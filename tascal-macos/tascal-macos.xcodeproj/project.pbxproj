@@ -123,7 +123,6 @@
 				3195BF502555F42A00707ECB /* ContentView.swift */,
 				3195BFBB255602B900707ECB /* calendar types */,
 				3195BFBC255602DC00707ECB /* calendar management */,
-				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BF552555F42C00707ECB /* Assets.xcassets */,
 				3195BF5A2555F42C00707ECB /* Main.storyboard */,
 				3195BF5D2555F42C00707ECB /* Info.plist */,
@@ -163,6 +162,7 @@
 		3195BFBB255602B900707ECB /* calendar types */ = {
 			isa = PBXGroup;
 			children = (
+				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BFB6255601FF00707ECB /* CalView.swift */,
 				3195BFA2255600C000707ECB /* CalTypeView_Year.swift */,
 				3195BFA7255600EC00707ECB /* CalTypeView_Week.swift */,
