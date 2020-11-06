@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct CalTypeView_Week: View {
+    
+    @EnvironmentObject var envi: AppEnvironment
+    
     var body: some View {
-        Text("week!")
+        Text("\(envi.date_pick)")
     }
 }
 

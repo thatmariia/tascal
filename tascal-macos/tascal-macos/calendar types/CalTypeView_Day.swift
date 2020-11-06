@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct CalTypeView_Day: View {
+    
+    @EnvironmentObject var envi: AppEnvironment
+    
     var body: some View {
-        Text("day!")
+        Text("\(DateInfo(date: envi.date_pick).weekday)")
     }
 }
 

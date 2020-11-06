@@ -24,6 +24,7 @@
 		3195BFAD2556010300707ECB /* CalTypeView_Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFAC2556010300707ECB /* CalTypeView_Days.swift */; };
 		3195BFB22556011500707ECB /* CalTypeView_Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFB12556011500707ECB /* CalTypeView_Day.swift */; };
 		3195BFB7255601FF00707ECB /* CalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFB6255601FF00707ECB /* CalView.swift */; };
+		3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFC925560D4A00707ECB /* DateInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		3195BFAC2556010300707ECB /* CalTypeView_Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Days.swift; sourceTree = "<group>"; };
 		3195BFB12556011500707ECB /* CalTypeView_Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Day.swift; sourceTree = "<group>"; };
 		3195BFB6255601FF00707ECB /* CalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalView.swift; sourceTree = "<group>"; };
+		3195BFC925560D4A00707ECB /* DateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,8 @@
 			children = (
 				3195BF4E2555F42A00707ECB /* AppDelegate.swift */,
 				3195BF832555F99F00707ECB /* AppEnvironment.swift */,
+				3195BF882555FA5200707ECB /* CalType.swift */,
+				3195BFC925560D4A00707ECB /* DateInfo.swift */,
 				3195BF502555F42A00707ECB /* ContentView.swift */,
 				3195BFBB255602B900707ECB /* calendar types */,
 				3195BFBC255602DC00707ECB /* calendar management */,
@@ -162,7 +166,6 @@
 		3195BFBB255602B900707ECB /* calendar types */ = {
 			isa = PBXGroup;
 			children = (
-				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BFB6255601FF00707ECB /* CalView.swift */,
 				3195BFA2255600C000707ECB /* CalTypeView_Year.swift */,
 				3195BFA7255600EC00707ECB /* CalTypeView_Week.swift */,
@@ -313,6 +316,7 @@
 			files = (
 				3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */,
 				3195BF892555FA5200707ECB /* CalType.swift in Sources */,
+				3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */,
 				3195BFB22556011500707ECB /* CalTypeView_Day.swift in Sources */,
 				3195BFAD2556010300707ECB /* CalTypeView_Days.swift in Sources */,
 				3195BF842555F99F00707ECB /* AppEnvironment.swift in Sources */,
