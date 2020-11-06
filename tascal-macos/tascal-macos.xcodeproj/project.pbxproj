@@ -121,13 +121,8 @@
 				3195BF4E2555F42A00707ECB /* AppDelegate.swift */,
 				3195BF832555F99F00707ECB /* AppEnvironment.swift */,
 				3195BF502555F42A00707ECB /* ContentView.swift */,
-				3195BFA2255600C000707ECB /* CalTypeView_Year.swift */,
-				3195BFA7255600EC00707ECB /* CalTypeView_Week.swift */,
-				3195BFAC2556010300707ECB /* CalTypeView_Days.swift */,
-				3195BFB12556011500707ECB /* CalTypeView_Day.swift */,
-				3195BFB6255601FF00707ECB /* CalView.swift */,
-				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
-				3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */,
+				3195BFBB255602B900707ECB /* calendar types */,
+				3195BFBC255602DC00707ECB /* calendar management */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BF552555F42C00707ECB /* Assets.xcassets */,
 				3195BF5A2555F42C00707ECB /* Main.storyboard */,
@@ -163,6 +158,27 @@
 				3195BF742555F42D00707ECB /* Info.plist */,
 			);
 			path = "tascal-macosUITests";
+			sourceTree = "<group>";
+		};
+		3195BFBB255602B900707ECB /* calendar types */ = {
+			isa = PBXGroup;
+			children = (
+				3195BFB6255601FF00707ECB /* CalView.swift */,
+				3195BFA2255600C000707ECB /* CalTypeView_Year.swift */,
+				3195BFA7255600EC00707ECB /* CalTypeView_Week.swift */,
+				3195BFAC2556010300707ECB /* CalTypeView_Days.swift */,
+				3195BFB12556011500707ECB /* CalTypeView_Day.swift */,
+			);
+			path = "calendar types";
+			sourceTree = "<group>";
+		};
+		3195BFBC255602DC00707ECB /* calendar management */ = {
+			isa = PBXGroup;
+			children = (
+				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
+				3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */,
+			);
+			path = "calendar management";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
