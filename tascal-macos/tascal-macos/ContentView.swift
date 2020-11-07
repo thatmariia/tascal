@@ -12,6 +12,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             CalManagerView()
+            TaskManagerView()
             CalView()
             Spacer()
         }
