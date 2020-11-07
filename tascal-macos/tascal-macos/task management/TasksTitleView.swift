@@ -1,5 +1,5 @@
 //
-//  NewTaskView.swift
+//  TasksTitleView.swift
 //  tascal-macos
 //
 //  Created by Mariia Turchina on 07/11/2020.
@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-struct NewTaskView: View {
+struct TasksTitleView: View {
     
     var txt: String
     
     var body: some View {
-        Text(txt)
+        HStack {
+            Text(txt).font(.largeTitle)
+            Spacer()
+        }
     }
 }

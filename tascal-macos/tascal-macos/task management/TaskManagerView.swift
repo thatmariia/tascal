@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct TaskManagerView: View {
+    
+    var bins = 3
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
             HStack{
                 VStack {
-                    Text("TASKS").font(.subheadline)
-                    
-                    ForEach(newtasks, id: \.self) {task in
-                        NewTaskView(txt: task)
-                    }
-                    
+                    TasksTitleView(txt: "Tasks")
+                    TasksView()
                     Spacer()
                 }
-                Spacer()
             }
         }
     }
