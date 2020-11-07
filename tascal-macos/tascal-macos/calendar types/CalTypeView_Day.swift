@@ -14,7 +14,7 @@ struct CalTypeView_Day: View {
     var body: some View {
         
         ZStack {
-            DayBoxView(date_info: dates.date_pick_info)
+            DayBoxView(date: dates.day)
                 .gesture(DragGesture().onChanged({ (value) in
                     dates.drag_update(on: value, with: .day)
                 }))

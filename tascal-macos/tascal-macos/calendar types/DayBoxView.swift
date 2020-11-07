@@ -9,18 +9,14 @@ import SwiftUI
 
 struct DayBoxView: View {
     
-    var date_info: DateInfo
+    var date: CalDate
     
     var body: some View {
         ZStack {
             /* bg here */
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
-                    VStack{
-                        Text("\(date_info.weekday)")
-                        Text("\(date_info.day)")
-                        Text("\(date_info.month)")
-                    }
+                    DateButtonBoxView(date: date)
                     
                     Spacer()
                     

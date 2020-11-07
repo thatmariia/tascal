@@ -9,18 +9,20 @@ import SwiftUI
 
 struct DateButtonBoxView: View {
     
-    var date_info: DateInfo
+    @EnvironmentObject var dates: DatesSettings
+    var date: CalDate
     
     var body: some View {
         VStack {
             VStack{
-                Text("\(date_info.weekday)")
-                Text("\(date_info.day)")
-                Text("\(date_info.month)")
+                Text("\(date.date_info.weekday)")
+                Text("\(date.date_info.day)")
+                Text("\(date.date_info.month)")
             }
         }
         .onTapGesture {
-            // go to day
+            dates.update_date(date: date.date)
+            dates.cal_type = .day
         }
     }
 }

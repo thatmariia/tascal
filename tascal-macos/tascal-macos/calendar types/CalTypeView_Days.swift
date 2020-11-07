@@ -14,8 +14,8 @@ struct CalTypeView_Days: View {
     var body: some View {
         
         HStack {
-            ForEach(0..<dates.days_dates.count) { i in
-                DayBoxView(date_info: dates.days_dates_info[i])
+            ForEach(dates.days) { day in
+                DayBoxView(date: day)
             }
         }
         .gesture(DragGesture().onChanged({ (value) in
