@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CalManagerView: View {
     
-    @EnvironmentObject var envi: AppEnvironment
+    @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
         HStack {
@@ -17,6 +17,13 @@ struct CalManagerView: View {
             CalManagerButtonView(type: CalType.week)
             CalManagerButtonView(type: CalType.days)
             CalManagerButtonView(type: CalType.day)
+            
+            Spacer().frame(width: 40)
+            Button(action: {
+                dates.update_date(date: dates.today.date)
+            }) {
+                Text("Today")
+            }
         }
     }
 }

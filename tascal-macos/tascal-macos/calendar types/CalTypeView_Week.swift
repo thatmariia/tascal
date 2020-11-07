@@ -14,8 +14,10 @@ struct CalTypeView_Week: View {
     var body: some View {
         
         HStack {
+            Divider()
             ForEach(dates.week) { day in
                 DayBoxView(date: day)
+                Divider()
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .gesture(DragGesture().onChanged({ (value) in

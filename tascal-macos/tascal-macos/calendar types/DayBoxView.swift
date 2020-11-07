@@ -17,12 +17,13 @@ struct DayBoxView: View {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
                     DateButtonBoxView(date: date)
+                    Divider()
                     
                     Text("blahhh")
                     Spacer()
                 }
             }
             
-        }.background(Color.blue)
+        }
     }
 }

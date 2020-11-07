@@ -14,8 +14,10 @@ struct CalTypeView_Days: View {
     var body: some View {
         
         HStack {
+            Divider()
             ForEach(dates.days) { day in
                 DayBoxView(date: day)
+                Divider()
             }
         }
         .gesture(DragGesture().onChanged({ (value) in

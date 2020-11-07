@@ -26,7 +26,7 @@ struct DateButtonBoxView: View {
                 }
             }
             Spacer()
-        }.background(Color.red)
+        }
         
     }
 }
