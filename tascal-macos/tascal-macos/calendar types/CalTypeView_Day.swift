@@ -12,7 +12,19 @@ struct CalTypeView_Day: View {
     @EnvironmentObject var envi: AppEnvironment
     
     var body: some View {
-        Text("\(DateInfo(date: envi.date_pick).weekday)")
+        
+        ZStack {
+            ScrollView(.horizontal, showsIndicators: true) {
+                
+                HStack {
+                    ForEach(envi.dates_info) { date_info in
+                        
+                        DayBoxView(date_info: date_info)
+                    }
+                }
+            }
+        }
+        
     }
 }
 

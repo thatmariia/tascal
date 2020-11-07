@@ -7,7 +7,9 @@
 
 import Foundation
 
-class DateInfo {
+class DateInfo: Identifiable {
+    
+    let id = UUID()
     
     var day: Int
     var week: Int
