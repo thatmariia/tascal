@@ -11,6 +11,10 @@
 		31750C7F2556F04F007ACF87 /* DateButtonBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */; };
 		31750C842556F105007ACF87 /* CalDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750C832556F105007ACF87 /* CalDate.swift */; };
 		31750C8925570093007ACF87 /* TaskManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750C8825570093007ACF87 /* TaskManagerView.swift */; };
+		31750C9A255709E9007ACF87 /* tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750C99255709E9007ACF87 /* tasks.swift */; };
+		31750C9F25570BBB007ACF87 /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750C9E25570BBB007ACF87 /* NewTaskView.swift */; };
+		31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750CA325570D31007ACF87 /* CalTaskView.swift */; };
+		31750CA925570DE3007ACF87 /* TaskLevelTxtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750CA825570DE3007ACF87 /* TaskLevelTxtView.swift */; };
 		3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF4E2555F42A00707ECB /* AppDelegate.swift */; };
 		3195BF512555F42A00707ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF502555F42A00707ECB /* ContentView.swift */; };
 		3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF522555F42A00707ECB /* tascal_macos.xcdatamodeld */; };
@@ -54,6 +58,10 @@
 		31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButtonBoxView.swift; sourceTree = "<group>"; };
 		31750C832556F105007ACF87 /* CalDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalDate.swift; sourceTree = "<group>"; };
 		31750C8825570093007ACF87 /* TaskManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerView.swift; sourceTree = "<group>"; };
+		31750C99255709E9007ACF87 /* tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasks.swift; sourceTree = "<group>"; };
+		31750C9E25570BBB007ACF87 /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		31750CA325570D31007ACF87 /* CalTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTaskView.swift; sourceTree = "<group>"; };
+		31750CA825570DE3007ACF87 /* TaskLevelTxtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskLevelTxtView.swift; sourceTree = "<group>"; };
 		3195BF4B2555F42A00707ECB /* tascal-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tascal-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3195BF4E2555F42A00707ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3195BF502555F42A00707ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				31750C8825570093007ACF87 /* TaskManagerView.swift */,
+				31750C9E25570BBB007ACF87 /* NewTaskView.swift */,
 			);
 			path = "task management";
 			sourceTree = "<group>";
@@ -140,6 +149,7 @@
 			children = (
 				3195BF4E2555F42A00707ECB /* AppDelegate.swift */,
 				3195BF832555F99F00707ECB /* AppEnvironment.swift */,
+				31750C99255709E9007ACF87 /* tasks.swift */,
 				3195BF502555F42A00707ECB /* ContentView.swift */,
 				31750C8D25570098007ACF87 /* task management */,
 				3195BFBB255602B900707ECB /* calendar types */,
@@ -189,6 +199,8 @@
 				3195BFAC2556010300707ECB /* CalTypeView_Days.swift */,
 				3195BFB12556011500707ECB /* CalTypeView_Day.swift */,
 				3195BFD1255691D000707ECB /* DayBoxView.swift */,
+				31750CA325570D31007ACF87 /* CalTaskView.swift */,
+				31750CA825570DE3007ACF87 /* TaskLevelTxtView.swift */,
 				31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */,
 			);
 			path = "calendar types";
@@ -338,7 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				31750C7F2556F04F007ACF87 /* DateButtonBoxView.swift in Sources */,
+				31750C9A255709E9007ACF87 /* tasks.swift in Sources */,
 				3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */,
+				31750CA925570DE3007ACF87 /* TaskLevelTxtView.swift in Sources */,
 				3195BF892555FA5200707ECB /* CalType.swift in Sources */,
 				3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */,
 				3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */,
@@ -352,6 +366,8 @@
 				31750C842556F105007ACF87 /* CalDate.swift in Sources */,
 				31750C8925570093007ACF87 /* TaskManagerView.swift in Sources */,
 				3195BF512555F42A00707ECB /* ContentView.swift in Sources */,
+				31750C9F25570BBB007ACF87 /* NewTaskView.swift in Sources */,
+				31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */,
 				3195BFA8255600EC00707ECB /* CalTypeView_Week.swift in Sources */,
 				3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,

@@ -9,13 +9,19 @@ import SwiftUI
 
 struct TaskManagerView: View {
     var body: some View {
-        HStack{
-            VStack {
-                Text("TASKS")
-                Text("some stuff")
+        ScrollView(.vertical, showsIndicators: true){
+            HStack{
+                VStack {
+                    Text("TASKS").font(.subheadline)
+                    
+                    ForEach(newtasks, id: \.self) {task in
+                        NewTaskView(txt: task)
+                    }
+                    
+                    Spacer()
+                }
                 Spacer()
             }
-            Spacer()
         }
     }
 }

@@ -19,11 +19,27 @@ struct DayBoxView: View {
                     DateButtonBoxView(date: date)
                     Divider()
                     
-                    Text("blahhh")
+                    TaskLevelTxtView(txt: "Must")
+                    TaskList(tasks: musttasks)
+                    
+                    TaskLevelTxtView(txt: "Should")
+                    TaskList(tasks: shouldtasks)
+                    
+                    TaskLevelTxtView(txt: "Want")
+                    TaskList(tasks: wanttasks)
+                    
                     Spacer()
                 }.padding()
             }
             
+        }
+    }
+    
+    fileprivate func TaskList(tasks: [String]) -> some View {
+        return VStack{
+            ForEach(tasks, id: \.self) {task in
+                CalTaskView(txt: task)
+            }
         }
     }
 }
