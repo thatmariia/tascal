@@ -15,11 +15,12 @@ struct CalTypeView_Day: View {
         
         ZStack {
             ScrollView(.horizontal, showsIndicators: true) {
-                
                 HStack {
+                    //TODO:: make just 7? days and detect action? // scrollViewDidScroll
                     ForEach(envi.dates_info) { date_info in
-                        
-                        DayBoxView(date_info: date_info)
+                        HStack {
+                            DayBoxView(date_info: date_info)
+                        }
                     }
                 }
             }
