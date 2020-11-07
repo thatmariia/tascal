@@ -9,11 +9,13 @@ import SwiftUI
 
 struct TaskManagerView: View {
     var body: some View {
-        VStack {
-            Text("TASKS")
-            Text("some stuff")
+        HStack{
+            VStack {
+                Text("TASKS")
+                Text("some stuff")
+                Spacer()
+            }
             Spacer()
-            Divider()
         }
     }
 }
