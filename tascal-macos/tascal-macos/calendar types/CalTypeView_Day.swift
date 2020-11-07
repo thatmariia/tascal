@@ -9,20 +9,14 @@ import SwiftUI
 
 struct CalTypeView_Day: View {
     
-    @EnvironmentObject var envi: AppEnvironment
-    
-    //let next_day = calendar.date(byAdding: .day, value: 1, to: envi.dates[i])
+    @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
         
         ZStack {
-            DayBoxView(date_info: envi.date_pick_info)
+            DayBoxView(date_info: dates.date_pick_info)
                 .gesture(DragGesture().onChanged({ (value) in
-                    if (value.startLocation.x > value.predictedEndLocation.x) {
-                        self.envi.update_date(date: calendar.date(byAdding: .day, value: 1, to: envi.date_pick)!)
-                    } else {
-                        self.envi.update_date(date: calendar.date(byAdding: .day, value: -1, to: envi.date_pick)!)
-                    }
+                    dates.drag_update(on: value, with: .day)
                 }))
         }
     }

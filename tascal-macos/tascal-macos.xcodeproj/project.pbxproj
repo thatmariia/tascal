@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31750C772556E4BB007ACF87 /* DatesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750C762556E4BB007ACF87 /* DatesSettings.swift */; };
+		31750C7F2556F04F007ACF87 /* DateButtonBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */; };
 		3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF4E2555F42A00707ECB /* AppDelegate.swift */; };
 		3195BF512555F42A00707ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF502555F42A00707ECB /* ContentView.swift */; };
 		3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF522555F42A00707ECB /* tascal_macos.xcdatamodeld */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31750C762556E4BB007ACF87 /* DatesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesSettings.swift; sourceTree = "<group>"; };
+		31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateButtonBoxView.swift; sourceTree = "<group>"; };
 		3195BF4B2555F42A00707ECB /* tascal-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tascal-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3195BF4E2555F42A00707ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3195BF502555F42A00707ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 			children = (
 				3195BF4E2555F42A00707ECB /* AppDelegate.swift */,
 				3195BF832555F99F00707ECB /* AppEnvironment.swift */,
+				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BFC925560D4A00707ECB /* DateInfo.swift */,
 				3195BF502555F42A00707ECB /* ContentView.swift */,
@@ -174,6 +179,7 @@
 				3195BFAC2556010300707ECB /* CalTypeView_Days.swift */,
 				3195BFB12556011500707ECB /* CalTypeView_Day.swift */,
 				3195BFD1255691D000707ECB /* DayBoxView.swift */,
+				31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */,
 			);
 			path = "calendar types";
 			sourceTree = "<group>";
@@ -317,12 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31750C7F2556F04F007ACF87 /* DateButtonBoxView.swift in Sources */,
 				3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */,
 				3195BF892555FA5200707ECB /* CalType.swift in Sources */,
 				3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */,
 				3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */,
 				3195BFB22556011500707ECB /* CalTypeView_Day.swift in Sources */,
 				3195BFAD2556010300707ECB /* CalTypeView_Days.swift in Sources */,
+				31750C772556E4BB007ACF87 /* DatesSettings.swift in Sources */,
 				3195BF842555F99F00707ECB /* AppEnvironment.swift in Sources */,
 				3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */,
 				3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */,

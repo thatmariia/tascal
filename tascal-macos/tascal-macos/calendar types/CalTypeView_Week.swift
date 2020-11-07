@@ -9,10 +9,18 @@ import SwiftUI
 
 struct CalTypeView_Week: View {
     
-    @EnvironmentObject var envi: AppEnvironment
+    @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
-        Text("\(envi.date_pick)")
+        
+        HStack {
+            ForEach(0..<dates.week_dates.count) { i in
+                DayBoxView(date_info: dates.week_dates_info[i])
+            }
+        }
+        .gesture(DragGesture().onChanged({ (value) in
+            dates.drag_update(on: value, with: .day)
+        }))
     }
 }
 

@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CalManagerButtonView: View {
     
-    @EnvironmentObject var envi: AppEnvironment
+    @EnvironmentObject var dates: DatesSettings
     var type: CalType
     
     var body: some View {
         ZStack {
             Button(action: {
-                envi.cal_type = type
+                dates.cal_type = type
             }) {
                 Text("\(type.rawValue)")
             }

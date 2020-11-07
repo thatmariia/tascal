@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct CalTypeView_Days: View {
+    
+    @EnvironmentObject var dates: DatesSettings
+    
     var body: some View {
-        Text("3 days!")
+        
+        HStack {
+            ForEach(0..<dates.days_dates.count) { i in
+                DayBoxView(date_info: dates.days_dates_info[i])
+            }
+        }
+        .gesture(DragGesture().onChanged({ (value) in
+            dates.drag_update(on: value, with: .day)
+        }))
     }
 }
 

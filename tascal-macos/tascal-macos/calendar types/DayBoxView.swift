@@ -16,9 +16,11 @@ struct DayBoxView: View {
             /* bg here */
             ScrollView(.vertical, showsIndicators: true) {
                 VStack {
-                    Text("\(date_info.weekday)")
-                    Text("\(date_info.day)")
-                    Text("\(date_info.month)")
+                    VStack{
+                        Text("\(date_info.weekday)")
+                        Text("\(date_info.day)")
+                        Text("\(date_info.month)")
+                    }
                     
                     Spacer()
                     

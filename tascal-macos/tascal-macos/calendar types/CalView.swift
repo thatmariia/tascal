@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CalView: View {
     
-    @EnvironmentObject var envi: AppEnvironment
+    @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
         ZStack {
-            switch envi.cal_type {
+            switch dates.cal_type {
             case .year:
                 CalTypeView_Year()
             case .week:
@@ -21,8 +21,6 @@ struct CalView: View {
             case .days:
                 CalTypeView_Days()
             case .day:
-                CalTypeView_Day()
-            default:
                 CalTypeView_Day()
             }
         }

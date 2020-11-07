@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var envi: AppEnvironment
-    
     var body: some View {
         VStack {
             CalManagerView()

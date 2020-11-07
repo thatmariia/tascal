@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
     var app_environement = AppEnvironment()
+    var dates_settings = DatesSettings()
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -20,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let contentView = ContentView().environment(\.managedObjectContext, persistentContainer.viewContext)
             .environmentObject(app_environement)
+            .environmentObject(dates_settings)
 
         // Create the window and set the content view.
         window = NSWindow(
