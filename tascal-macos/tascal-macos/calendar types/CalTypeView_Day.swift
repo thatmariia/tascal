@@ -11,21 +11,20 @@ struct CalTypeView_Day: View {
     
     @EnvironmentObject var envi: AppEnvironment
     
+    //let next_day = calendar.date(byAdding: .day, value: 1, to: envi.dates[i])
+    
     var body: some View {
         
         ZStack {
-            ScrollView(.horizontal, showsIndicators: true) {
-                HStack {
-                    //TODO:: make just 7? days and detect action? // scrollViewDidScroll
-                    ForEach(envi.dates_info) { date_info in
-                        HStack {
-                            DayBoxView(date_info: date_info)
-                        }
+            DayBoxView(date_info: envi.date_pick_info)
+                .gesture(DragGesture().onChanged({ (value) in
+                    if (value.startLocation.x > value.predictedEndLocation.x) {
+                        self.envi.update_date(date: calendar.date(byAdding: .day, value: 1, to: envi.date_pick)!)
+                    } else {
+                        self.envi.update_date(date: calendar.date(byAdding: .day, value: -1, to: envi.date_pick)!)
                     }
-                }
-            }
+                }))
         }
-        
     }
 }
 
