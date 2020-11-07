@@ -13,7 +13,8 @@ struct ContentView: View {
         VStack {
             CalManagerView()
             CalView()
-        }
+            Spacer()
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

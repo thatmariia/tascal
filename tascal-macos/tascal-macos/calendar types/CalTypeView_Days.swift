@@ -19,6 +19,7 @@ struct CalTypeView_Days: View {
             }
         }
         .gesture(DragGesture().onChanged({ (value) in
+            //TODO:: figure out why it doesnt drag properly
             dates.drag_update(on: value, with: .day)
         }))
     }

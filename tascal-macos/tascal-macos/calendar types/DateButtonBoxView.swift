@@ -13,17 +13,21 @@ struct DateButtonBoxView: View {
     var date: CalDate
     
     var body: some View {
-        VStack {
-            VStack{
-                Text("\(date.date_info.weekday)")
-                Text("\(date.date_info.day)")
-                Text("\(date.date_info.month)")
+        HStack{
+            Spacer()
+            Button(action: {
+                dates.update_date(date: date.date)
+                dates.cal_type = .day
+            }) {
+                VStack {
+                    Text("\(date.date_info.weekday)")
+                    Text("\(date.date_info.day)")
+                    Text("\(date.date_info.month)")
+                }
             }
-        }
-        .onTapGesture {
-            dates.update_date(date: date.date)
-            dates.cal_type = .day
-        }
+            Spacer()
+        }.background(Color.red)
+        
     }
 }
 

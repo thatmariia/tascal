@@ -18,12 +18,11 @@ struct DayBoxView: View {
                 VStack {
                     DateButtonBoxView(date: date)
                     
-                    Spacer()
-                    
                     Text("blahhh")
+                    Spacer()
                 }
             }
             
-        }
+        }.background(Color.blue)
     }
 }

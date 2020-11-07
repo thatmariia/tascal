@@ -17,8 +17,9 @@ struct CalTypeView_Week: View {
             ForEach(dates.week) { day in
                 DayBoxView(date: day)
             }
-        }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity)
         .gesture(DragGesture().onChanged({ (value) in
+            //TODO:: figure out why it doesnt drag properly
             dates.drag_update(on: value, with: .day)
         }))
     }
