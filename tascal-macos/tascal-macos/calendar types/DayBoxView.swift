@@ -21,7 +21,7 @@ struct DayBoxView: View {
                     
                     Text("blahhh")
                     Spacer()
-                }
+                }.padding()
             }
             
         }

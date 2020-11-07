@@ -23,7 +23,7 @@ struct DateButtonBoxView: View {
                     Text("\(date.date_info.weekday)")
                     Text("\(date.date_info.day)")
                     Text("\(date.date_info.month)")
-                }
+                }.padding()
             }
             Spacer()
         }

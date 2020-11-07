@@ -14,7 +14,9 @@ struct ContentView: View {
             CalManagerView()
             CalView()
             Spacer()
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding()
     }
 }
 
