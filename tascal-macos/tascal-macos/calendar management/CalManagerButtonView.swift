@@ -13,12 +13,10 @@ struct CalManagerButtonView: View {
     var type: CalType
     
     var body: some View {
-        ZStack {
-            Button(action: {
-                dates.cal_type = type
-            }) {
-                Text("\(type.rawValue)")
-            }
+        Button(action: {
+            dates.cal_type = type
+        }) {
+            Text("\(type.rawValue)")
         }
     }
 }

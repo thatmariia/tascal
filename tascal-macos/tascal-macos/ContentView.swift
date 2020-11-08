@@ -10,14 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        
-        VStack {
-            CalManagerView()
-            VSplitView{
-                TaskManagerView()
-                Divider()
-                CalView()
-            }
+
+        VSplitView{
+            TaskManagerView()
+            Divider()
+            CalView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()

@@ -12,18 +12,18 @@ struct CalTypeView_Week: View {
     @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
-        
-        HStack {
-            Divider()
-            ForEach(dates.week) { day in
-                DayBoxView(date: day)
-                Divider()
-            }
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        .gesture(DragGesture().onChanged({ (value) in
-            //TODO:: figure out why it doesnt drag properly
-            dates.drag_update(on: value, with: .day)
-        }))
+        VStack{
+            MonthTitleView()
+            HStack {
+                ForEach(dates.week) { day in
+                    DayBoxView(date: day)
+                }
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .gesture(DragGesture().onChanged({ (value) in
+                //TODO:: figure out why it doesnt drag properly
+                dates.drag_update(on: value, with: .day)
+            }))
+        }
     }
 }
 

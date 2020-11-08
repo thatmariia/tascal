@@ -15,17 +15,11 @@ struct DateButtonBoxView: View {
     var body: some View {
         HStack{
             Spacer()
-            Button(action: {
-                dates.update_date(date: date.date)
-                dates.cal_type = .day
-            }) {
-                VStack {
-                    Text("\(date.date_info.weekday)")
-                    Text("\(date.date_info.day)")
-                    Text("\(date.date_info.month)")
-                }.padding()
-            }
+            Text("\(date.date_info.weekday + " " + String(date.date_info.day))")
             Spacer()
+        }.onTapGesture {
+            dates.update_date(date: date.date)
+            dates.cal_type = .day
         }
         
     }

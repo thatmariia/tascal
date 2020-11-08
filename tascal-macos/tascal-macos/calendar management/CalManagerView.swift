@@ -12,22 +12,19 @@ struct CalManagerView: View {
     @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
-        VStack{
-            HStack {
-                CalManagerButtonView(type: CalType.year)
-                CalManagerButtonView(type: CalType.week)
-                CalManagerButtonView(type: CalType.days)
-                CalManagerButtonView(type: CalType.day)
-                
-                Spacer().frame(width: 40)
-                Button(action: {
-                    dates.update_date(date: dates.today.date)
-                }) {
-                    Text("Today")
-                }
+        HStack {
+            CalManagerButtonView(type: CalType.year)
+            CalManagerButtonView(type: CalType.week)
+            CalManagerButtonView(type: CalType.days)
+            CalManagerButtonView(type: CalType.day)
+            
+            Spacer().frame(width: 40)
+            Button(action: {
+                dates.update_date(date: dates.today.date)
+            }) {
+                Text("Today")
             }
-            Divider()
-        }
+        }.padding()
     }
 }
 

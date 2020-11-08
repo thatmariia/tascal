@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class DatesSettings: ObservableObject {
-    @Published var cal_type = CalType.day
+    @Published var cal_type = CalType.year
     
     @Published var today    = CalDate(date: Date(), date_info: DateInfo(date: Date()))
     

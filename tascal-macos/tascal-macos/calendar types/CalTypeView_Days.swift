@@ -13,17 +13,18 @@ struct CalTypeView_Days: View {
     
     var body: some View {
         
-        HStack {
-            Divider()
-            ForEach(dates.days) { day in
-                DayBoxView(date: day)
-                Divider()
+        VStack {
+            MonthTitleView()
+            HStack {
+                ForEach(dates.days) { day in
+                    DayBoxView(date: day)
+                }
             }
+            .gesture(DragGesture().onChanged({ (value) in
+                //TODO:: figure out why it doesnt drag properly
+                dates.drag_update(on: value, with: .day)
+            }))
         }
-        .gesture(DragGesture().onChanged({ (value) in
-            //TODO:: figure out why it doesnt drag properly
-            dates.drag_update(on: value, with: .day)
-        }))
     }
 }
 

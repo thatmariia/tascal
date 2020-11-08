@@ -12,27 +12,23 @@ struct DayBoxView: View {
     var date: CalDate
     
     var body: some View {
-        ZStack {
-            /* bg here */
+        VStack {
+            DateButtonBoxView(date: date)
+
             ScrollView(.vertical, showsIndicators: true) {
-                VStack {
-                    DateButtonBoxView(date: date)
-                    Divider()
-                    
-                    TaskLevelTxtView(txt: "Must")
-                    TaskList(tasks: musttasks)
-                    
-                    TaskLevelTxtView(txt: "Should")
-                    TaskList(tasks: shouldtasks)
-                    
-                    TaskLevelTxtView(txt: "Want")
-                    TaskList(tasks: wanttasks)
-                    
-                    Spacer()
-                }.padding()
-            }
-            
-        }
+                TaskLevelTxtView(txt: "Must")
+                TaskList(tasks: musttasks)
+                
+                TaskLevelTxtView(txt: "Should")
+                TaskList(tasks: shouldtasks)
+                
+                TaskLevelTxtView(txt: "Want")
+                TaskList(tasks: wanttasks)
+            }.modifier(DayBoxViewModifier())
+            Spacer()
+        }.padding(EdgeInsets(top: 3, leading: 15, bottom: 3, trailing: 15))
+        
+        
     }
     
     fileprivate func TaskList(tasks: [String]) -> some View {
