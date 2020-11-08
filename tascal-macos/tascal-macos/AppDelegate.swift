@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView, .unifiedTitleAndToolbar],
             backing: .buffered, defer: false)
         window.center()
-        //window.titlebarAppearsTransparent = true
+        window.titlebarAppearsTransparent = true
         //window.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)
         window.title = "Tascal"
         window.titleVisibility = .hidden
@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
         window.isOpaque = false
-        window.backgroundColor = NSColor.black.withAlphaComponent(0.9)
+        //window.backgroundColor = NSColor.black.withAlphaComponent(0.9)
         
         let toolbarButtons = NSHostingView(rootView: CalManagerView()
                                             .environmentObject(app_environement)

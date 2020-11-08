@@ -13,7 +13,7 @@ struct NewTaskViewModifier: ViewModifier {
     func body(content: Content) -> some View {
             content
                 .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
-                .background(Color.white.opacity(0.1)).cornerRadius(10)
+                .background(Color.white.opacity(0.1)).cornerRadius(5)
         }
 }
 

@@ -5,7 +5,9 @@
 //  Created by Mariia Turchina on 07/11/2020.
 //
 
+import Foundation
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct TaskView: View {
     
@@ -57,27 +59,29 @@ struct TaskView: View {
     }
     
     fileprivate func EditView() -> some View {
-        return HStack {
-            //TODO:: change to text editor when macos 12 is out
-            TextField("", text: $txt) { (changed) in
-                print("meow ", changed)
-            } onCommit: {
-                editing = false
-                // todo:: send in new txt
+        return VStack {
+            HStack {
+                
+                TextEditor(text: $txt)
+                //TODO:: editing=false on return (issue with onPasteCommand)
+                
+                Spacer()
+                Divider()
+                
+                TextField("", text: $time) { (changed) in
+                    print("woof ", changed)
+                } onCommit: {
+                    editing = false
+                    // todo:: send in new txt
+                }
+                .frame(maxWidth: 50)
             }
-            .lineLimit(10)
-            .fixedSize(horizontal: false, vertical: true)
             
-            Spacer()
-            Divider()
-            
-            TextField("", text: $time) { (changed) in
-                print("woof ", changed)
-            } onCommit: {
+            Button(action: {
                 editing = false
-                // todo:: send in new txt
-            }
-            .frame(maxWidth: 50)
+            }, label: {
+                Text("done")
+            })
         }
     }
 }

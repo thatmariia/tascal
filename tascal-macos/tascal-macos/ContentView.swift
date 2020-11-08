@@ -18,6 +18,8 @@ struct ContentView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
+        //.background(Color.black.opacity(0.3))
+        //.blendingMode(NSVisualEffectView.BlendingMode.behindWindow)
         
     }
 }
