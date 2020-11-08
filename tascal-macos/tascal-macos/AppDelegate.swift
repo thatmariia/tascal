@@ -14,14 +14,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     var app_environement = AppEnvironment()
     var dates_settings = DatesSettings()
+    var tasks_environment = TasksEnvironment()
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
+        
+        tasks_environment.distribute_tasks()
+        
         let contentView = ContentView().environment(\.managedObjectContext, persistentContainer.viewContext)
             .environmentObject(app_environement)
             .environmentObject(dates_settings)
+            .environmentObject(tasks_environment)
+        
+        
 
         // Create the window and set the content view.
         window = NSWindow(
@@ -36,7 +43,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Tascal")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
-        window.isOpaque = false
+        //window.isOpaque = false
+        /*window.alphaValue = 0.9
+
+        let blurView = NSVisualEffectView()
+        blurView.blendingMode = .behindWindow
+        blurView.material = .sidebar
+        blurView.state = .active
+        window.contentView?.addSubview(blurView)*/
+        
         //window.backgroundColor = NSColor.black.withAlphaComponent(0.9)
         
         let toolbarButtons = NSHostingView(rootView: CalManagerView()

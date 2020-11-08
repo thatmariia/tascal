@@ -13,7 +13,7 @@ struct TasksTitleView: View {
     
     var body: some View {
         HStack {
-            Text(txt).font(.largeTitle)
+            Text(txt).font(.system(size: 30)).fontWeight(.bold)
             Spacer()
         }
     }

@@ -10,16 +10,18 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-
-        VSplitView{
-            TaskManagerView()
-            Divider()
-            CalView()
+        
+        GeometryReader { geom in
+            VSplitView{
+                TaskManagerView()
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                Divider()
+                CalView()
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                    .frame(minHeight: geom.size.height * 0.25)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding()
-        //.background(Color.black.opacity(0.3))
-        //.blendingMode(NSVisualEffectView.BlendingMode.behindWindow)
         
     }
 }

@@ -10,18 +10,23 @@ import SwiftUI
 struct TasksView: View {
     
     var bins = 3
+    @EnvironmentObject var tasks: TasksEnvironment
     
     var body: some View {
+
         ScrollView(.vertical, showsIndicators: true){
+            Spacer().frame(height: 2)
             HStack{
-                ForEach(0..<bins) {i in
+                ForEach(0..<tasks.bins) {i in
                     VStack{
-                        ForEach(0..<distribute_tasks(tasks: newtasks, bins: bins)[i].count) {j in
+                        ForEach(0..<(tasks.distributed_sizes.max() ?? 0)) {j in
                             ZStack {
                                 if (i == 0 && j == 0) {
-                                    AddNewTaskFieldView()
+                                    AddTaskFieldView()
+                                } else if (j < tasks.distributed_tasks[i].count) {
+                                    TaskView(txt: tasks.distributed_tasks[i][j])
                                 } else {
-                                    TaskView(txt: distribute_tasks(tasks: newtasks, bins: bins)[i][j] as! String)
+                                    TaskPlaceholderView() // hacky shit, might delete later
                                 }
                             }
                         }
@@ -31,17 +36,6 @@ struct TasksView: View {
                 }
             }
         }
-    }
-    
-    fileprivate func distribute_tasks(tasks: [Any], bins: Int) -> [[Any]] {
-        var distributed_tasks: [[Any]] = []
-        
-        for _ in 0..<bins { distributed_tasks.append([]) }
-        distributed_tasks[0].append("")
-        for i in 0..<tasks.count {
-            distributed_tasks[(i+1)%bins].append(tasks[i])
-        }
-        return distributed_tasks
     }
 }
 
