@@ -15,10 +15,10 @@ struct SearchTextFieldView: View {
     
     var body: some View {
         
-        HStack{
+        HStack {
             
             Image(systemName: "magnifyingglass.circle.fill")
-        ZStack{
+        ZStack {
             
             if search.isEmpty {
                 Text("Search")
