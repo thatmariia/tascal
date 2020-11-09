@@ -52,6 +52,7 @@
 		31EF9FF32558B969003DFADF /* DateFrameViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */; };
 		31EFA0012558C4DB003DFADF /* TaskCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */; };
 		31EFA0192559488C003DFADF /* TaskActionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA0182559488C003DFADF /* TaskActionsMenuView.swift */; };
+		31EFA02425595B1F003DFADF /* ToolbarStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFrameViewModifier.swift; sourceTree = "<group>"; };
 		31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckmarkView.swift; sourceTree = "<group>"; };
 		31EFA0182559488C003DFADF /* TaskActionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskActionsMenuView.swift; sourceTree = "<group>"; };
+		31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarStyleModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				31750C99255709E9007ACF87 /* tasks.swift */,
 				3195BF502555F42A00707ECB /* ContentView.swift */,
 				31EF9F9725588E7F003DFADF /* NSTextField.swift */,
+				31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */,
 				31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */,
 				31EF9FD22558B4A4003DFADF /* DividerView.swift */,
 				31750C8D25570098007ACF87 /* Tasks */,
@@ -466,6 +469,7 @@
 				3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */,
 				3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */,
 				3195BFB7255601FF00707ECB /* CalView.swift in Sources */,
+				31EFA02425595B1F003DFADF /* ToolbarStyleModifier.swift in Sources */,
 				31750CB1255723FC007ACF87 /* TasksTitleView.swift in Sources */,
 				31EF9FCE2558B2DB003DFADF /* IconButtonView.swift in Sources */,
 				31750C842556F105007ACF87 /* CalDate.swift in Sources */,

@@ -13,18 +13,27 @@ struct CalManagerView: View {
     
     var body: some View {
         HStack {
-            CalManagerButtonView(type: CalType.year)
-            CalManagerButtonView(type: CalType.week)
-            CalManagerButtonView(type: CalType.days)
-            CalManagerButtonView(type: CalType.day)
+            HStack {
+                CalManagerButtonView(type: CalType.year)
+                CalManagerButtonView(type: CalType.week)
+                CalManagerButtonView(type: CalType.days)
+                CalManagerButtonView(type: CalType.day)
+            }
+            .modifier(ToolbarStyleModifier())
             
             Spacer().frame(width: 40)
             Button(action: {
                 dates.update_date(date: dates.today.date)
             }) {
                 Text("Today")
+                    .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
+                    .modifier(ToolbarStyleModifier())
             }
-        }.padding()
+            .buttonStyle(PlainButtonStyle())
+            
+            Spacer().frame(width: 20)
+        }//.padding()
+
     }
 }
 
