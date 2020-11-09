@@ -15,20 +15,41 @@ struct DayBoxView: View {
         
         VStack {
             DateButtonBoxView(date: date)
-
-            ScrollView(.vertical, showsIndicators: false) {
-                TaskLevelTxtView(txt: "Must")
-                TaskList(tasks: musttasks)
-                Spacer().frame(height: 10)
+            
+            //ScrollView(.vertical, showsIndicators: false) {
+            
+            List{
+                Section(header: TaskLevelTxtView(txt: "Must")) {
+                    TaskList(tasks: musttasks)
+                }
                 
-                TaskLevelTxtView(txt: "Should")
-                TaskList(tasks: shouldtasks)
-                Spacer().frame(height: 10)
+                Section(header: TaskLevelTxtView(txt: "Should")) {
+                    TaskList(tasks: shouldtasks)
+                }
                 
-                TaskLevelTxtView(txt: "Want")
-                TaskList(tasks: wanttasks)
-                Spacer().frame(height: 10)
-            }.modifier(DayBoxViewModifier())
+                Section(header: TaskLevelTxtView(txt: "Want")) {
+                    TaskList(tasks: wanttasks)
+                }
+            }
+            .onNSView(added: { nsview in
+                let root = nsview.subviews[0] as! NSScrollView
+                root.hasVerticalScroller = false
+                root.hasHorizontalScroller = false
+            })
+            .modifier(DayBoxViewModifier())
+            /*TaskLevelTxtView(txt: "Must")
+             TaskList(tasks: musttasks)
+             Spacer().frame(height: 10)
+             
+             TaskLevelTxtView(txt: "Should")
+             TaskList(tasks: shouldtasks)
+             Spacer().frame(height: 10)
+             
+             TaskLevelTxtView(txt: "Want")
+             TaskList(tasks: wanttasks)
+             Spacer().frame(height: 10)*/
+            
+            //}.modifier(DayBoxViewModifier())
             
             Spacer()
         }

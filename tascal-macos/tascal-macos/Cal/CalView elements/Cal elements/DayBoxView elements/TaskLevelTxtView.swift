@@ -12,7 +12,6 @@ struct TaskLevelTxtView: View {
     var txt: String
     
     var body: some View {
-        VStack{
         HStack {
             IconButtonView(icon_system_name: "arrow.right").opacity(0.0)
 
@@ -20,8 +19,6 @@ struct TaskLevelTxtView: View {
                 .font(.system(size: 15)).fontWeight(.semibold)
                 .foregroundColor(Color.accentColor)
             Spacer()
-        }
-            Divider()
         }
     }
 }
