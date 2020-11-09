@@ -10,11 +10,18 @@ import SwiftUI
 struct CalTaskView: View {
     
     var txt: String
+    @State var completed = false
     
     var body: some View {
-        HStack{
-            Text(txt)
-            Spacer()
+        VStack {
+            HStack {
+                TaskCheckmarkView(completed: $completed)
+                Text(txt)
+                    .lineLimit(nil)
+                
+               Spacer()
+            }
+            Divider()
         }
     }
 }

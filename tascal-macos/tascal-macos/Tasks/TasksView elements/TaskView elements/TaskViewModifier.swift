@@ -14,22 +14,22 @@ struct TaskViewModifier: ViewModifier {
     var editing = false
     
     func body(content: Content) -> some View {
-            content
-                .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
-                .frame(height: tasks.task_height)
-
-                .background(ColorSecondary.opacity(editing ? 0.0 : 1.0))
-                .cornerRadius(editing ? 0 : 5)
-                
-                .foregroundColor(editing ? ColorSecondary : ColorPrimary)
-                .accentColor(Color.accentColor)
-                
-                .overlay(
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(ColorSecondary.opacity(editing ? 1.0 : 0.0),
-                                    lineWidth: 2)
-                    )
-        }
+        content
+            .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
+            .frame(height: tasks.task_height)
+            
+            .background(ColorSecondary.opacity(editing ? 0.0 : 1.0))
+            .cornerRadius(editing ? 0 : 5)
+            
+            .foregroundColor(editing ? ColorSecondary : ColorPrimary)
+            .accentColor(Color.accentColor)
+            
+            .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(ColorSecondary.opacity(editing ? 1.0 : 0.0),
+                            lineWidth: 2)
+            )
+    }
 }
 
 

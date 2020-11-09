@@ -12,9 +12,16 @@ struct TaskLevelTxtView: View {
     var txt: String
     
     var body: some View {
+        VStack{
         HStack {
-            Text(txt).font(.subheadline)
+            IconButtonView(icon_system_name: "arrow.right").opacity(0.0)
+
+            Text(txt)
+                .font(.system(size: 15)).fontWeight(.semibold)
+                .foregroundColor(Color.accentColor)
             Spacer()
+        }
+            Divider()
         }
     }
 }

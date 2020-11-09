@@ -12,19 +12,21 @@ struct CalTypeView_Days: View {
     @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
-        
+
         VStack {
             MonthTitleView()
             HStack {
-                ForEach(dates.days) { day in
-                    DayBoxView(date: day)
+                ForEach(0..<dates.days.count) { i in
+                    DayBoxView(date: dates.days[i])
+                    if (i != dates.days.count-1) { Spacer() }
                 }
             }
             .gesture(DragGesture().onChanged({ (value) in
-                //TODO:: figure out why it doesnt drag properly
+                //TODO:: drag slower, do a carousel
                 dates.drag_update(on: value, with: .day)
             }))
         }
+        
     }
 }
 

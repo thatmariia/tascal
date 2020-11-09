@@ -49,6 +49,8 @@
 		31EF9FB22558ABA5003DFADF /* DoneEditingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FB12558ABA5003DFADF /* DoneEditingButtonView.swift */; };
 		31EF9FCE2558B2DB003DFADF /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */; };
 		31EF9FD32558B4A4003DFADF /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FD22558B4A4003DFADF /* DividerView.swift */; };
+		31EF9FF32558B969003DFADF /* DateFrameViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */; };
+		31EFA0012558C4DB003DFADF /* TaskCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		31EF9FB12558ABA5003DFADF /* DoneEditingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneEditingButtonView.swift; sourceTree = "<group>"; };
 		31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		31EF9FD22558B4A4003DFADF /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFrameViewModifier.swift; sourceTree = "<group>"; };
+		31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckmarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,8 +301,10 @@
 			isa = PBXGroup;
 			children = (
 				31750CA325570D31007ACF87 /* CalTaskView.swift */,
+				31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */,
 				31750CA825570DE3007ACF87 /* TaskLevelTxtView.swift */,
 				31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */,
+				31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */,
 				31750CF225577285007ACF87 /* DayBoxViewModifier.swift */,
 			);
 			path = "DayBoxView elements";
@@ -464,6 +470,7 @@
 				3195BF512555F42A00707ECB /* ContentView.swift in Sources */,
 				31750C9F25570BBB007ACF87 /* TaskView.swift in Sources */,
 				31EF9FD32558B4A4003DFADF /* DividerView.swift in Sources */,
+				31EF9FF32558B969003DFADF /* DateFrameViewModifier.swift in Sources */,
 				31750CEB25576E01007ACF87 /* MonthTitleView.swift in Sources */,
 				31750CB625572528007ACF87 /* TasksView.swift in Sources */,
 				31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */,
@@ -471,6 +478,7 @@
 				3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,
+				31EFA0012558C4DB003DFADF /* TaskCheckmarkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

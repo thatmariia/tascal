@@ -5,6 +5,7 @@
 //  Created by Mariia Turchina on 07/11/2020.
 //
 
+import Foundation
 import SwiftUI
 
 struct DateButtonBoxView: View {
@@ -16,11 +17,17 @@ struct DateButtonBoxView: View {
         HStack{
             Spacer()
             Text("\(date.date_info.weekday + " " + String(date.date_info.day))")
+                .font(.system(size: 16))
+                .fontWeight(.bold)
+                .modifier(DateFrameViewModifier(is_today:
+                                                calendar.isDate(date.date, inSameDayAs: dates.today.date)))
             Spacer()
-        }.onTapGesture {
+        }
+        .onTapGesture {
             dates.update_date(date: date.date)
             dates.cal_type = .day
         }
+        
         
     }
 }
