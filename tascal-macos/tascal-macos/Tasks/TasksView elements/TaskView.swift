@@ -16,6 +16,7 @@ struct TaskView: View {
     var time_step = 0.25
 
     @State var editing = false
+    @State var show_actions = false
     
     var edit_gesture: some Gesture {
         TapGesture(count: 2)
@@ -50,9 +51,16 @@ struct TaskView: View {
                 //TODO:: either get a bottleneck or come up with a better divider
                 .frame(width: 50)
             
+            if show_actions{
+                TaskActionsMenuView(editing: $editing)
+            }
+            
             //TODO:: implement menu to: edit, delete, duplicate etc
         }
         .gesture(edit_gesture)
+        .onHover { hovering in
+            show_actions = hovering
+        }
     }
     
     

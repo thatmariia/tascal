@@ -16,7 +16,7 @@ struct DayBoxView: View {
         VStack {
             DateButtonBoxView(date: date)
 
-            ScrollView(.vertical, showsIndicators: true) {
+            ScrollView(.vertical, showsIndicators: false) {
                 TaskLevelTxtView(txt: "Must")
                 TaskList(tasks: musttasks)
                 Spacer().frame(height: 10)
