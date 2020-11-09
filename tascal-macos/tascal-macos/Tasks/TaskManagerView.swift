@@ -9,21 +9,38 @@ import SwiftUI
 
 struct TaskManagerView: View {
     
+    @EnvironmentObject var envi: AppEnvironment
     var bins = 3
     
     var body: some View {
+        
         HStack{
             VStack {
                 TasksTitleView(txt: "Tasks")
-                TasksView()
-                Spacer()
+                
+                if (envi.search != "") {
+                    //TODO:: fix the splitview so it extends in vsplitview
+                    HSplitView {
+                        
+                        TasksView()
+                        Spacer()
+                        
+                        Divider()
+                        
+                        
+                        //TODO:: add search view here
+                        VStack{
+                            Text("\(envi.search)")
+                            Spacer()
+                        }
+
+                    }
+                } else {
+                    TasksView()
+                    Spacer()
+                }
             }
         }
     }
 }
-
-struct TaskManagerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskManagerView()
-    }
-}
+        

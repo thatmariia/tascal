@@ -13,6 +13,7 @@ struct CalManagerView: View {
     
     var body: some View {
         HStack {
+            // cal type buttons
             HStack {
                 CalManagerButtonView(type: CalType.year)
                 CalManagerButtonView(type: CalType.week)
@@ -22,6 +23,8 @@ struct CalManagerView: View {
             .modifier(ToolbarStyleModifier())
             
             Spacer().frame(width: 40)
+            
+            // today button
             Button(action: {
                 dates.update_date(date: dates.today.date)
             }) {
@@ -30,6 +33,11 @@ struct CalManagerView: View {
                     .modifier(ToolbarStyleModifier())
             }
             .buttonStyle(PlainButtonStyle())
+            
+            Spacer().frame(width: 40)
+            
+            // search field
+            SearchTextFieldView()
             
             Spacer().frame(width: 20)
         }//.padding()

@@ -18,6 +18,7 @@ struct CalManagerButtonView: View {
         }) {
             Text("\(type.rawValue)")
         }
+        .frame(minWidth: 40)
         .buttonStyle(PlainButtonStyle())
         .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
         .background(Color(.separatorColor).opacity((type == dates.cal_type) ? 1.0 : 0.0))
