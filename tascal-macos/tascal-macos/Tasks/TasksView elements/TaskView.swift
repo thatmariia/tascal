@@ -67,7 +67,7 @@ struct TaskView: View {
     fileprivate func EditView() -> some View {
         return VStack {
             HStack {
-                DoneEditingButtonView(editing: $editing)
+                DoneEditingButtonView(editing: $editing, txt: txt, time: time)
                 
                 TaskTextFieldView(txt: $txt)
                 

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DayBoxView: View {
     
+    @EnvironmentObject var task_types: TaskTypesSettings
+    
     var date: CalDate
     
     var body: some View {
@@ -16,19 +18,11 @@ struct DayBoxView: View {
         VStack {
             DateButtonBoxView(date: date)
             
-            //ScrollView(.vertical, showsIndicators: false) {
-            
             List{
-                Section(header: TaskLevelTxtView(txt: "Must")) {
-                    TaskList(tasks: musttasks)
-                }
-                
-                Section(header: TaskLevelTxtView(txt: "Should")) {
-                    TaskList(tasks: shouldtasks)
-                }
-                
-                Section(header: TaskLevelTxtView(txt: "Want")) {
-                    TaskList(tasks: wanttasks)
+                ForEach(0..<task_types.types.count) { i in
+                    Section(header: TaskLevelTxtView(i: i)) {
+                        TaskList(tasks: task_types.tasks[i])
+                    }
                 }
             }
             .onNSView(added: { nsview in
@@ -37,19 +31,6 @@ struct DayBoxView: View {
                 root.hasHorizontalScroller = false
             })
             .modifier(DayBoxViewModifier())
-            /*TaskLevelTxtView(txt: "Must")
-             TaskList(tasks: musttasks)
-             Spacer().frame(height: 10)
-             
-             TaskLevelTxtView(txt: "Should")
-             TaskList(tasks: shouldtasks)
-             Spacer().frame(height: 10)
-             
-             TaskLevelTxtView(txt: "Want")
-             TaskList(tasks: wanttasks)
-             Spacer().frame(height: 10)*/
-            
-            //}.modifier(DayBoxViewModifier())
             
             Spacer()
         }

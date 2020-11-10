@@ -9,7 +9,11 @@ import SwiftUI
 
 struct DoneEditingButtonView: View {
     
+    @EnvironmentObject var tasks: TasksEnvironment
     @Binding var editing: Bool
+    
+    var txt: String
+    var time: String
     
     var body: some View {
         
@@ -19,5 +23,6 @@ struct DoneEditingButtonView: View {
             IconButtonView(icon_system_name: "pin.circle.fill")
         }
         .buttonStyle(PlainButtonStyle())
+        .disabled(!tasks.is_valid_task(with: txt) || !tasks.is_valid_time(with: time))
     }
 }

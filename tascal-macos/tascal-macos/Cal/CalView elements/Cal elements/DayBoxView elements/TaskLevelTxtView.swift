@@ -9,16 +9,32 @@ import SwiftUI
 
 struct TaskLevelTxtView: View {
     
-    var txt: String
+    @EnvironmentObject var task_types: TaskTypesSettings
+
+    var i: Int
+    
+    @State var hov = false
     
     var body: some View {
         HStack {
-            IconButtonView(icon_system_name: "arrow.right").opacity(0.0)
-
-            Text(txt)
+            
+            Text(task_types.types[i])
                 .font(.system(size: 15)).fontWeight(.semibold)
                 .foregroundColor(Color.accentColor)
+            
+            if hov {
+                Button(action: {
+                    //TODO:: add a line to add new task AddTaskFieldView?
+                }, label: {
+                    IconButtonView(icon_system_name: "plus.circle.fill")
+                })
+                .buttonStyle(PlainButtonStyle())
+            }
+            
             Spacer()
         }
+        .onHover(perform: { hovering in
+            hov = hovering
+        })
     }
 }

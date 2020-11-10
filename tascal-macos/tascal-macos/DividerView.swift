@@ -4,7 +4,6 @@
 //
 //  Created by Mariia Turchina on 09/11/2020.
 //
-
 import SwiftUI
 
 struct DividerView: View {

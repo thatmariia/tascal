@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var app_environement = AppEnvironment()
     var dates_settings = DatesSettings()
     var tasks_environment = TasksEnvironment()
+    var task_types_setting = TaskTypesSettings()
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -27,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .environmentObject(app_environement)
             .environmentObject(dates_settings)
             .environmentObject(tasks_environment)
+            .environmentObject(task_types_setting)
         
         
 
