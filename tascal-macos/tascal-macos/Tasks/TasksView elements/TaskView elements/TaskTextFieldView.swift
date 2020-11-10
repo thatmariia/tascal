@@ -24,7 +24,7 @@ struct TaskTextFieldView: View {
                 }
             }
             TextField("", text: $txt) { (changed) in
-                print("woof ", changed)
+
             } onCommit: {
                 //TODO:: send in new txt
                 // called from both existing and new tasks

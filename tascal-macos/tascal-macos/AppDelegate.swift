@@ -45,16 +45,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.setFrameAutosaveName("Tascal")
         window.contentView = NSHostingView(rootView: contentView)
         window.makeKeyAndOrderFront(nil)
-        //window.isOpaque = false
-        /*window.alphaValue = 0.9
-
-        let blurView = NSVisualEffectView()
-        blurView.blendingMode = .behindWindow
-        blurView.material = .sidebar
-        blurView.state = .active
-        window.contentView?.addSubview(blurView)*/
-        
-        //window.backgroundColor = NSColor.black.withAlphaComponent(0.9)
         
         let toolbarButtons = NSHostingView(rootView: CalManagerView()
                                             .environmentObject(app_environement)
@@ -64,7 +54,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let titlebarAccessory = NSTitlebarAccessoryViewController()
         titlebarAccessory.view = toolbarButtons
         titlebarAccessory.layoutAttribute = .trailing
-        
         
         window.toolbar = NSToolbar()
         window.addTitlebarAccessoryViewController(titlebarAccessory)

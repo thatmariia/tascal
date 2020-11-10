@@ -14,7 +14,7 @@ struct TimeTextFieldView: View {
     var body: some View {
         //TODO:: figure out accent color and selection color
         TextField("", text: $time) { (changed) in
-            print("woof ", changed)
+
         } onCommit: {
             //TODO:: send in new txt
         }

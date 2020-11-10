@@ -18,6 +18,6 @@ struct DateFrameViewModifier: ViewModifier {
             .background(Color.accentColor.opacity(is_today ? 1.0 : 0.0))
             .cornerRadius(10)
             
-            .foregroundColor(Color.white)
+            .foregroundColor(is_today ? Color.white : Color.primary)
     }
 }

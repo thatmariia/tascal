@@ -33,6 +33,7 @@ class DatesSettings: ObservableObject {
         self.year         = generate_dates(start_date: date, years: 1)
     }
     
+    
     func drag_update(on value: DragGesture.Value, with cal_type: CalType) {
         
         switch cal_type {

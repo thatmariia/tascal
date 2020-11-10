@@ -22,7 +22,6 @@ struct TaskView: View {
         TapGesture(count: 2)
             .onEnded({ (_) in
                 editing = true
-                print("double tap")
             })
     }
     

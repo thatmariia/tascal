@@ -23,6 +23,7 @@
 		31750CF325577285007ACF87 /* DayBoxViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31750CF225577285007ACF87 /* DayBoxViewModifier.swift */; };
 		3188BD3E255A18800039CE56 /* TaskTypesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */; };
 		3188BD4E255A1CF80039CE56 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3188BD4D255A1CF80039CE56 /* DividerView.swift */; };
+		3188BD60255B428D0039CE56 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3188BD5F255B428D0039CE56 /* CloudKit.framework */; };
 		3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF4E2555F42A00707ECB /* AppDelegate.swift */; };
 		3195BF512555F42A00707ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF502555F42A00707ECB /* ContentView.swift */; };
 		3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF522555F42A00707ECB /* tascal_macos.xcdatamodeld */; };
@@ -92,6 +93,7 @@
 		31750CF225577285007ACF87 /* DayBoxViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBoxViewModifier.swift; sourceTree = "<group>"; };
 		3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypesSettings.swift; sourceTree = "<group>"; };
 		3188BD4D255A1CF80039CE56 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		3188BD5F255B428D0039CE56 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3195BF4B2555F42A00707ECB /* tascal-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tascal-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3195BF4E2555F42A00707ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3195BF502555F42A00707ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3188BD60255B428D0039CE56 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +173,14 @@
 			path = Tasks;
 			sourceTree = "<group>";
 		};
+		3188BD5E255B428D0039CE56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3188BD5F255B428D0039CE56 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3195BF422555F42A00707ECB = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +188,7 @@
 				3195BF662555F42D00707ECB /* tascal-macosTests */,
 				3195BF712555F42D00707ECB /* tascal-macosUITests */,
 				3195BF4C2555F42A00707ECB /* Products */,
+				3188BD5E255B428D0039CE56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -666,7 +678,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "tascal-macos/tascal_macos.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"tascal-macos/Preview Content\"";
@@ -681,6 +693,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mariia.tascal-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -691,7 +704,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "tascal-macos/tascal_macos.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"tascal-macos/Preview Content\"";
@@ -706,6 +719,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mariia.tascal-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
