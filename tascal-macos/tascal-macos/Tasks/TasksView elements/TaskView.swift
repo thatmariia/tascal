@@ -10,12 +10,15 @@ import SwiftUI
 
 struct TaskView: View {
     
+    var task: Task
+    
     @State var txt: String
-    @State var time = "12.25"
-    var time_step = 0.25
+    @State var time: String
 
     @State var editing = false
     @State var show_actions = false
+    
+    //TODO:: add a gesture to view/modify description and stuff
     
     var edit_gesture: some Gesture {
         TapGesture(count: 2)
@@ -31,6 +34,10 @@ struct TaskView: View {
                 EditView().modifier(TaskViewModifier(editing: editing))
             } else {
                 StaticView().modifier(TaskViewModifier(editing: editing))
+                    .onAppear(perform: {
+                        txt = task.txt ?? "error"
+                        time = String(task.time)
+                    })
             }
         }
     }
@@ -65,15 +72,16 @@ struct TaskView: View {
     fileprivate func EditView() -> some View {
         return VStack {
             HStack {
-                DoneEditingButtonView(editing: $editing, txt: txt, time: time)
-                
+                DoneEditingButtonView(editing: $editing,
+                                      task: task,
+                                      txt: txt,
+                                      time: time)
                 TaskTextFieldView(txt: $txt)
                 
                 Spacer()
                 DividerView(editing: editing)
                 
                 TimeTextFieldView(time: $time)
-                TimeStepperView(time: $time, time_step: time_step)
                 
             }
         }

@@ -18,7 +18,9 @@ struct TimeStepperView: View {
         VStack {
             // increase time
             Button {
+                print("\n\n**********up - ", time, Double(time)!, "\n\n")
                 if Double(time) != nil {
+                    print("in")
                     time = String(Double(time)! + time_step)
                 }
             } label: {
@@ -29,8 +31,13 @@ struct TimeStepperView: View {
             
             // decrease time
             Button {
+                print("\n\n**********down - ", time, Double(time)!, "\n\n")
                 if Double(time) != nil {
-                    if (Double(time)! > 0.0) { time = String(Double(time)! - time_step) }
+                    print("in")
+                    if (Double(time)! > 0.0) {
+                        time = String(Double(time)! - time_step)
+                        
+                    }
                 }
             } label: {
                 Image(systemName: "arrowtriangle.down.fill")

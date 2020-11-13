@@ -32,7 +32,9 @@ struct TasksView: View {
                             if (i == 0) {
                                 AddTaskFieldView()
                             } else {
-                                TaskView(txt: tasks[i-1].txt ?? "error")
+                                TaskView(task:  tasks[i-1],
+                                         txt:   tasks[i-1].txt ?? "error",
+                                         time:  String(tasks[i-1].time))
                             }
                         }
             })

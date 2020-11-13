@@ -12,12 +12,14 @@ struct DoneEditingButtonView: View {
     @EnvironmentObject var tasks: TasksEnvironment
     @Binding var editing: Bool
     
+    var task: Task
     var txt: String
     var time: String
     
     var body: some View {
         
         Button {
+            //TODO:: commit changes to the task
             editing = false
         } label: {
             IconButtonView(icon_system_name: "pin.circle.fill")

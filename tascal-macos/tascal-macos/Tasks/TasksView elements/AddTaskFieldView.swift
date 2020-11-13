@@ -47,7 +47,6 @@ struct AddTaskFieldView: View {
             TaskTextFieldView(txt: $new_task, placeholder: "Add new task")
             DividerView(editing: true)
             TimeTextFieldView(time: $new_time)
-            TimeStepperView(time: $new_time, time_step: 0.25)
         }
         .modifier(TaskViewModifier(editing: true))
     }
