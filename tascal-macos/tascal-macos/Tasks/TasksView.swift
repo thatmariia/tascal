@@ -9,32 +9,34 @@ import SwiftUI
 
 struct TasksView: View {
     
+    //TODO:: why when I add a new one it doesnt appear immediately?
+    
     var bins = 3
-    @EnvironmentObject var tasks: TasksEnvironment
+
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.date_created, ascending: false)]) var all_tasks: FetchedResults<Task>
+    
+    var tasks: [Task] {
+        all_tasks.filter{ $0.level == -1 }
+    }
     
     var body: some View {
 
         ScrollView(.vertical, showsIndicators: true){
             Spacer().frame(height: 2)
-            HStack{
-                ForEach(0..<tasks.bins) {i in
-                    VStack{
-                        ForEach(0..<(tasks.distributed_sizes.max() ?? 0)) {j in
-                            ZStack {
-                                if (i == 0 && j == 0) {
-                                    AddTaskFieldView()
-                                } else if (j < tasks.distributed_tasks[i].count) {
-                                    TaskView(txt: tasks.distributed_tasks[i][j])
-                                } else {
-                                    TaskPlaceholderView() // hacky shit, might delete later
-                                }
+
+            LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3)
+                      , content: {
+                        ForEach(0..<tasks.count+1) { i in
+                            if (i == 0) {
+                                AddTaskFieldView()
+                            } else {
+                                TaskView(txt: tasks[i-1].txt ?? "error")
                             }
                         }
-                        //TODO:: why doesnt this spacer do anything?
-                        Spacer()
-                    }
-                }
-            }
+            })
+    
         }
     }
 }
