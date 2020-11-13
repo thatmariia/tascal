@@ -15,9 +15,9 @@ struct TasksView: View {
 
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.date_created, ascending: false)]) var all_tasks: FetchedResults<Task>
+    @FetchRequest(entity: CloudKitTask.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \CloudKitTask.date_created, ascending: false)]) var all_tasks: FetchedResults<CloudKitTask>
     
-    var tasks: [Task] {
+    var tasks: [CloudKitTask] {
         all_tasks.filter{ $0.level == -1 }
     }
     

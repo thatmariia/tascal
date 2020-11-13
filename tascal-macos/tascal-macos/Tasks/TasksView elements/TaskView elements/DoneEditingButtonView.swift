@@ -12,7 +12,7 @@ struct DoneEditingButtonView: View {
     @EnvironmentObject var tasks: TasksEnvironment
     @Binding var editing: Bool
     
-    var task: Task
+    var task: CloudKitTask
     var txt: String
     var time: String
     

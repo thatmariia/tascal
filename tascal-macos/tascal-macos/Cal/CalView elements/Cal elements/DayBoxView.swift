@@ -13,11 +13,11 @@ struct DayBoxView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.is_completed, ascending: true)]) var all_tasks: FetchedResults<Task>
+    @FetchRequest(entity: CloudKitTask.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \CloudKitTask.is_completed, ascending: true)]) var all_tasks: FetchedResults<CloudKitTask>
     
     var date: CalDate
     
-    var tasks: [Task] {
+    var tasks: [CloudKitTask] {
         all_tasks.filter{ calendar.isDate($0.date_distributed ?? Date(), inSameDayAs: date.date) }
     }
     
@@ -46,7 +46,7 @@ struct DayBoxView: View {
         
     }
     
-    fileprivate func TaskList(tasks: [Task]) -> some View {
+    fileprivate func TaskList(tasks: [CloudKitTask]) -> some View {
         return VStack{
             ForEach(tasks) { task in
                 CalTaskView(task: task)

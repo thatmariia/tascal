@@ -20,7 +20,7 @@ struct AddTaskFieldView: View {
             
             Button(action: {
                 
-                let task = Task(context: self.managedObjectContext)
+                let task = CloudKitTask(context: self.managedObjectContext)
                 task.id                 = UUID()
                 task.txt                = new_task
                 task.time               = Double(new_time)!

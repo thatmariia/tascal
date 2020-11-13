@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TaskView: View {
     
-    var task: Task
+    var task: CloudKitTask
     
     @State var txt: String
     @State var time: String

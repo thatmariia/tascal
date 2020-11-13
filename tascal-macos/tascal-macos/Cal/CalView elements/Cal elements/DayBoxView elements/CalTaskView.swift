@@ -11,7 +11,7 @@ struct CalTaskView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    var task: Task
+    var task: CloudKitTask
     
     var body: some View {
         VStack {

@@ -22,8 +22,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         
-        tasks_environment.distribute_tasks()
-        
         let contentView = ContentView().environment(\.managedObjectContext, persistentContainer.viewContext)
             .environmentObject(app_environement)
             .environmentObject(dates_settings)
