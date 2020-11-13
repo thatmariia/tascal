@@ -24,6 +24,8 @@
 		3188BD3E255A18800039CE56 /* TaskTypesSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */; };
 		3188BD4E255A1CF80039CE56 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3188BD4D255A1CF80039CE56 /* DividerView.swift */; };
 		3188BD60255B428D0039CE56 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3188BD5F255B428D0039CE56 /* CloudKit.framework */; };
+		31898C33255F24F3008FCB77 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31898C32255F24F3008FCB77 /* Task.swift */; };
+		31898C38255F297C008FCB77 /* CloudKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31898C37255F297C008FCB77 /* CloudKitHelper.swift */; };
 		3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF4E2555F42A00707ECB /* AppDelegate.swift */; };
 		3195BF512555F42A00707ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF502555F42A00707ECB /* ContentView.swift */; };
 		3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF522555F42A00707ECB /* tascal_macos.xcdatamodeld */; };
@@ -92,6 +94,8 @@
 		3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypesSettings.swift; sourceTree = "<group>"; };
 		3188BD4D255A1CF80039CE56 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
 		3188BD5F255B428D0039CE56 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		31898C32255F24F3008FCB77 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		31898C37255F297C008FCB77 /* CloudKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitHelper.swift; sourceTree = "<group>"; };
 		3195BF4B2555F42A00707ECB /* tascal-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tascal-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3195BF4E2555F42A00707ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3195BF502555F42A00707ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				31EF9F72255858D5003DFADF /* TasksEnvironment.swift */,
+				31898C32255F24F3008FCB77 /* Task.swift */,
 				31750C8825570093007ACF87 /* TaskManagerView.swift */,
 				31750CB525572528007ACF87 /* TasksView.swift */,
 				31EF9FBA2558ADD0003DFADF /* TasksView elements */,
@@ -210,6 +215,7 @@
 				31EFA02B25596250003DFADF /* NSViewAccessor.swift */,
 				31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */,
 				31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */,
+				31898C37255F297C008FCB77 /* CloudKitHelper.swift */,
 				31750C8D25570098007ACF87 /* Tasks */,
 				3195BFBB255602B900707ECB /* Cal */,
 				3195BFBC255602DC00707ECB /* calendar management */,
@@ -471,6 +477,7 @@
 				31EFA02C25596250003DFADF /* NSViewAccessor.swift in Sources */,
 				31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */,
 				31EFA0192559488C003DFADF /* TaskActionsMenuView.swift in Sources */,
+				31898C38255F297C008FCB77 /* CloudKitHelper.swift in Sources */,
 				31EF9FB22558ABA5003DFADF /* DoneEditingButtonView.swift in Sources */,
 				3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */,
 				3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */,
@@ -501,6 +508,7 @@
 				31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */,
 				3195BFA8255600EC00707ECB /* CalTypeView_Week.swift in Sources */,
 				3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */,
+				31898C33255F24F3008FCB77 /* Task.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,
 			);

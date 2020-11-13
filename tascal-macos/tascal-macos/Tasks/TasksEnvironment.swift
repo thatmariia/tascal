@@ -10,8 +10,9 @@ import Foundation
 class TasksEnvironment : ObservableObject {
     @Published var task_height: CGFloat = 28
     
-    @Published var tasks: [CloudKitTask] = []
+    @Published var all_tasks: [Task] = []
     
+    // MARK: - supplementary funcs
     func is_valid_task(with txt: String) -> Bool {
         if (txt.isEmpty || txt.count > 140) {
             return false

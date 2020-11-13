@@ -12,14 +12,33 @@ struct DoneEditingButtonView: View {
     @EnvironmentObject var tasks: TasksEnvironment
     @Binding var editing: Bool
     
-    var task: CloudKitTask
+    var task: Task
     var txt: String
     var time: String
     
     var body: some View {
         
         Button {
-            //TODO:: commit changes to the task
+            
+            var mod_task = task
+            mod_task.txt = txt
+            mod_task.time = Double(time)!
+            
+            CloudKitHelper.modify(task: mod_task) { (result) in
+                switch result {
+                case .success(let item):
+                    for i in 0..<self.tasks.all_tasks.count {
+                        let currentItem = self.tasks.all_tasks[i]
+                        if currentItem.record_id == item.record_id {
+                            self.tasks.all_tasks[i] = item
+                        }
+                    }
+                    print("Successfully modified item")
+                case .failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
+            
             editing = false
         } label: {
             IconButtonView(icon_system_name: "pin.circle.fill")

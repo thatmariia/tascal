@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TaskView: View {
     
-    var task: CloudKitTask
+    var task: Task
     
     @State var txt: String
     @State var time: String
@@ -35,7 +35,7 @@ struct TaskView: View {
             } else {
                 StaticView().modifier(TaskViewModifier(editing: editing))
                     .onAppear(perform: {
-                        txt = task.txt ?? "error"
+                        txt = task.txt
                         time = String(task.time)
                     })
             }

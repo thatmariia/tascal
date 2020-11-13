@@ -15,7 +15,7 @@ struct TimeTextFieldView: View {
     var body: some View {
         
         HStack {
-            ///MARK: text field
+            // MARK: - text field
             //TODO:: figure out accent color and selection color
             TextField("", text: $time) { (changed) in
                 
@@ -25,7 +25,7 @@ struct TimeTextFieldView: View {
             .textFieldStyle(PlainTextFieldStyle())
             .frame(maxWidth: 32)
         
-            ///MARK: stepper
+            // MARK: - stepper
             VStack {
                 // increase time
                 Button {

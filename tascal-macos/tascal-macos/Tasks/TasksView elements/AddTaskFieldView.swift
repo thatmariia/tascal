@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddTaskFieldView: View {
     
-    @Environment(\.managedObjectContext) var managedObjectContext
     @EnvironmentObject var tasks: TasksEnvironment
     
     @State var new_task: String = ""
@@ -20,23 +19,25 @@ struct AddTaskFieldView: View {
             
             Button(action: {
                 
-                let task = CloudKitTask(context: self.managedObjectContext)
-                task.id                 = UUID()
-                task.txt                = new_task
-                task.time               = Double(new_time)!
-                task.date_created       = Date()
-                task.date_distributed   = Date()
-                task.level              = -1
-                task.is_completed       = false
-                task.is_repeatig        = false
-                do {
-                    try self.managedObjectContext.save()
-                } catch {
-                    print(error)
+                let task = Task(id: UUID(),
+                                task_id: UUID().uuidString,
+                                date_distributed: Date(),
+                                is_completed: 0,
+                                is_repeating: 0,
+                                level: -1,
+                                time: Double(new_time)!,
+                                txt: new_task)
+                
+                CloudKitHelper.save(task: task) { (result) in
+                    switch result {
+                    case .success(let task):
+                        self.tasks.all_tasks.insert(task, at: 0)
+                        print("Successfully added item")
+                    case .failure(let err):
+                        print(err.localizedDescription)
+                    }
                 }
                 
-                
-                //TODO:: upload the new task
                 new_task  = ""
             }, label: {
                 IconButtonView(icon_system_name: "plus.circle.fill")
