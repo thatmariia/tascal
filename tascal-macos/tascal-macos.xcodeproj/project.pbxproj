@@ -52,7 +52,6 @@
 		31EF9FB22558ABA5003DFADF /* DoneEditingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FB12558ABA5003DFADF /* DoneEditingButtonView.swift */; };
 		31EF9FCE2558B2DB003DFADF /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */; };
 		31EF9FF32558B969003DFADF /* DateFrameViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */; };
-		31EFA0012558C4DB003DFADF /* TaskCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */; };
 		31EFA0192559488C003DFADF /* TaskActionsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA0182559488C003DFADF /* TaskActionsMenuView.swift */; };
 		31EFA02425595B1F003DFADF /* ToolbarStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */; };
 		31EFA02C25596250003DFADF /* NSViewAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFA02B25596250003DFADF /* NSViewAccessor.swift */; };
@@ -129,7 +128,6 @@
 		31EF9FB12558ABA5003DFADF /* DoneEditingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneEditingButtonView.swift; sourceTree = "<group>"; };
 		31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
 		31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFrameViewModifier.swift; sourceTree = "<group>"; };
-		31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCheckmarkView.swift; sourceTree = "<group>"; };
 		31EFA0182559488C003DFADF /* TaskActionsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskActionsMenuView.swift; sourceTree = "<group>"; };
 		31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarStyleModifier.swift; sourceTree = "<group>"; };
 		31EFA02B25596250003DFADF /* NSViewAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewAccessor.swift; sourceTree = "<group>"; };
@@ -328,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				31750CA325570D31007ACF87 /* CalTaskView.swift */,
-				31EFA0002558C4DB003DFADF /* TaskCheckmarkView.swift */,
 				31750CA825570DE3007ACF87 /* TaskLevelTxtView.swift */,
 				31750C7E2556F04F007ACF87 /* DateButtonBoxView.swift */,
 				31EF9FF22558B969003DFADF /* DateFrameViewModifier.swift */,
@@ -510,7 +507,6 @@
 				3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,
-				31EFA0012558C4DB003DFADF /* TaskCheckmarkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

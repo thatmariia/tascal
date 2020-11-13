@@ -9,14 +9,22 @@ import SwiftUI
 
 struct CalTaskView: View {
     
-    var txt: String
-    @State var completed = false
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    var task: Task
     
     var body: some View {
         VStack {
             HStack {
-                TaskCheckmarkView(completed: $completed)
-                Text(txt)
+                Button(action: {
+                    //TODO:: toggle the is_completed state in task
+                }, label: {
+                    IconButtonView(icon_system_name: task.is_completed ? "checkmark.circle.fill" : "checkmark.circle")
+                })
+                .buttonStyle(PlainButtonStyle())
+                
+                
+                Text(task.txt ?? "error")
                     .lineLimit(nil)
                 
                Spacer()

@@ -11,7 +11,15 @@ struct DayBoxView: View {
     
     @EnvironmentObject var task_types: TaskTypesSettings
     
+    @Environment(\.managedObjectContext) var managedObjectContext
+    
+    @FetchRequest(entity: Task.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Task.is_completed, ascending: true)]) var all_tasks: FetchedResults<Task>
+    
     var date: CalDate
+    
+    var tasks: [Task] {
+        all_tasks.filter{ calendar.isDate($0.date_distributed ?? Date(), inSameDayAs: date.date) }
+    }
     
     var body: some View {
         
@@ -21,7 +29,7 @@ struct DayBoxView: View {
             List{
                 ForEach(0..<task_types.types.count) { i in
                     Section(header: TaskLevelTxtView(i: i)) {
-                        TaskList(tasks: task_types.tasks[i])
+                        TaskList(tasks: tasks.filter { $0.level == i })
                     }
                 }
             }
@@ -38,10 +46,10 @@ struct DayBoxView: View {
         
     }
     
-    fileprivate func TaskList(tasks: [String]) -> some View {
+    fileprivate func TaskList(tasks: [Task]) -> some View {
         return VStack{
-            ForEach(tasks, id: \.self) {task in
-                CalTaskView(txt: task)
+            ForEach(tasks) { task in
+                CalTaskView(task: task)
                 
             }
         }
