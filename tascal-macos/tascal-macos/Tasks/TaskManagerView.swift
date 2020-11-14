@@ -28,7 +28,7 @@ struct TaskManagerView: View {
                         Divider()
                         
                         
-                        //TODO:: add search view here
+                        //TODO:: add search view here or move search view to the sidebar?
                         VStack{
                             Text("\(envi.search)")
                             Spacer()

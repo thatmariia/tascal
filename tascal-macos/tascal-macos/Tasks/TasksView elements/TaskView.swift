@@ -41,7 +41,6 @@ struct TaskView: View {
     // MARK: - STATIC view
     fileprivate func StaticView() -> some View {
         return HStack{
-            //TODO:: look into having multiline when text editor is fixed
             Text(txt)
                 .lineLimit(1)
             

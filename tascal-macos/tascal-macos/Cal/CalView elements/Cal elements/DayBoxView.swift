@@ -29,15 +29,16 @@ struct DayBoxView: View {
                     }
                 }
             }
+            .listRowBackground(Color.clear)
             .onNSView(added: { nsview in
                 let root = nsview.subviews[0] as! NSScrollView
                 root.hasVerticalScroller = false
                 root.hasHorizontalScroller = false
             })
-            .modifier(DayBoxViewModifier())
             
             Spacer()
         }
+        .modifier(DayBoxViewModifier())
         
         
     }
@@ -45,7 +46,9 @@ struct DayBoxView: View {
     fileprivate func TaskList(tasks: [Task]) -> some View {
         return VStack{
             ForEach(tasks) { task in
-                CalTaskView(task: task)
+                CalTaskView(task: task,
+                            txt:  task.txt,
+                            time: String(task.time))
                 
             }
         }
