@@ -11,6 +11,7 @@ class TasksEnvironment : ObservableObject {
     @Published var task_height: CGFloat = 28
     
     @Published var all_tasks: [Task] = []
+
     
     // MARK: - supplementary funcs
     func is_valid_task(with txt: String) -> Bool {

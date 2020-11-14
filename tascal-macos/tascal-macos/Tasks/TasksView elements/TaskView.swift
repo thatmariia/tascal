@@ -34,10 +34,6 @@ struct TaskView: View {
                 EditView().modifier(TaskViewModifier(editing: editing))
             } else {
                 StaticView().modifier(TaskViewModifier(editing: editing))
-                    .onAppear(perform: {
-                        txt = task.txt
-                        time = String(task.time)
-                    })
             }
         }
     }

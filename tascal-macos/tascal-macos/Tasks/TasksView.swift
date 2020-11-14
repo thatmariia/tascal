@@ -22,28 +22,19 @@ struct TasksView: View {
             
             VStack{
                 
-                Text("\(tasks.all_tasks.count)")
-                if tasks.all_tasks.count > 2 {
-                    Text("\(tasks.all_tasks[0].txt)")
-                    Text("\(tasks.all_tasks[1].txt)")
-                    Text("\(tasks.all_tasks[2].txt)")
-                    
-                }
-                
-                LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3)
-                          , content: {
-                            ForEach(0..<tasks.all_tasks.count+1) { i in
-                                if (i == 0) {
-                                    AddTaskFieldView()
-                                } else if (tasks.all_tasks[i-1].level == -1) {
-                                    TaskView(task:  tasks.all_tasks[i-1],
-                                             txt:   tasks.all_tasks[i-1].txt,
-                                             time:  String(tasks.all_tasks[i-1].time))
-                                } else {
-                                    Text("\(tasks.all_tasks.count)")
+                if tasks.all_tasks.count > 0 {
+                    LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3)
+                              , content: {
+                                AddTaskFieldView()
+                                ForEach(tasks.all_tasks) { task in
+                                    TaskView(task: task,
+                                             txt: task.txt,
+                                             time: String(task.time))
                                 }
-                            }
-                          })
+                              })
+                } else {
+                    AddTaskFieldView()
+                }
             }
             
         }
@@ -53,11 +44,8 @@ struct TasksView: View {
                 case .success(let task):
                     self.tasks.all_tasks.append(task)
                     print("Successfully fetched item")
-                    print("***")
-                    print(self.tasks.all_tasks)
                 // TODO:: sort tasks.all_tasks desc by creation date
                 case .failure(let err):
-                    print("Trying to fetch tasks - fail")
                     print(err.localizedDescription)
                 }
             }
