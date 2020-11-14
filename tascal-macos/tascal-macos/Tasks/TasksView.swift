@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct TasksView: View {
     
     @EnvironmentObject var tasks: TasksEnvironment
+    
+    @ObservedObject var delegate = TasksEnvironment()
     
     var body: some View {
         
@@ -31,6 +34,7 @@ struct TasksView: View {
             }
             
         }
+        .onDrop(of: [String(kUTTypeURL)], delegate: delegate)
     }
 }
 
