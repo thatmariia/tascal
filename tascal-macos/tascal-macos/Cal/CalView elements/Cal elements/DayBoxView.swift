@@ -11,9 +11,9 @@ struct DayBoxView: View {
     
     @EnvironmentObject var tasks: TasksEnvironment
     @EnvironmentObject var task_types: TaskTypesSettings
-
+    
     var date: CalDate
-
+    
     
     var body: some View {
         
@@ -23,9 +23,13 @@ struct DayBoxView: View {
             List{
                 ForEach(0..<task_types.types.count) { i in
                     Section(header: TaskLevelTxtView(i: i)) {
-                        TaskList(tasks: tasks.all_tasks.filter {
-                            calendar.isDate($0.date_distributed, inSameDayAs: date.date) && ($0.level == i)
-                        })
+                        TaskList(tasks: tasks.all_tasks
+                                    .filter {
+                                        calendar.isDate($0.date_distributed, inSameDayAs: date.date) && ($0.level == i)
+                                    }
+                                    .sorted(by: {
+                                        $0.is_completed < $1.is_completed
+                                    }))
                     }
                 }
             }

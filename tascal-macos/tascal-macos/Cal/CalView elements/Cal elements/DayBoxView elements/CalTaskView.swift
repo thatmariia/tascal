@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CalTaskView: View {
     
+    @EnvironmentObject var tasks: TasksEnvironment
+    
     var task: Task
     
     @State var txt: String
@@ -40,8 +42,26 @@ struct CalTaskView: View {
     fileprivate func StaticView() -> some View {
         VStack {
             HStack {
+                // checkmark
                 Button(action: {
-                    //TODO:: toggle the is_completed state in task
+                    var mod_task = task
+                    mod_task.is_completed = (task.is_completed == 0) ? 1 : 0
+                    
+                    CloudKitHelper.modify(task: mod_task) { (result) in
+                        switch result {
+                        case .success(let item):
+                            for i in 0..<self.tasks.all_tasks.count {
+                                let currentItem = self.tasks.all_tasks[i]
+                                if currentItem.record_id == item.record_id {
+                                    self.tasks.all_tasks[i] = item
+                                }
+                            }
+                            print("Successfully modified item")
+                        case .failure(let err):
+                            print(err.localizedDescription)
+                        }
+                    }
+                    
                 }, label: {
                     IconButtonView(icon_system_name: (task.is_completed != 0) ? "checkmark.circle.fill" : "checkmark.circle")
                 })
@@ -67,6 +87,7 @@ struct CalTaskView: View {
     }
     
     // MARK: - EDIT view
+    // TODO:: make it appear the same way as in the task pool
     fileprivate func EditView() -> some View {
         return VStack {
             HStack {
