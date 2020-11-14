@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var envi: AppEnvironment
+    @EnvironmentObject var tasks: TasksEnvironment
     
     var body: some View {
         
@@ -26,8 +27,24 @@ struct ContentView: View {
                     .frame(minHeight: geom.size.height * 0.25)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear(perform: {
+                fetch_tasks()
+            })
         }
         
+    }
+    
+    fileprivate func fetch_tasks() {
+        CloudKitHelper.fetch { (result) in
+            switch result {
+            case .success(let task):
+                self.tasks.all_tasks.append(task)
+                print("Successfully fetched item")
+            // TODO:: sort tasks.all_tasks desc by creation date
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
     }
 }
 

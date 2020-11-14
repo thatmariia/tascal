@@ -38,6 +38,7 @@ struct TaskView: View {
         }
     }
     
+    // MARK: - STATIC view
     fileprivate func StaticView() -> some View {
         return HStack{
             //TODO:: look into having multiline when text editor is fixed
@@ -53,7 +54,7 @@ struct TaskView: View {
                 .frame(width: 50)
             
             if show_actions{
-                TaskActionsMenuView(editing: $editing)
+                TaskActionsMenuView(editing: $editing, task: task)
             }
             
             //TODO:: implement menu to: edit, delete, duplicate etc
@@ -64,7 +65,7 @@ struct TaskView: View {
         }
     }
     
-    
+    // MARK: - EDIT view
     fileprivate func EditView() -> some View {
         return VStack {
             HStack {

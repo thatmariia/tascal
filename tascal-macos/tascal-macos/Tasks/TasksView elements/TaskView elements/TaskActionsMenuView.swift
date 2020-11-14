@@ -9,40 +9,50 @@ import SwiftUI
 
 struct TaskActionsMenuView: View {
     
+    @EnvironmentObject var tasks: TasksEnvironment
+    
     @Binding var editing: Bool
     @State var showing: Bool = false
     
+    var task: Task
+    
     var body: some View {
-        //Image(systemName: "ellipsis")
-        //    .foregroundColor(Color.accentColor)
-        //    .rotationEffect(.degrees(90))
-        //    .contextMenu
         
         Button(action: {
             showing = true
         }, label: {
             Image(systemName: "ellipsis.circle.fill")
                 .foregroundColor(Color.accentColor)
-                //.rotationEffect(.degrees(90))
                 .frame(width: 10)
-                /*.overlay(
-                    Rectangle()
-                        .stroke(Color(.separatorColor).opacity(0.0),
-                            //ColorSecondary.opacity(editing ? 1.0 : 0.5),
-                                lineWidth: 1)
-                )*/
         })
         .popover(isPresented: $showing, content: {
             HStack {
+                
+                // MARK: - duplicate task
                 Button(action: {
+                    
+                    var dupl_task = task
+                    dupl_task.task_id = UUID().uuidString
+                    
+                    CloudKitHelper.save(task: dupl_task) { (result) in
+                        switch result {
+                        case .success(let dupl_task):
+                            self.tasks.all_tasks.insert(dupl_task, at: 0)
+                            print("Successfully duplicated item")
+                        case .failure(let err):
+                            print(err.localizedDescription)
+                        }
+                    }
+                    
                     showing = false
-                    //TODO:: duplicate task
+                    
                 }, label: {
                     Image(systemName: "plus.square.on.square")
                 })
                 
                 Divider()
                 
+                // MARK: - edit task
                 Button(action: {
                     showing = false
                     editing = true
@@ -52,9 +62,23 @@ struct TaskActionsMenuView: View {
                 
                 Divider()
                 
+                // MARK: - delete task
                 Button(action: {
+                    guard let recordID = task.record_id else { return }
+                    
+                    CloudKitHelper.delete(recordID: recordID) { (result) in
+                        switch result {
+                        case .success(let recordID):
+                            self.tasks.all_tasks.removeAll { (t) -> Bool in
+                                return t.record_id == recordID
+                            }
+                            print("Successfully deleted item")
+                        case .failure(let err):
+                            print(err.localizedDescription)
+                        }
+                    }
+                    
                     showing = false
-                    //TODO:: delete task
                 }, label: {
                     Image(systemName: "trash")
                         .foregroundColor(Color.red)
@@ -64,35 +88,6 @@ struct TaskActionsMenuView: View {
             .buttonStyle(PlainButtonStyle())
         })
         .buttonStyle(PlainButtonStyle())
-        //
-        
-        /*Menu {
-            Button(action: {
-                //TODO:: duplicate task
-            }, label: {
-                Image(systemName: "plus.square.on.square")
-            })
-            
-            Button(action: {
-                editing = true
-            }, label: {
-                Image(systemName: "square.and.pencil")
-            })
-            
-            Button(action: {
-                //TODO:: delete task
-            }, label: {
-                Image(systemName: "trash")
-                    .foregroundColor(Color.red)
-            })
-        } label: {
-            Image(systemName: "ellipsis")
-                .foregroundColor(Color.accentColor)
-                .rotationEffect(.degrees(90))
-        }
-        .menuStyle(BorderlessPullDownMenuButtonStyle())
-        .frame(width: 20)*/
-        //.menuStyle(BorderlessButtonMenuStyle())
         
     }
 }

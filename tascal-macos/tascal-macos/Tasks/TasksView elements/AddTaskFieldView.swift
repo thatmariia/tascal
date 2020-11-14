@@ -16,39 +16,41 @@ struct AddTaskFieldView: View {
     
     var body: some View {
         HStack {
-            
-            Button(action: {
-                
-                let task = Task(id: UUID(),
-                                task_id: UUID().uuidString,
-                                date_distributed: Date(),
-                                is_completed: 0,
-                                is_repeating: 0,
-                                level: -1,
-                                time: Double(new_time)!,
-                                txt: new_task)
-                
-                CloudKitHelper.save(task: task) { (result) in
-                    switch result {
-                    case .success(let task):
-                        self.tasks.all_tasks.insert(task, at: 0)
-                        print("Successfully added item")
-                    case .failure(let err):
-                        print(err.localizedDescription)
-                    }
-                }
-                
-                new_task  = ""
-            }, label: {
-                IconButtonView(icon_system_name: "plus.circle.fill")
-            })
-            .buttonStyle(PlainButtonStyle())
-            .disabled(!tasks.is_valid_task(with: new_task) || !tasks.is_valid_time(with: new_time))
-            
+            AddTaskButton()
             TaskTextFieldView(txt: $new_task, placeholder: "Add new task")
             DividerView(editing: true)
             TimeTextFieldView(time: $new_time)
         }
         .modifier(TaskViewModifier(editing: true))
+    }
+    
+    fileprivate func AddTaskButton() -> some View {
+        Button(action: {
+            
+            let task = Task(id: UUID(),
+                            task_id: UUID().uuidString,
+                            date_distributed: Date(),
+                            is_completed: 0,
+                            is_repeating: 0,
+                            level: -1,
+                            time: Double(new_time)!,
+                            txt: new_task)
+            
+            CloudKitHelper.save(task: task) { (result) in
+                switch result {
+                case .success(let task):
+                    self.tasks.all_tasks.insert(task, at: 0)
+                    print("Successfully added item")
+                case .failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
+            
+            new_task  = ""
+        }, label: {
+            IconButtonView(icon_system_name: "plus.circle.fill")
+        })
+        .buttonStyle(PlainButtonStyle())
+        .disabled(!tasks.is_valid_task(with: new_task) || !tasks.is_valid_time(with: new_time))
     }
 }

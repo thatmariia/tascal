@@ -9,11 +9,7 @@ import SwiftUI
 
 struct TasksView: View {
     
-    //TODO:: why when I add a new one it doesnt appear immediately?
-    
     @EnvironmentObject var tasks: TasksEnvironment
-    
-    var bins = 3
     
     var body: some View {
         
@@ -22,34 +18,19 @@ struct TasksView: View {
             
             VStack{
                 
-                if tasks.all_tasks.count > 0 {
-                    LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3)
-                              , content: {
-                                AddTaskFieldView()
-                                ForEach(tasks.all_tasks) { task in
-                                    TaskView(task: task,
-                                             txt: task.txt,
-                                             time: String(task.time))
-                                }
-                              })
-                } else {
-                    AddTaskFieldView()
-                }
+                //TODO:: adjust nr of bins according to the width of the window
+                LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3)
+                          , content: {
+                            AddTaskFieldView()
+                            ForEach(tasks.all_tasks.filter { $0.level == -1 }) { task in
+                                TaskView(task: task,
+                                         txt: task.txt,
+                                         time: String(task.time))
+                            }
+                          })
             }
             
         }
-        .onAppear(perform: {
-            CloudKitHelper.fetch { (result) in
-                switch result {
-                case .success(let task):
-                    self.tasks.all_tasks.append(task)
-                    print("Successfully fetched item")
-                // TODO:: sort tasks.all_tasks desc by creation date
-                case .failure(let err):
-                    print(err.localizedDescription)
-                }
-            }
-        })
     }
 }
 

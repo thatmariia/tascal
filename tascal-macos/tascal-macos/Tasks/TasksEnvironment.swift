@@ -14,6 +14,7 @@ class TasksEnvironment : ObservableObject {
 
     
     // MARK: - supplementary funcs
+    
     func is_valid_task(with txt: String) -> Bool {
         if (txt.isEmpty || txt.count > 140) {
             return false

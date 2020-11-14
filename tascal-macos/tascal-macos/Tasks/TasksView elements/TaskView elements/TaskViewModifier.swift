@@ -21,13 +21,11 @@ struct TaskViewModifier: ViewModifier {
             .background(Color(.separatorColor).opacity(editing ? 1.0 : 0.0))
             .cornerRadius(editing ? 5 : 0)
             
-            //.foregroundColor(editing ? ColorSecondary : ColorPrimary)
             .accentColor(Color.accentColor)
             
             .overlay(
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(Color(.separatorColor).opacity(editing ? 0.0 : 1.0),
-                        //ColorSecondary.opacity(editing ? 1.0 : 0.5),
                             lineWidth: 1)
             )
     }
