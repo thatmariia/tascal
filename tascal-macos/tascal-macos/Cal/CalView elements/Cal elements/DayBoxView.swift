@@ -33,7 +33,6 @@ struct DayBoxView: View {
                     }
                 }
             }
-            .listRowBackground(Color.clear)
             .onNSView(added: { nsview in
                 let root = nsview.subviews[0] as! NSScrollView
                 root.hasVerticalScroller = false

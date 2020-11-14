@@ -34,6 +34,8 @@ struct TaskView: View {
                 EditView().modifier(TaskViewModifier(editing: editing))
             } else {
                 StaticView().modifier(TaskViewModifier(editing: editing))
+                    // TODO:: check on drag out
+                    .onDrag { return NSItemProvider(object: task.get_NSType(from: task) as! NSItemProviderWriting) }
             }
         }
     }

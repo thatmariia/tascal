@@ -8,6 +8,7 @@
 import Foundation
 import CloudKit
 
+// TODO:: incorporate creation date too
 struct Task : Identifiable {
     var id = UUID()
     
@@ -19,4 +20,15 @@ struct Task : Identifiable {
     var level               : Int
     var time                : Double
     var txt                 : String
+    
+    func get_NSType(from task: Task) -> NSTask {
+        return NSTask(task_id:          task.task_id,
+                      record_id:        task.record_id,
+                      date_distributed: task.date_distributed,
+                      is_completed:     task.is_completed,
+                      is_repeating:     task.is_repeating,
+                      level:            task.level,
+                      time:             task.time,
+                      txt:              task.txt)
+    }
 }
