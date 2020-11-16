@@ -14,33 +14,13 @@ struct TaskManagerView: View {
     
     var body: some View {
         
-        HStack{
-            VStack {
-                TasksTitleView(txt: "Tasks")
-                
-                if (envi.search != "") {
-                    //TODO:: fix the splitview so it extends in vsplitview
-                    HSplitView {
-                        
-                        TasksView()
-                        Spacer()
-                        
-                        Divider()
-                        
-                        
-                        //TODO:: add search view here or move search view to the sidebar?
-                        VStack{
-                            Text("\(envi.search)")
-                            Spacer()
-                        }
-
-                    }
-                } else {
-                    TasksView()
-                    Spacer()
-                }
-            }
+        VStack {
+            TasksTitleView(txt: "Tasks")
+            
+            TasksView()
+            Spacer()
         }
+        
     }
 }
-        
+

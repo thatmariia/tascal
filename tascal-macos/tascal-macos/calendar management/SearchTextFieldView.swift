@@ -12,13 +12,12 @@ struct SearchTextFieldView: View {
     @EnvironmentObject var envi: AppEnvironment
     
     @State var search = ""
-    @State var is_searching = false
     
     var body: some View {
         
         HStack {
             Button(action: {
-                is_searching.toggle()
+                envi.is_searching.toggle()
             }, label: {
                 Image(systemName: "magnifyingglass.circle.fill")
             })
