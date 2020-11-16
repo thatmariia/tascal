@@ -33,6 +33,8 @@ struct TaskActionsMenuView: View {
                     
                     var dupl_task = task
                     dupl_task.task_id = UUID().uuidString
+                    dupl_task.level = -1
+                    dupl_task.date_created = Date()
                     
                     CloudKitHelper.save(task: dupl_task) { (result) in
                         switch result {
@@ -70,6 +72,7 @@ struct TaskActionsMenuView: View {
                         switch result {
                         case .success(let recordID):
                             self.tasks.all_tasks.removeAll { (t) -> Bool in
+                                print("* * * DELETED ", t.txt, t.record_id == recordID)
                                 return t.record_id == recordID
                             }
                             print("Successfully deleted item")

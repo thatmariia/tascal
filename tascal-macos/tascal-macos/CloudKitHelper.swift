@@ -186,7 +186,7 @@ struct CloudKitHelper {
     
     // MARK: - delete from CloudKit
     static func delete(recordID: CKRecord.ID, completion: @escaping (Result<CKRecord.ID, Error>) -> ()) {
-        CKContainer.default().publicCloudDatabase.delete(withRecordID: recordID) { (recordID, err) in
+        CKContainer.default().privateCloudDatabase.delete(withRecordID: recordID) { (recordID, err) in
             DispatchQueue.main.async {
                 if let err = err {
                     completion(.failure(err))

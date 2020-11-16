@@ -24,6 +24,7 @@ struct CalTypeView_Week: View {
             .onMoveCommand(perform: { (dir) in
                 dates.drag_update(on: dir, with: .day)
             })
+            
         }
         
     }

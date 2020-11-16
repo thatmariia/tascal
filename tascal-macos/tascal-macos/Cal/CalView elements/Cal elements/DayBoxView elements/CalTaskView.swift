@@ -33,7 +33,10 @@ struct CalTaskView: View {
             if editing {
                 EditView().modifier(TaskViewModifier(editing: editing))
             } else {
-                StaticView()
+                StaticView().modifier(TaskViewModifier(editing: editing))
+                    .onDrag {
+                        NSItemProvider(object: self.task.record_id!.recordName as NSString)
+                    }
             }
         }
     }
@@ -54,18 +57,20 @@ struct CalTaskView: View {
                 
                 Text(task.txt)
                     .lineLimit(nil)
-                    .onDrag {
-                        NSItemProvider(object: self.task.record_id!.recordName as NSString)
-                    }
                 
                 Spacer()
+                DividerView(editing: editing)
+                
+                Text(time + " h")
+                    .multilineTextAlignment(.trailing)
+                    .frame(width: 50)
                 
                 if show_actions{
                     TaskActionsMenuView(editing: $editing, task: task)
                     Spacer().frame(width: 2)
                 }
             }
-            Divider()
+            //Divider()
         }
         .gesture(edit_gesture)
         .onHover { hovering in

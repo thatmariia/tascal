@@ -53,7 +53,6 @@ struct TaskView: View {
             
             Text(time + " h")
                 .multilineTextAlignment(.trailing)
-                //TODO:: either get a bottleneck or come up with a better divider
                 .frame(width: 50)
             
             if show_actions{

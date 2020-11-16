@@ -27,7 +27,7 @@ struct ContentView: View {
                     .frame(minHeight: geom_window.size.height * 0.25)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .frame(minWidth: 300)
+            .animation(.easeInOut)
             .onAppear(perform: {
                 fetch_tasks()
             })
