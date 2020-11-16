@@ -28,7 +28,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .environmentObject(tasks_environment)
             .environmentObject(task_types_setting)
         
-        
 
         // Create the window and set the content view.
         window = NSWindow(
@@ -36,6 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView, .unifiedTitleAndToolbar],
             backing: .buffered, defer: false)
         window.center()
+        //window.minSize = NSSize(width: 200, height: 200)
         window.titlebarAppearsTransparent = true
         //window.styleMask.insert(NSWindow.StyleMask.fullSizeContentView)
         window.title = "Tascal"

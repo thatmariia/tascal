@@ -11,6 +11,6 @@ struct DividerView: View {
     var editing: Bool
     
     var body: some View {
-        Divider().background(editing ? ColorSecondary : ColorPrimary)
+        Divider().background(editing ? Color(NSColor.controlTextColor) : Color(NSColor.controlBackgroundColor))
     }
 }

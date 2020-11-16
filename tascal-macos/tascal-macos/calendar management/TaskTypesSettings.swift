@@ -11,7 +11,6 @@ class TaskTypesSettings: ObservableObject {
     
     //TODO:: upload saved
     @Published var types : [String] = ["Must", "Should", "Want"]
-    @Published var tasks : [[String]] = [musttasks, shouldtasks, wanttasks]
     
     
 }

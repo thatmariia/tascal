@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         
-        GeometryReader { geom in
+        GeometryReader { geom_window in
             VSplitView{
                 
                 TaskManagerView()
@@ -24,9 +24,10 @@ struct ContentView: View {
                 
                 CalView()
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                    .frame(minHeight: geom.size.height * 0.25)
+                    .frame(minHeight: geom_window.size.height * 0.25)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(minWidth: 300)
             .onAppear(perform: {
                 fetch_tasks()
             })
@@ -40,7 +41,6 @@ struct ContentView: View {
             case .success(let task):
                 self.tasks.all_tasks.append(task)
                 print("Successfully fetched item")
-            // TODO:: sort tasks.all_tasks desc by creation date
             case .failure(let err):
                 print(err.localizedDescription)
             }
