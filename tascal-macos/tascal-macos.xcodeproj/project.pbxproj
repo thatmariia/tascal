@@ -43,6 +43,7 @@
 		3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFC925560D4A00707ECB /* DateInfo.swift */; };
 		3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFD1255691D000707ECB /* DayBoxView.swift */; };
 		3199F4002562025500279044 /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F3FF2562025500279044 /* NSTextField.swift */; };
+		3199F4112563092E00279044 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F4102563092E00279044 /* View.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -116,6 +117,7 @@
 		3195BFC925560D4A00707ECB /* DateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfo.swift; sourceTree = "<group>"; };
 		3195BFD1255691D000707ECB /* DayBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBoxView.swift; sourceTree = "<group>"; };
 		3199F3FF2562025500279044 /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
+		3199F4102563092E00279044 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -201,10 +203,10 @@
 				3195BF4E2555F42A00707ECB /* AppDelegate.swift */,
 				3195BF832555F99F00707ECB /* AppEnvironment.swift */,
 				3195BF502555F42A00707ECB /* ContentView.swift */,
+				3199F4102563092E00279044 /* View.swift */,
 				3188BD4D255A1CF80039CE56 /* DividerView.swift */,
 				31EFA02B25596250003DFADF /* NSViewAccessor.swift */,
 				3199F3FF2562025500279044 /* NSTextField.swift */,
-				31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */,
 				31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */,
 				31898C37255F297C008FCB77 /* CloudKitHelper.swift */,
 				31750C8D25570098007ACF87 /* Tasks */,
@@ -262,7 +264,9 @@
 				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BFC925560D4A00707ECB /* DateInfo.swift */,
 				31750C832556F105007ACF87 /* CalDate.swift */,
+				31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */,
 				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
+				31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */,
 				31EFA03025596566003DFADF /* SearchTextFieldView.swift */,
 				3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */,
 				3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */,
@@ -276,7 +280,6 @@
 				31750CC225573029007ACF87 /* TaskViewModifier.swift */,
 				31EF9FB12558ABA5003DFADF /* DoneEditingButtonView.swift */,
 				31EFA0182559488C003DFADF /* TaskActionsMenuView.swift */,
-				31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */,
 				31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */,
 			);
 			path = "TaskView elements";
@@ -474,6 +477,7 @@
 				31750CF325577285007ACF87 /* DayBoxViewModifier.swift in Sources */,
 				31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */,
 				3188BD4E255A1CF80039CE56 /* DividerView.swift in Sources */,
+				3199F4112563092E00279044 /* View.swift in Sources */,
 				3195BF842555F99F00707ECB /* AppEnvironment.swift in Sources */,
 				3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */,
 				3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */,

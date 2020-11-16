@@ -18,7 +18,7 @@ struct CalManagerView: View {
                 CalManagerButtonView(type: CalType.year)
                 CalManagerButtonView(type: CalType.days)
             }
-            .modifier(ToolbarStyleModifier())
+            .modifier(ToolbarStyleModifier(is_arrow: false))
             
             Spacer().frame(width: 40)
             
@@ -26,9 +26,9 @@ struct CalManagerView: View {
             Button(action: {
                 dates.drag_update(on: MoveCommandDirection.left, with: .days)
             }, label: {
-                Image(systemName: "arrowtriangle.left.fill")
+                Image(systemName: "arrowtriangle.left.circle.fill")
                     .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
-                    .modifier(ToolbarStyleModifier())
+                    //.modifier(ToolbarStyleModifier(is_arrow: true))
             })
             .buttonStyle(PlainButtonStyle())
             
@@ -38,7 +38,7 @@ struct CalManagerView: View {
             }) {
                 Text("Today")
                     .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
-                    .modifier(ToolbarStyleModifier())
+                    .modifier(ToolbarStyleModifier(is_arrow: false))
             }
             .buttonStyle(PlainButtonStyle())
             
@@ -46,9 +46,9 @@ struct CalManagerView: View {
             Button(action: {
                 dates.drag_update(on: MoveCommandDirection.right, with: .days)
             }, label: {
-                Image(systemName: "arrowtriangle.right.fill")
+                Image(systemName: "arrowtriangle.right.circle.fill")
                     .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
-                    .modifier(ToolbarStyleModifier())
+                    //.modifier(ToolbarStyleModifier(is_arrow: true))
             })
             .buttonStyle(PlainButtonStyle())
             

@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ToolbarStyleModifier: ViewModifier {
+    
+    var is_arrow: Bool
+    
     func body(content: Content) -> some View {
         content
             .overlay(
-                RoundedRectangle(cornerRadius: 5)
+                    RoundedRectangle(cornerRadius: is_arrow ? 100 : 5)
                     .stroke(Color(.separatorColor),
                             lineWidth: 1)
             )
