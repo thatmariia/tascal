@@ -23,8 +23,7 @@ struct CalTypeView_Days: View {
             }
             .gesture(DragGesture().onChanged({ (value) in
                 // TODO:: drag slower, do a carousel
-                // TODO:: reenable moving #dragdrop
-                //dates.drag_update(on: value, with: .day)
+                dates.drag_update(on: value, with: .day)
             }))
         }
         

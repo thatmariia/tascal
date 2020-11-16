@@ -17,7 +17,7 @@ struct CalTypeView_Day: View {
             MonthTitleView()
             DayBoxView(date: dates.day)
                 .gesture(DragGesture().onChanged({ (value) in
-                    //TODO:: drag slower, do a carousel #dragdrop
+                    //TODO:: drag slower, do a carousel
                     dates.drag_update(on: value, with: .day)
                 }))
         }

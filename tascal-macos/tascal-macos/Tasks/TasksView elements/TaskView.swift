@@ -59,8 +59,6 @@ struct TaskView: View {
             if show_actions{
                 TaskActionsMenuView(editing: $editing, task: task)
             }
-            
-            //TODO:: implement menu to: edit, delete, duplicate etc
         }
         .gesture(edit_gesture)
         .onHover { hovering in

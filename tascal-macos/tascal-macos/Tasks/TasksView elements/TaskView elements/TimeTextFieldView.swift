@@ -20,7 +20,6 @@ struct TimeTextFieldView: View {
             TextField("", text: $time) { (changed) in
                 
             } onCommit: {
-                //TODO:: send in new txt
             }
             .textFieldStyle(PlainTextFieldStyle())
             .frame(maxWidth: 32)

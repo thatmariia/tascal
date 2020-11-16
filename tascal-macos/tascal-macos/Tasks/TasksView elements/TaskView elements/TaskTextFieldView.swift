@@ -10,7 +10,7 @@ import SwiftUI
 struct TaskTextFieldView: View {
     
     @Binding var txt: String
-    var placeholder: String = ""
+    var placeholder: String = "Your task"
     
     var body: some View {
         //TODO:: figure out accent color and selection color
@@ -26,8 +26,6 @@ struct TaskTextFieldView: View {
             TextField("", text: $txt) { (changed) in
 
             } onCommit: {
-                //TODO:: send in new txt
-                // called from both existing and new tasks
             }
             .textFieldStyle(PlainTextFieldStyle())
             .accentColor(Color.accentColor)

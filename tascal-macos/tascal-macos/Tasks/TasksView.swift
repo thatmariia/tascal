@@ -30,8 +30,7 @@ struct TasksView: View {
                                                 $0.level == -1
                                             }
                                             .sorted(by: {
-                                                // TODO:: sort by creation date
-                                                $0.is_completed < $1.is_completed
+                                                $0.date_created > $1.date_created
                                             })) { task in
                                     TaskView(task: task,
                                              txt: task.txt,
