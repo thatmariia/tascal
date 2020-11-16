@@ -15,6 +15,9 @@ struct CalTypeView_Days: View {
         
         GeometryReader { geom in
             VStack {
+                
+                MonthTitleView()
+                
                 HStack {
                     // TODO:: maybe find a less ugly way to do this
                     

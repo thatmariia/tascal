@@ -17,7 +17,7 @@ struct CalManagerView: View {
             Spacer()
             // cal type buttons
             HStack {
-                CalManagerButtonView(type: CalType.year)
+                CalManagerButtonView(type: CalType.year).disabled(true)
                 CalManagerButtonView(type: CalType.days)
             }
             //.frame(minWidth: 40)

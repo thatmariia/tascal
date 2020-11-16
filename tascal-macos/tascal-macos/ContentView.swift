@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         
-        
+        ZStack{
         NavigationView {
             
             SidebarView()
@@ -23,41 +23,22 @@ struct ContentView: View {
                 
                 if envi.is_searching {
                     
-                    // MARK: - searching - start
-                    
+                    // MARK: - searching
                     
                     HSplitView {
-                        
                         MainView(geom_window: geom_window).layoutPriority(1)
+                            .frame(minWidth: 0.5*geom_window.size.width)
                         
-                        GeometryReader { geom_search in
-                        
-                            VStack {
-                                List(1..<100) { i in
-                                    Text("Row \(i)")
-                                }
-                                Spacer()
-                            }.frame(minWidth: 150, idealWidth: 150)
-                            
-                            .onChange(of: geom_search.size.width, perform: { (width) in
-                                
-                                    self.envi.search_width = width
-                                
-                              //print("* * * ", width))
-                            })
-                            
-                        }
-                        
+                        SearchView()
+                            .frame(minWidth: 150, idealWidth: 200)
                     }
                     
-                    
-                    // MARK: - searching - end
+                    //.frame(minWidth: 300)
                     
                 } else {
                     
-                    // MARK: - not searching - start
+                    // MARK: - not searching
                     MainView(geom_window: geom_window)
-                    // MARK: - not searching - end
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -67,8 +48,23 @@ struct ContentView: View {
             })
             
         }
+        }
         
         
+    }
+    
+    fileprivate func SearchView() -> some View {
+        Group{
+            GeometryReader { geom_search in
+                SearchSidebarView()
+                    .onAppear(perform: {
+                        self.envi.search_width = geom_search.size.width
+                    })
+                    .onChange(of: geom_search.size.width, perform: { (width) in
+                        self.envi.search_width = width
+                    })
+            }
+        }
     }
     
     fileprivate func MainView(geom_window: GeometryProxy) -> some View {

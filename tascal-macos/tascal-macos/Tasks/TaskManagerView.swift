@@ -15,7 +15,7 @@ struct TaskManagerView: View {
     var body: some View {
         
         VStack {
-            TasksTitleView(txt: "Tasks")
+            TasksTitleView(txt: "Pool")
             
             TasksView()
             Spacer()

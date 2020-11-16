@@ -13,8 +13,8 @@ struct MonthTitleView: View {
     
     var body: some View {
         HStack{
-            Text(dates.day.date_info.month).font(.system(size: 32)).fontWeight(.bold)
-            Text(" '" + String(dates.day.date_info.year%100)).font(.system(size: 32)).fontWeight(.regular)
+            Text(dates.day.date_info.month).font(.system(size: 30)).fontWeight(.bold)
+            Text(" '" + String(dates.day.date_info.year%100)).font(.system(size: 30)).fontWeight(.regular)
             Spacer()
         }
     }
