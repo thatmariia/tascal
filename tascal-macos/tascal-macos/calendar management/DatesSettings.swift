@@ -49,13 +49,13 @@ class DatesSettings: ObservableObject {
                 self.update_date(date: calendar.date(byAdding: .day, value: -3, to: day.date)!)
             }
         case .week:
-            if (direction == .left) {
+            if (direction == .right) {
                 self.update_date(date: calendar.date(byAdding: .day, value:  7, to: day.date)!)
             } else {
                 self.update_date(date: calendar.date(byAdding: .day, value: -7, to: day.date)!)
             }
         case .year:
-            if (direction == .left) {
+            if (direction == .right) {
                 self.update_date(date: calendar.date(byAdding: .year, value:  1, to: day.date)!)
             } else {
                 self.update_date(date: calendar.date(byAdding: .year, value: -1, to: day.date)!)

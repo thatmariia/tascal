@@ -24,6 +24,16 @@ struct CalManagerView: View {
             
             Spacer().frame(width: 40)
             
+            // prev day button
+            Button(action: {
+                dates.drag_update(on: MoveCommandDirection.left, with: .day)
+            }, label: {
+                Image(systemName: "arrowtriangle.left.fill")
+                    .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
+                    .modifier(ToolbarStyleModifier())
+            })
+            .buttonStyle(PlainButtonStyle())
+            
             // today button
             Button(action: {
                 dates.update_date(date: dates.today.date)
@@ -32,6 +42,16 @@ struct CalManagerView: View {
                     .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
                     .modifier(ToolbarStyleModifier())
             }
+            .buttonStyle(PlainButtonStyle())
+            
+            // next day button
+            Button(action: {
+                dates.drag_update(on: MoveCommandDirection.right, with: .day)
+            }, label: {
+                Image(systemName: "arrowtriangle.right.fill")
+                    .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
+                    .modifier(ToolbarStyleModifier())
+            })
             .buttonStyle(PlainButtonStyle())
             
             Spacer().frame(width: 40)
