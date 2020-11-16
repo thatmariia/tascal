@@ -25,7 +25,13 @@ struct TasksView: View {
                 LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 3)
                           , content: {
                             AddTaskFieldView()
-                            ForEach(tasks.all_tasks.filter { $0.level == -1 }) { task in
+                            ForEach(tasks.all_tasks
+                                        .filter {
+                                            $0.level == -1
+                                        }
+                                        .sorted(by: {
+                                            $0.is_completed < $1.is_completed
+                                        })) { task in
                                 TaskView(task: task,
                                          txt: task.txt,
                                          time: String(task.time))
@@ -34,6 +40,7 @@ struct TasksView: View {
             }
             
         }
+        // MARK: - on drop
         .onDrop(of: NSString.readableTypeIdentifiersForItemProvider, isTargeted: nil, perform: { (ips) -> Bool in
             
             // TODO:: what if multiple?
@@ -55,6 +62,7 @@ struct TasksView: View {
                     }
                     if (task == nil) { return }
                     task!.level = -1
+                    task!.is_completed = 0
                     
                     CloudKitHelper.modify(task: task!) { (result) in
                         switch result {

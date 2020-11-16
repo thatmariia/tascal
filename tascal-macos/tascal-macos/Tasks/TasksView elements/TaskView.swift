@@ -34,6 +34,9 @@ struct TaskView: View {
                 EditView().modifier(TaskViewModifier(editing: editing))
             } else {
                 StaticView().modifier(TaskViewModifier(editing: editing))
+                    .onDrag {
+                        NSItemProvider(object: self.task.record_id!.recordName as NSString)
+                    }
             }
         }
     }
@@ -41,6 +44,7 @@ struct TaskView: View {
     // MARK: - STATIC view
     fileprivate func StaticView() -> some View {
         return HStack{
+            
             Text(txt)
                 .lineLimit(1)
             
