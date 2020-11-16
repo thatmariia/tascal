@@ -38,9 +38,7 @@
 		3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF982555FC6A00707ECB /* CalManagerView.swift */; };
 		3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */; };
 		3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFA2255600C000707ECB /* CalTypeView_Year.swift */; };
-		3195BFA8255600EC00707ECB /* CalTypeView_Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFA7255600EC00707ECB /* CalTypeView_Week.swift */; };
 		3195BFAD2556010300707ECB /* CalTypeView_Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFAC2556010300707ECB /* CalTypeView_Days.swift */; };
-		3195BFB22556011500707ECB /* CalTypeView_Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFB12556011500707ECB /* CalTypeView_Day.swift */; };
 		3195BFB7255601FF00707ECB /* CalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFB6255601FF00707ECB /* CalView.swift */; };
 		3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFC925560D4A00707ECB /* DateInfo.swift */; };
 		3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFD1255691D000707ECB /* DayBoxView.swift */; };
@@ -113,9 +111,7 @@
 		3195BF982555FC6A00707ECB /* CalManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManagerView.swift; sourceTree = "<group>"; };
 		3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManagerButtonView.swift; sourceTree = "<group>"; };
 		3195BFA2255600C000707ECB /* CalTypeView_Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Year.swift; sourceTree = "<group>"; };
-		3195BFA7255600EC00707ECB /* CalTypeView_Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Week.swift; sourceTree = "<group>"; };
 		3195BFAC2556010300707ECB /* CalTypeView_Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Days.swift; sourceTree = "<group>"; };
-		3195BFB12556011500707ECB /* CalTypeView_Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Day.swift; sourceTree = "<group>"; };
 		3195BFB6255601FF00707ECB /* CalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalView.swift; sourceTree = "<group>"; };
 		3195BFC925560D4A00707ECB /* DateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfo.swift; sourceTree = "<group>"; };
 		3195BFD1255691D000707ECB /* DayBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBoxView.swift; sourceTree = "<group>"; };
@@ -302,9 +298,7 @@
 			children = (
 				31750CEA25576E00007ACF87 /* MonthTitleView.swift */,
 				3195BFA2255600C000707ECB /* CalTypeView_Year.swift */,
-				3195BFA7255600EC00707ECB /* CalTypeView_Week.swift */,
 				3195BFAC2556010300707ECB /* CalTypeView_Days.swift */,
-				3195BFB12556011500707ECB /* CalTypeView_Day.swift */,
 				31EF9FE42558B8D7003DFADF /* Cal elements */,
 			);
 			path = "CalView elements";
@@ -473,7 +467,6 @@
 				31EF9FB22558ABA5003DFADF /* DoneEditingButtonView.swift in Sources */,
 				3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */,
 				3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */,
-				3195BFB22556011500707ECB /* CalTypeView_Day.swift in Sources */,
 				3195BFAD2556010300707ECB /* CalTypeView_Days.swift in Sources */,
 				3188BD3E255A18800039CE56 /* TaskTypesSettings.swift in Sources */,
 				31750CBE25572F57007ACF87 /* AddTaskFieldView.swift in Sources */,
@@ -498,7 +491,6 @@
 				31750CEB25576E01007ACF87 /* MonthTitleView.swift in Sources */,
 				31750CB625572528007ACF87 /* TasksView.swift in Sources */,
 				31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */,
-				3195BFA8255600EC00707ECB /* CalTypeView_Week.swift in Sources */,
 				3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */,
 				31898C33255F24F3008FCB77 /* Task.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,

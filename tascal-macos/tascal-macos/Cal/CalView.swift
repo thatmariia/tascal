@@ -16,12 +16,8 @@ struct CalView: View {
             switch dates.cal_type {
             case .year:
                 CalTypeView_Year()
-            case .week:
-                CalTypeView_Week()
             case .days:
                 CalTypeView_Days()
-            case .day:
-                CalTypeView_Day()
             }
         }
     }

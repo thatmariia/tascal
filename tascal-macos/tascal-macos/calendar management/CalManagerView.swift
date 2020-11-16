@@ -16,9 +16,7 @@ struct CalManagerView: View {
             // cal type buttons
             HStack {
                 CalManagerButtonView(type: CalType.year)
-                CalManagerButtonView(type: CalType.week)
                 CalManagerButtonView(type: CalType.days)
-                CalManagerButtonView(type: CalType.day)
             }
             .modifier(ToolbarStyleModifier())
             
@@ -26,7 +24,7 @@ struct CalManagerView: View {
             
             // prev day button
             Button(action: {
-                dates.drag_update(on: MoveCommandDirection.left, with: .day)
+                dates.drag_update(on: MoveCommandDirection.left, with: .days)
             }, label: {
                 Image(systemName: "arrowtriangle.left.fill")
                     .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
@@ -46,7 +44,7 @@ struct CalManagerView: View {
             
             // next day button
             Button(action: {
-                dates.drag_update(on: MoveCommandDirection.right, with: .day)
+                dates.drag_update(on: MoveCommandDirection.right, with: .days)
             }, label: {
                 Image(systemName: "arrowtriangle.right.fill")
                     .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))

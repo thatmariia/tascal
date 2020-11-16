@@ -23,12 +23,6 @@ struct DateButtonBoxView: View {
                                                 calendar.isDate(date.date, inSameDayAs: dates.today.date)))
             Spacer()
         }
-        .onTapGesture {
-            dates.update_date(date: date.date)
-            dates.cal_type = .day
-        }
-        
-        
     }
 }
 

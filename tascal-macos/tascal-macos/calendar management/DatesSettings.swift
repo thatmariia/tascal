@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 class DatesSettings: ObservableObject {
-    //TODO:: remember last setting before app closed
-    @Published var cal_type = CalType.year
+
+    @Published var cal_type = CalType.days
     
     @Published var today    = CalDate(date: Date(), date_info: DateInfo(date: Date()))
     
@@ -20,39 +20,24 @@ class DatesSettings: ObservableObject {
     // 3 days
     @Published var days     = generate_dates(start_date: Date(), days: 3)
     
-    // 1 week
-    @Published var week     = generate_dates(start_date: Date(), days: 7)
     
     // 1 year
     @Published var year     = generate_dates(start_date: Date(), years: 1)
     
     func update_date(date: Date) {
         self.day          = CalDate(date: date, date_info: DateInfo(date: date))
-        self.days         = generate_dates(start_date: date, days: 3)
-        self.week         = generate_dates(start_date: date, days: 7)
+        self.days        = generate_dates(start_date: date, days: 3)
         self.year         = generate_dates(start_date: date, years: 1)
     }
     
     func drag_update(on direction: MoveCommandDirection, with cal_type: CalType) {
         
         switch cal_type {
-        case .day:
+        case .days:
             if (direction == .right) {
                 self.update_date(date: calendar.date(byAdding: .day, value:  1, to: day.date)!)
             } else {
                 self.update_date(date: calendar.date(byAdding: .day, value: -1, to: day.date)!)
-            }
-        case .days:
-            if (direction == .right) {
-                self.update_date(date: calendar.date(byAdding: .day, value:  3, to: day.date)!)
-            } else {
-                self.update_date(date: calendar.date(byAdding: .day, value: -3, to: day.date)!)
-            }
-        case .week:
-            if (direction == .right) {
-                self.update_date(date: calendar.date(byAdding: .day, value:  7, to: day.date)!)
-            } else {
-                self.update_date(date: calendar.date(byAdding: .day, value: -7, to: day.date)!)
             }
         case .year:
             if (direction == .right) {
