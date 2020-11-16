@@ -21,14 +21,23 @@ struct Task : Identifiable {
     var time                : Double
     var txt                 : String
     
-    func get_NSType(from task: Task) -> NSTask {
-        return NSTask(task_id:          task.task_id,
-                      record_id:        task.record_id,
-                      date_distributed: task.date_distributed,
-                      is_completed:     task.is_completed,
-                      is_repeating:     task.is_repeating,
-                      level:            task.level,
-                      time:             task.time,
-                      txt:              task.txt)
-    }
+    /*init(task_id            : String,
+         record_id          : CKRecord.ID?,
+         date_distributed   : Date,
+         is_completed       : Int,
+         is_repeating       : Int,
+         level              : Int,
+         time               : Double,
+         txt                : String) {
+        
+        self.task_id            = task_id
+        self.record_id          = record_id
+        self.date_distributed   = date_distributed
+        self.is_completed       = is_completed
+        self.is_repeating       = is_repeating
+        self.level              = level
+        self.time               = time
+        self.txt                = txt
+    }*/
 }
+

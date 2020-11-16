@@ -55,9 +55,7 @@ struct CalTaskView: View {
                 Text(task.txt)
                     .lineLimit(nil)
                     .onDrag {
-                        // TODO:: #dragdrop id isnt absolute url, figure this out
-                        NSItemProvider(item: .some(URL(string: task.record_id!.recordName)! as NSSecureCoding),
-                                       typeIdentifier: String(kUTTypeURL))
+                        NSItemProvider(object: self.task.record_id!.recordName as NSString)
                     }
                 
                 Spacer()
@@ -115,4 +113,5 @@ struct CalTaskView: View {
         }
     }
 }
+
 
