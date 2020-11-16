@@ -33,30 +33,29 @@ class DatesSettings: ObservableObject {
         self.year         = generate_dates(start_date: date, years: 1)
     }
     
-    
-    func drag_update(on value: DragGesture.Value, with cal_type: CalType) {
+    func drag_update(on direction: MoveCommandDirection, with cal_type: CalType) {
         
         switch cal_type {
         case .day:
-            if (value.startLocation.x > value.predictedEndLocation.x) {
+            if (direction == .right) {
                 self.update_date(date: calendar.date(byAdding: .day, value:  1, to: day.date)!)
             } else {
                 self.update_date(date: calendar.date(byAdding: .day, value: -1, to: day.date)!)
             }
         case .days:
-            if (value.startLocation.x > value.predictedEndLocation.x) {
+            if (direction == .right) {
                 self.update_date(date: calendar.date(byAdding: .day, value:  3, to: day.date)!)
             } else {
                 self.update_date(date: calendar.date(byAdding: .day, value: -3, to: day.date)!)
             }
         case .week:
-            if (value.startLocation.x > value.predictedEndLocation.x) {
+            if (direction == .left) {
                 self.update_date(date: calendar.date(byAdding: .day, value:  7, to: day.date)!)
             } else {
                 self.update_date(date: calendar.date(byAdding: .day, value: -7, to: day.date)!)
             }
         case .year:
-            if (value.startLocation.x > value.predictedEndLocation.x) {
+            if (direction == .left) {
                 self.update_date(date: calendar.date(byAdding: .year, value:  1, to: day.date)!)
             } else {
                 self.update_date(date: calendar.date(byAdding: .year, value: -1, to: day.date)!)

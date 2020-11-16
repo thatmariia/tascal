@@ -21,10 +21,9 @@ struct CalTypeView_Days: View {
                     if (i != dates.days.count-1) { Spacer() }
                 }
             }
-            .gesture(DragGesture().onChanged({ (value) in
-                // TODO:: drag slower, do a carousel
-                dates.drag_update(on: value, with: .day)
-            }))
+            .onMoveCommand(perform: { (dir) in
+                dates.drag_update(on: dir, with: .day)
+            })
         }
         
     }
