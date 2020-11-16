@@ -17,14 +17,16 @@ struct SearchTextFieldView: View {
         
         HStack {
             Button(action: {
-                toggleSidebar()
+                envi.is_searching.toggle()
+                //toggleSidebar()
             }, label: {
                 Image(systemName: "magnifyingglass.circle.fill")
             })
             .buttonStyle(PlainButtonStyle())
             
+            if envi.is_searching && envi.search_width > 80 {
             // TODO:: make a sidebar for search
-             /*   ZStack {
+                ZStack {
                     
                     if search.isEmpty {
                         Text("Search")
@@ -41,14 +43,15 @@ struct SearchTextFieldView: View {
                         //TODO:: do the search
                     })
                     .textFieldStyle(PlainTextFieldStyle())
-                    .frame(minWidth: 70)
+                    .frame(width: envi.search_width-80)
                     
                 }
-                .isHidden(!is_searching)
-             */
+                //.isHidden(!is_searching)
+            }
+             
             
         }
-        //.frame(minWidth: 90)
+        .frame(width: (envi.is_searching && envi.search_width > 80) ? envi.search_width-60 : 20)
         .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
         .modifier(ToolbarStyleModifier(is_arrow: false))
         

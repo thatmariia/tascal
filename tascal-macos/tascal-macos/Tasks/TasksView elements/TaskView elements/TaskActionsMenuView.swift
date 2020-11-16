@@ -72,7 +72,6 @@ struct TaskActionsMenuView: View {
                         switch result {
                         case .success(let recordID):
                             self.tasks.all_tasks.removeAll { (t) -> Bool in
-                                print("* * * DELETED ", t.txt, t.record_id == recordID)
                                 return t.record_id == recordID
                             }
                             print("Successfully deleted item")

@@ -12,5 +12,7 @@ let calendar = Calendar.current
 class AppEnvironment: ObservableObject {
     
     @Published var search: String = ""
+    @Published var is_searching = false
+    @Published var search_width: CGFloat = 0
     
 }

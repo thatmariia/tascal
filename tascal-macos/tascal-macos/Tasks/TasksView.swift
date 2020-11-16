@@ -87,7 +87,6 @@ struct TasksView: View {
     }
     
     fileprivate func bins(width: CGFloat) -> Int {
-        print("* * * WIDTH TASKS = ", width)
         if width < 450 { return 1 }
         if width < 800 { return 2 }
         return 3

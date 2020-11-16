@@ -47,7 +47,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let toolbarButtons = NSHostingView(rootView: CalManagerView()
                                             .environmentObject(app_environement)
                                             .environmentObject(dates_settings))
-        toolbarButtons.frame.size = toolbarButtons.fittingSize
+        
+        //toolbarButtons.frame.size = toolbarButtons.fittingSize
+        toolbarButtons.frame.size = CGSize(width: window.frame.width, height: 32)
         
         let titlebarAccessory = NSTitlebarAccessoryViewController()
         titlebarAccessory.view = toolbarButtons

@@ -10,14 +10,17 @@ import SwiftUI
 struct CalManagerView: View {
     
     @EnvironmentObject var dates: DatesSettings
+    @EnvironmentObject var envi: AppEnvironment
     
     var body: some View {
         HStack {
+            Spacer()
             // cal type buttons
             HStack {
                 CalManagerButtonView(type: CalType.year)
                 CalManagerButtonView(type: CalType.days)
             }
+            //.frame(minWidth: 40)
             .modifier(ToolbarStyleModifier(is_arrow: false))
             
             Spacer().frame(width: 40)
@@ -41,6 +44,7 @@ struct CalManagerView: View {
                     .modifier(ToolbarStyleModifier(is_arrow: false))
             }
             .buttonStyle(PlainButtonStyle())
+            //.frame(minWidth: 100)
             
             // next day button
             Button(action: {

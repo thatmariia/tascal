@@ -16,19 +16,48 @@ struct ContentView: View {
         
         
         NavigationView {
+            
             SidebarView()
             
             GeometryReader { geom_window in
-                VSplitView{
+                
+                if envi.is_searching {
                     
-                    TaskManagerView()
-                        .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                    // MARK: - searching - start
                     
-                    Divider()
                     
-                    CalView()
-                        .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                        .frame(minHeight: geom_window.size.height * 0.25)
+                    HSplitView {
+                        
+                        MainView(geom_window: geom_window).layoutPriority(1)
+                        
+                        GeometryReader { geom_search in
+                        
+                            VStack {
+                                List(1..<100) { i in
+                                    Text("Row \(i)")
+                                }
+                                Spacer()
+                            }.frame(minWidth: 150, idealWidth: 150)
+                            
+                            .onChange(of: geom_search.size.width, perform: { (width) in
+                                
+                                    self.envi.search_width = width
+                                
+                              //print("* * * ", width))
+                            })
+                            
+                        }
+                        
+                    }
+                    
+                    
+                    // MARK: - searching - end
+                    
+                } else {
+                    
+                    // MARK: - not searching - start
+                    MainView(geom_window: geom_window)
+                    // MARK: - not searching - end
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -36,8 +65,25 @@ struct ContentView: View {
             .onAppear(perform: {
                 fetch_tasks()
             })
+            
         }
         
+        
+    }
+    
+    fileprivate func MainView(geom_window: GeometryProxy) -> some View {
+        VSplitView{
+            
+            TaskManagerView()
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+            
+            //Divider()
+            
+            CalView()
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                .frame(minHeight: geom_window.size.height * 0.25)
+                .layoutPriority(1)
+        }
     }
     
     fileprivate func fetch_tasks() {
