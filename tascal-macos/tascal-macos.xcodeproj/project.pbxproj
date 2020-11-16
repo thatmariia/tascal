@@ -44,6 +44,7 @@
 		3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFD1255691D000707ECB /* DayBoxView.swift */; };
 		3199F4002562025500279044 /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F3FF2562025500279044 /* NSTextField.swift */; };
 		3199F4112563092E00279044 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F4102563092E00279044 /* View.swift */; };
+		3199F416256318AF00279044 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F415256318AF00279044 /* SidebarView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -118,6 +119,7 @@
 		3195BFD1255691D000707ECB /* DayBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayBoxView.swift; sourceTree = "<group>"; };
 		3199F3FF2562025500279044 /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
 		3199F4102563092E00279044 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		3199F415256318AF00279044 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				31EFA02B25596250003DFADF /* NSViewAccessor.swift */,
 				3199F3FF2562025500279044 /* NSTextField.swift */,
 				31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */,
+				3199F415256318AF00279044 /* SidebarView.swift */,
 				31898C37255F297C008FCB77 /* CloudKitHelper.swift */,
 				31750C8D25570098007ACF87 /* Tasks */,
 				3195BFBB255602B900707ECB /* Cal */,
@@ -481,6 +484,7 @@
 				3195BF842555F99F00707ECB /* AppEnvironment.swift in Sources */,
 				3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */,
 				3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */,
+				3199F416256318AF00279044 /* SidebarView.swift in Sources */,
 				3195BFB7255601FF00707ECB /* CalView.swift in Sources */,
 				3199F4002562025500279044 /* NSTextField.swift in Sources */,
 				31EFA02425595B1F003DFADF /* ToolbarStyleModifier.swift in Sources */,

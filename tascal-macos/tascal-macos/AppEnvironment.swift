@@ -12,6 +12,5 @@ let calendar = Calendar.current
 class AppEnvironment: ObservableObject {
     
     @Published var search: String = ""
-    @Published var is_searching = false
     
 }

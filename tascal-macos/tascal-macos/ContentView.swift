@@ -14,17 +14,22 @@ struct ContentView: View {
     
     var body: some View {
         
-        GeometryReader { geom_window in
-            VSplitView{
-                
-                TaskManagerView()
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                
-                Divider()
-                
-                CalView()
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                    .frame(minHeight: geom_window.size.height * 0.25)
+        
+        NavigationView {
+            SidebarView()
+            
+            GeometryReader { geom_window in
+                VSplitView{
+                    
+                    TaskManagerView()
+                        .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                    
+                    Divider()
+                    
+                    CalView()
+                        .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        .frame(minHeight: geom_window.size.height * 0.25)
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .animation(.easeInOut)

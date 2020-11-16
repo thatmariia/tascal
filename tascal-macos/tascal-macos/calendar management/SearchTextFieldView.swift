@@ -17,7 +17,7 @@ struct SearchTextFieldView: View {
         
         HStack {
             Button(action: {
-                envi.is_searching.toggle()
+                toggleSidebar()
             }, label: {
                 Image(systemName: "magnifyingglass.circle.fill")
             })
@@ -41,14 +41,14 @@ struct SearchTextFieldView: View {
                         //TODO:: do the search
                     })
                     .textFieldStyle(PlainTextFieldStyle())
-                    .frame(minWidth: is_searching ? 0 : 70)
+                    .frame(minWidth: 70)
                     
                 }
                 .isHidden(!is_searching)
              */
             
         }
-        //.frame(minWidth: is_searching ? 0 : 90)
+        //.frame(minWidth: 90)
         .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
         .modifier(ToolbarStyleModifier(is_arrow: false))
         
