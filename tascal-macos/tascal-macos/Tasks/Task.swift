@@ -13,6 +13,7 @@ struct Task : Identifiable {
     
     var task_id             : String
     var record_id           : CKRecord.ID?
+    var date_created        : Date
     var date_distributed    : Date
     var is_completed        : Int
     var is_repeating        : Int

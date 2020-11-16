@@ -29,6 +29,7 @@ struct AddTaskFieldView: View {
             
             let task = Task(id: UUID(),
                             task_id: UUID().uuidString,
+                            date_created: Date(),
                             date_distributed: Date(),
                             is_completed: 0,
                             is_repeating: 0,
