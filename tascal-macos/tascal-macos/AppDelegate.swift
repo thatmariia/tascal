@@ -63,6 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         window.toolbar = NSToolbar()
         window.addTitlebarAccessoryViewController(titlebarAccessory)
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

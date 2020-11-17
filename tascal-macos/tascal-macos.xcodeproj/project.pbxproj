@@ -37,7 +37,6 @@
 		3195BF892555FA5200707ECB /* CalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF882555FA5200707ECB /* CalType.swift */; };
 		3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF982555FC6A00707ECB /* CalManagerView.swift */; };
 		3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */; };
-		3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFA2255600C000707ECB /* CalTypeView_Year.swift */; };
 		3195BFAD2556010300707ECB /* CalTypeView_Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFAC2556010300707ECB /* CalTypeView_Days.swift */; };
 		3195BFB7255601FF00707ECB /* CalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFB6255601FF00707ECB /* CalView.swift */; };
 		3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFC925560D4A00707ECB /* DateInfo.swift */; };
@@ -52,6 +51,8 @@
 		3199F4362563594F00279044 /* DayArrowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F4352563594F00279044 /* DayArrowButtonView.swift */; };
 		3199F43B256365D300279044 /* FoundTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F43A256365D300279044 /* FoundTaskView.swift */; };
 		3199F44025636C4F00279044 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F43F25636C4F00279044 /* TextFieldClearButton.swift */; };
+		31E08AA425638C8A006C0639 /* MonthSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AA325638C8A006C0639 /* MonthSectionView.swift */; };
+		31E08AA92563932B006C0639 /* DayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AA82563932B006C0639 /* DayButtonView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -119,7 +120,6 @@
 		3195BF882555FA5200707ECB /* CalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalType.swift; sourceTree = "<group>"; };
 		3195BF982555FC6A00707ECB /* CalManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManagerView.swift; sourceTree = "<group>"; };
 		3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManagerButtonView.swift; sourceTree = "<group>"; };
-		3195BFA2255600C000707ECB /* CalTypeView_Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Year.swift; sourceTree = "<group>"; };
 		3195BFAC2556010300707ECB /* CalTypeView_Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Days.swift; sourceTree = "<group>"; };
 		3195BFB6255601FF00707ECB /* CalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalView.swift; sourceTree = "<group>"; };
 		3195BFC925560D4A00707ECB /* DateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfo.swift; sourceTree = "<group>"; };
@@ -134,6 +134,8 @@
 		3199F4352563594F00279044 /* DayArrowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayArrowButtonView.swift; sourceTree = "<group>"; };
 		3199F43A256365D300279044 /* FoundTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundTaskView.swift; sourceTree = "<group>"; };
 		3199F43F25636C4F00279044 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
+		31E08AA325638C8A006C0639 /* MonthSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionView.swift; sourceTree = "<group>"; };
+		31E08AA82563932B006C0639 /* DayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButtonView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -224,8 +226,8 @@
 				31EFA02B25596250003DFADF /* NSViewAccessor.swift */,
 				3199F3FF2562025500279044 /* NSTextField.swift */,
 				31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */,
-				3199F415256318AF00279044 /* SidebarView.swift */,
 				31898C37255F297C008FCB77 /* CloudKitHelper.swift */,
+				3199F44725636E7E00279044 /* Sidebar Cal */,
 				3199F41F2563392B00279044 /* Seach */,
 				31750C8D25570098007ACF87 /* Tasks */,
 				3195BFBB255602B900707ECB /* Cal */,
@@ -278,12 +280,12 @@
 		3195BFBC255602DC00707ECB /* calendar management */ = {
 			isa = PBXGroup;
 			children = (
+				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
 				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BFC925560D4A00707ECB /* DateInfo.swift */,
 				31750C832556F105007ACF87 /* CalDate.swift */,
 				31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */,
-				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
 				3199F4352563594F00279044 /* DayArrowButtonView.swift */,
 				3199F430256355BC00279044 /* TodayButtonView.swift */,
 				3199F42B256350A100279044 /* SideCalendarButtonView.swift */,
@@ -304,6 +306,16 @@
 				3199F43A256365D300279044 /* FoundTaskView.swift */,
 			);
 			path = Seach;
+			sourceTree = "<group>";
+		};
+		3199F44725636E7E00279044 /* Sidebar Cal */ = {
+			isa = PBXGroup;
+			children = (
+				3199F415256318AF00279044 /* SidebarView.swift */,
+				31E08AA325638C8A006C0639 /* MonthSectionView.swift */,
+				31E08AA82563932B006C0639 /* DayButtonView.swift */,
+			);
+			path = "Sidebar Cal";
 			sourceTree = "<group>";
 		};
 		31EF9FB62558AD20003DFADF /* TaskView elements */ = {
@@ -332,7 +344,6 @@
 			isa = PBXGroup;
 			children = (
 				31750CEA25576E00007ACF87 /* MonthTitleView.swift */,
-				3195BFA2255600C000707ECB /* CalTypeView_Year.swift */,
 				3195BFAC2556010300707ECB /* CalTypeView_Days.swift */,
 				31EF9FE42558B8D7003DFADF /* Cal elements */,
 			);
@@ -497,6 +508,7 @@
 				3195BF892555FA5200707ECB /* CalType.swift in Sources */,
 				31EFA02C25596250003DFADF /* NSViewAccessor.swift in Sources */,
 				31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */,
+				31E08AA92563932B006C0639 /* DayButtonView.swift in Sources */,
 				31EFA0192559488C003DFADF /* TaskActionsMenuView.swift in Sources */,
 				31898C38255F297C008FCB77 /* CloudKitHelper.swift in Sources */,
 				31EF9FB22558ABA5003DFADF /* DoneEditingButtonView.swift in Sources */,
@@ -519,6 +531,7 @@
 				3195BFB7255601FF00707ECB /* CalView.swift in Sources */,
 				3199F4002562025500279044 /* NSTextField.swift in Sources */,
 				3199F431256355BC00279044 /* TodayButtonView.swift in Sources */,
+				31E08AA425638C8A006C0639 /* MonthSectionView.swift in Sources */,
 				31EFA02425595B1F003DFADF /* ToolbarStyleModifier.swift in Sources */,
 				31750CB1255723FC007ACF87 /* TasksTitleView.swift in Sources */,
 				3199F44025636C4F00279044 /* TextFieldClearButton.swift in Sources */,
@@ -535,7 +548,6 @@
 				31750CEB25576E01007ACF87 /* MonthTitleView.swift in Sources */,
 				31750CB625572528007ACF87 /* TasksView.swift in Sources */,
 				31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */,
-				3195BFA3255600C000707ECB /* CalTypeView_Year.swift in Sources */,
 				31898C33255F24F3008FCB77 /* Task.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,

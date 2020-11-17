@@ -12,14 +12,8 @@ struct CalView: View {
     @EnvironmentObject var dates: DatesSettings
     
     var body: some View {
-        ZStack {
-            switch dates.cal_type {
-            case .year:
-                CalTypeView_Year()
-            case .days:
-                CalTypeView_Days()
-            }
-        }
+        CalTypeView_Days()
+        
     }
 }
 

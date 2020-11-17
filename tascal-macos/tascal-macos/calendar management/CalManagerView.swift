@@ -16,6 +16,8 @@ struct CalManagerView: View {
         HStack {
             Spacer()
             
+            //TODO:: add reload button if no tasks loaded
+            
             SideCalendarButtonView()
             
             Spacer().frame(width: 40)
@@ -29,7 +31,7 @@ struct CalManagerView: View {
             SearchTextFieldView()
             
             Spacer().frame(width: 20)
-        }//.padding()
+        }
 
     }
 }
