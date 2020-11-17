@@ -12,20 +12,23 @@ struct SearchTextFieldView: View {
     @EnvironmentObject var envi: AppEnvironment
     
     @State var search = ""
+    @State var hovering = false
     
     var body: some View {
         
         HStack {
             Button(action: {
                 envi.is_searching.toggle()
-                //toggleSidebar()
             }, label: {
                 Image(systemName: "magnifyingglass.circle.fill")
             })
             .buttonStyle(PlainButtonStyle())
+            .onHover { (hov) in
+                hovering = hov
+            }
+            
             
             if envi.is_searching && envi.search_width > 80 {
-            // TODO:: make a sidebar for search
                 ZStack {
                     
                     if search.isEmpty {
@@ -46,14 +49,14 @@ struct SearchTextFieldView: View {
                     .frame(width: envi.search_width-80)
                     
                 }
-                //.isHidden(!is_searching)
+                
             }
              
             
         }
         .frame(width: (envi.is_searching && envi.search_width > 80) ? envi.search_width-60 : 20)
         .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
-        .modifier(ToolbarStyleModifier(is_arrow: false))
+        .modifier(ToolbarStyleModifier(hovering: hovering && !envi.is_searching))
         
         
     }

@@ -13,48 +13,50 @@ struct SearchSidebarView: View {
     @EnvironmentObject var search: AppEnvironment
     
     var body: some View {
-
-            VStack {
-                
-                List {
-                    ForEach(
-                        Array(Dictionary(grouping:
-                                            tasks.all_tasks.filter {
-                                                ($0.level != -1) && ($0.txt.contains(search.search))
-                                            },
-                                         by: { $0.date_created })
-                                .keys)
-                            .sorted(by: { $0 > $1 }),
-                        id: \.self
+        
+        VStack {
+            
+            List {
+                ForEach(grouped_dates(), id: \.self) { date in
+                    
+                    Section(header: DateHeaderView(date: CalDate(date: date, date_info: DateInfo(date: date)))) {
                         
-                    ) { date in
-                        
-                        Section(header: DateHeaderView(date: CalDate(date: date, date_info: DateInfo(date: date)))) {
-                            ForEach(
-                                tasks.all_tasks.filter {
-                                    ($0.level != -1) && ($0.txt.contains(search.search)) && ($0.date_created == date)
+                        ForEach(tasks_on_date(date: date)) { task in
+                            
+                            VStack {
+                                HStack {
+                                    Text(task.txt)
+                                    Spacer()
                                 }
-                            ) { task in
-                                
-                                VStack {
-                                    HStack {
-                                        Text(task.txt)
-                                        Spacer()
-                                    }
-                                    Divider()
-                                }
+                                Divider()
                             }
                         }
-                        
                     }
                 }
-                
-                Spacer()
-                
             }
-            
+            Spacer()
+        }
+    }
+    
+    fileprivate func tasks_on_date(date: Date) -> [Task] {
+        let t = tasks.all_tasks.filter {
+            ($0.level != -1) && ($0.txt.contains(search.search)) && ($0.date_created == date)
+        }
+        return t
         
-        
+    }
+    
+    
+    fileprivate func grouped_dates() -> [Date] {
+        let d = Array(Dictionary(grouping:
+                                    tasks.all_tasks.filter {
+                                        ($0.level != -1) && ($0.txt.contains(search.search))
+                                    },
+                                 by: { $0.date_created })
+                        .keys)
+            .sorted(by: { $0 > $1 })
+        print("* * * d = ", d)
+        return d
     }
 }
 

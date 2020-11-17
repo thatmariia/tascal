@@ -22,7 +22,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         
-        let contentView = ContentView().environment(\.managedObjectContext, persistentContainer.viewContext)
+        let contentView = ContentView()
+            // TODO: figure out min window size without errors
+            /*.frame(minWidth: 400,
+                   maxWidth: .infinity,
+                   minHeight: 350,
+                   maxHeight: .infinity)*/
+            .environment(\.managedObjectContext, persistentContainer.viewContext)
             .environmentObject(app_environement)
             .environmentObject(dates_settings)
             .environmentObject(tasks_environment)
@@ -31,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         // Create the window and set the content view.
         window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+            contentRect: NSRect(x: 0, y: 0, width: 480, height: 480),
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView, .unifiedTitleAndToolbar],
             backing: .buffered, defer: false)
         window.center()

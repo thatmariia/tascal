@@ -21,25 +21,18 @@ struct ContentView: View {
             
             GeometryReader { geom_window in
                 
-                if envi.is_searching {
+                HSplitView {
                     
-                    // MARK: - searching
+                    MainView(geom_window: geom_window).layoutPriority(1)
+                        .frame(minWidth: 0.5*geom_window.size.width)
                     
-                    HSplitView {
-                        MainView(geom_window: geom_window).layoutPriority(1)
-                            .frame(minWidth: 0.5*geom_window.size.width)
-                        
+                    if envi.is_searching {
                         SearchView()
                             .frame(minWidth: 150, idealWidth: 200)
                     }
                     
-                    //.frame(minWidth: 300)
-                    
-                } else {
-                    
-                    // MARK: - not searching
-                    MainView(geom_window: geom_window)
                 }
+
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .animation(.easeInOut)
@@ -73,6 +66,7 @@ struct ContentView: View {
             TaskManagerView()
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             
+            
             //Divider()
             
             CalView()
@@ -80,6 +74,8 @@ struct ContentView: View {
                 .frame(minHeight: geom_window.size.height * 0.25)
                 .layoutPriority(1)
         }
+        .frame(minWidth: 300)
+        .layoutPriority(1)
     }
     
     fileprivate func fetch_tasks() {

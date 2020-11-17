@@ -47,6 +47,9 @@
 		3199F416256318AF00279044 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F415256318AF00279044 /* SidebarView.swift */; };
 		3199F41B2563341F00279044 /* SearchSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F41A2563341F00279044 /* SearchSidebarView.swift */; };
 		3199F4242563396000279044 /* DateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F4232563396000279044 /* DateHeaderView.swift */; };
+		3199F42C256350A100279044 /* SideCalendarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F42B256350A100279044 /* SideCalendarButtonView.swift */; };
+		3199F431256355BC00279044 /* TodayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F430256355BC00279044 /* TodayButtonView.swift */; };
+		3199F4362563594F00279044 /* DayArrowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F4352563594F00279044 /* DayArrowButtonView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -124,6 +127,9 @@
 		3199F415256318AF00279044 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		3199F41A2563341F00279044 /* SearchSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSidebarView.swift; sourceTree = "<group>"; };
 		3199F4232563396000279044 /* DateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderView.swift; sourceTree = "<group>"; };
+		3199F42B256350A100279044 /* SideCalendarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideCalendarButtonView.swift; sourceTree = "<group>"; };
+		3199F430256355BC00279044 /* TodayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayButtonView.swift; sourceTree = "<group>"; };
+		3199F4352563594F00279044 /* DayArrowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayArrowButtonView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -274,6 +280,9 @@
 				31750C832556F105007ACF87 /* CalDate.swift */,
 				31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */,
 				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
+				3199F4352563594F00279044 /* DayArrowButtonView.swift */,
+				3199F430256355BC00279044 /* TodayButtonView.swift */,
+				3199F42B256350A100279044 /* SideCalendarButtonView.swift */,
 				31EFA02325595B1F003DFADF /* ToolbarStyleModifier.swift */,
 				31EFA03025596566003DFADF /* SearchTextFieldView.swift */,
 				3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */,
@@ -503,15 +512,18 @@
 				3199F416256318AF00279044 /* SidebarView.swift in Sources */,
 				3195BFB7255601FF00707ECB /* CalView.swift in Sources */,
 				3199F4002562025500279044 /* NSTextField.swift in Sources */,
+				3199F431256355BC00279044 /* TodayButtonView.swift in Sources */,
 				31EFA02425595B1F003DFADF /* ToolbarStyleModifier.swift in Sources */,
 				31750CB1255723FC007ACF87 /* TasksTitleView.swift in Sources */,
 				31EF9FCE2558B2DB003DFADF /* IconButtonView.swift in Sources */,
 				31750C842556F105007ACF87 /* CalDate.swift in Sources */,
+				3199F4362563594F00279044 /* DayArrowButtonView.swift in Sources */,
 				31750CC325573029007ACF87 /* TaskViewModifier.swift in Sources */,
 				31750C8925570093007ACF87 /* TaskManagerView.swift in Sources */,
 				3195BF512555F42A00707ECB /* ContentView.swift in Sources */,
 				31750C9F25570BBB007ACF87 /* TaskView.swift in Sources */,
 				31EF9FF32558B969003DFADF /* DateFrameViewModifier.swift in Sources */,
+				3199F42C256350A100279044 /* SideCalendarButtonView.swift in Sources */,
 				31750CEB25576E01007ACF87 /* MonthTitleView.swift in Sources */,
 				31750CB625572528007ACF87 /* TasksView.swift in Sources */,
 				31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */,
