@@ -15,7 +15,7 @@ struct TodayButtonView: View {
     
     var body: some View {
         Button(action: {
-            dates.update_date(date: dates.today.date)
+            dates.update_date(date: Date())
         }) {
             Text("Today")
                 .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))

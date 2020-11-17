@@ -32,10 +32,13 @@ struct SearchTextFieldView: View {
                 ZStack {
                     
                     if search.isEmpty {
-                        Text("Search")
-                            .foregroundColor(Color(.separatorColor))
-                        Spacer()
+                        HStack {
+                            Text("Search")
+                                .foregroundColor(Color(.separatorColor))
+                            Spacer()
+                        }
                     }
+                    HStack {
                     TextField("", text: $search) { (changed) in
                     }
                     onCommit: {
@@ -46,7 +49,9 @@ struct SearchTextFieldView: View {
                         //TODO:: do the search
                     })
                     .textFieldStyle(PlainTextFieldStyle())
+                    .modifier(TextFieldClearButton(text: $search))
                     .frame(width: envi.search_width-80)
+                    }
                     
                 }
                 
