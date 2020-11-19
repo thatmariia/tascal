@@ -45,59 +45,71 @@ func toggleSidebar() {
 }
 
 
-
 struct SidebarView: View {
     
     @EnvironmentObject var dates: DatesSettings
     
     @Environment(\.calendar) var calendar
     
-    let interval = DateInterval(start:  Calendar.current.date(from: DateComponents(year: 2020, month: 1, day: 1))!,
-                                end:    Calendar.current.date(from: DateComponents(year: 2021, month: 1, day: 1))!)
-    let showHeaders: Bool = true
-    //let content: (Date) -> DateView
+    @EnvironmentObject var cal: CalendarEnvironment
     
-    
-    
+    /*var interval = DateInterval(start: Calendar.current.date(from:
+                                                                DateComponents(year: 2020,
+                                                                               month: 1,
+                                                                               day: 1))!,
+                                end: Calendar.current.date(from:
+                                                            DateComponents(year: DateInfo(date: Date()).year+2,
+                                                                           month: DateInfo(date: Date()).month_int,
+                                                                           day: 1))!)*/
+
     var body: some View {
+        
+        GeometryReader { geom in
         
         List {
             
             LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
                 
-                ForEach(months, id: \.self) { month in
+                ForEach(cal.months, id: \.self) { month in
                         
                     Section(header: MonthSectionView(month: month)) {
                         
-                        Text("M")
-                        Text("T")
-                        Text("W")
-                        Text("T")
-                        Text("F")
-                        Text("S")
-                        Text("S")
+                        WeekDaysRowView(wd: "M")
+                        WeekDaysRowView(wd: "T")
+                        WeekDaysRowView(wd: "W")
+                        WeekDaysRowView(wd: "T")
+                        WeekDaysRowView(wd: "F")
+                        WeekDaysRowView(wd: "S")
+                        WeekDaysRowView(wd: "S")
                         
-                        ForEach(days(for: month), id: \.self) { date in
+                        ForEach(cal.days(for: month), id: \.self) { date in
                             
 
                             if calendar.isDate(date, equalTo: month, toGranularity: .month) {
-                                //Text("\(DateInfo(date: date).day)")
-                                DayButtonView(date: date)
+                                DayButtonView(date: date, month: month, width: geom.size.width)
                             } else {
-                                //Text("\(DateInfo(date: date).day)")
-                                DayButtonView(date: date)
-                                    .foregroundColor(Color.secondary)//.hidden()
+                                DayButtonView(date: date, month: month, width: geom.size.width)
+                                    .foregroundColor(Color.secondary)
                             }
                         }
                         
                     }
+                    Spacer().frame(height: 20)
                     
                 }
                 
             }
         }
+        .onNSView(added: { nsview in
+            let root = nsview.subviews[0] as! NSScrollView
+            root.hasVerticalScroller = false
+            root.hasHorizontalScroller = false
+        })
+        //.frame(width: 175)
+        }
     }
     
+    /*
     private var months: [Date] {
         calendar.generateDates(
             inside: interval,
@@ -117,10 +129,11 @@ struct SidebarView: View {
             matching: DateComponents(hour: 0, minute: 0, second: 0)
         )
     }
+ */
 }
 
 
-
+/*
 extension Calendar {
     func generateDates(
         inside interval: DateInterval,
@@ -146,3 +159,4 @@ extension Calendar {
         return dates
     }
 }
+ */

@@ -13,20 +13,32 @@ struct DayButtonView: View {
     
     //var in_month : Bool
     var date: Date
+    var month: Date
+    var width : CGFloat
     
     var body: some View {
+        
         
         Button(action: {
             dates.update_date(date: date)
         }, label: {
-            ZStack{
-            Text("\(DateInfo(date: date).day)")
+            HStack{
+                Text("\(DateInfo(date: date).day)")
+                    .font(.footnote)
+                    //.font(.system(size: width/20)) //.fontWeight(.bold)
+                    .foregroundColor(fg_color())
             }
-                //.foregroundColor(in_month ? Color.primary : Color.secondary)
-                .cornerRadius(10)
-            .foregroundColor(calendar.isDate(date, equalTo: Date(), toGranularity: .day) ? Color.accentColor : Color.clear)
         })
         .buttonStyle(PlainButtonStyle())
-        
+    }
+    
+    fileprivate func fg_color() -> Color {
+        if calendar.isDate(date, equalTo: Date(), toGranularity: .day) && calendar.isDate(date, equalTo: month, toGranularity: .month) {
+            return Color.accentColor
+        }
+        if !calendar.isDate(date, equalTo: month, toGranularity: .month) {
+            return Color.secondary
+        }
+        return Color.primary
     }
 }

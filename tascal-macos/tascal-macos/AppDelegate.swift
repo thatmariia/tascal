@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var dates_settings = DatesSettings()
     var tasks_environment = TasksEnvironment()
     var task_types_setting = TaskTypesSettings()
+    var calendar_environment = CalendarEnvironment()
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -33,6 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .environmentObject(dates_settings)
             .environmentObject(tasks_environment)
             .environmentObject(task_types_setting)
+            .environmentObject(calendar_environment)
         
 
         // Create the window and set the content view.

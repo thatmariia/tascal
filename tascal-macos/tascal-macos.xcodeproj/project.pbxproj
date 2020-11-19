@@ -53,6 +53,8 @@
 		3199F44025636C4F00279044 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3199F43F25636C4F00279044 /* TextFieldClearButton.swift */; };
 		31E08AA425638C8A006C0639 /* MonthSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AA325638C8A006C0639 /* MonthSectionView.swift */; };
 		31E08AA92563932B006C0639 /* DayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AA82563932B006C0639 /* DayButtonView.swift */; };
+		31E08AAE2566F69F006C0639 /* WeekDaysRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */; };
+		31E08ABB25671054006C0639 /* CalendarEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08ABA25671054006C0639 /* CalendarEnvironment.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -136,6 +138,8 @@
 		3199F43F25636C4F00279044 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
 		31E08AA325638C8A006C0639 /* MonthSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSectionView.swift; sourceTree = "<group>"; };
 		31E08AA82563932B006C0639 /* DayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButtonView.swift; sourceTree = "<group>"; };
+		31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysRowView.swift; sourceTree = "<group>"; };
+		31E08ABA25671054006C0639 /* CalendarEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEnvironment.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				3199F415256318AF00279044 /* SidebarView.swift */,
+				31E08ABA25671054006C0639 /* CalendarEnvironment.swift */,
+				31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */,
 				31E08AA325638C8A006C0639 /* MonthSectionView.swift */,
 				31E08AA82563932B006C0639 /* DayButtonView.swift */,
 			);
@@ -543,6 +549,7 @@
 				3195BF512555F42A00707ECB /* ContentView.swift in Sources */,
 				31750C9F25570BBB007ACF87 /* TaskView.swift in Sources */,
 				31EF9FF32558B969003DFADF /* DateFrameViewModifier.swift in Sources */,
+				31E08AAE2566F69F006C0639 /* WeekDaysRowView.swift in Sources */,
 				3199F42C256350A100279044 /* SideCalendarButtonView.swift in Sources */,
 				3199F43B256365D300279044 /* FoundTaskView.swift in Sources */,
 				31750CEB25576E01007ACF87 /* MonthTitleView.swift in Sources */,
@@ -551,6 +558,7 @@
 				31898C33255F24F3008FCB77 /* Task.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,
+				31E08ABB25671054006C0639 /* CalendarEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

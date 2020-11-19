@@ -14,10 +14,12 @@ struct ContentView: View {
     
     var body: some View {
         
-        ZStack{
+        HStack{
+            
         NavigationView {
             
             SidebarView()
+                .frame(width: 175)
             
             GeometryReader { geom_window in
                 
@@ -65,6 +67,7 @@ struct ContentView: View {
             
             TaskManagerView()
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                //.frame(idealHeight: geom_window.size.height * 0.15)
             
             
             //Divider()
