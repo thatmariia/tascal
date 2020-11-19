@@ -17,6 +17,7 @@ struct ToolbarStyleModifier: ViewModifier {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(Color(.separatorColor).opacity(hovering ? 1.0 : 0.0))
             )*/
+            .frame(height: 24)
             .overlay(
                 RoundedRectangle(cornerRadius: 5)
                     .stroke(Color(.separatorColor).opacity(hovering ? 0.0 : 1.0),

@@ -55,6 +55,7 @@
 		31E08AA92563932B006C0639 /* DayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AA82563932B006C0639 /* DayButtonView.swift */; };
 		31E08AAE2566F69F006C0639 /* WeekDaysRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */; };
 		31E08ABB25671054006C0639 /* CalendarEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08ABA25671054006C0639 /* CalendarEnvironment.swift */; };
+		31E08AC025671413006C0639 /* RefreshTasksButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -140,6 +141,7 @@
 		31E08AA82563932B006C0639 /* DayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayButtonView.swift; sourceTree = "<group>"; };
 		31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysRowView.swift; sourceTree = "<group>"; };
 		31E08ABA25671054006C0639 /* CalendarEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEnvironment.swift; sourceTree = "<group>"; };
+		31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTasksButtonView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
+				31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */,
 				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BFC925560D4A00707ECB /* DateInfo.swift */,
@@ -558,6 +561,7 @@
 				31898C33255F24F3008FCB77 /* Task.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,
+				31E08AC025671413006C0639 /* RefreshTasksButtonView.swift in Sources */,
 				31E08ABB25671054006C0639 /* CalendarEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

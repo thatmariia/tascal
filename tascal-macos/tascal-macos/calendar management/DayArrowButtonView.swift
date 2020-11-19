@@ -15,7 +15,8 @@ struct DayArrowButtonView: View {
     
     var body: some View {
         Button(action: {
-            dates.drag_update(on: MoveCommandDirection.left, with: .days)
+            let direction = left ? MoveCommandDirection.left : MoveCommandDirection.right
+            dates.drag_update(on: direction , with: .days)
         }, label: {
             if left {
                 Image(systemName: "arrowtriangle.left.circle.fill")

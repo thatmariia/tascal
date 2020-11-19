@@ -11,26 +11,35 @@ struct CalManagerView: View {
     
     @EnvironmentObject var dates: DatesSettings
     @EnvironmentObject var envi: AppEnvironment
+    @EnvironmentObject var tasks: TasksEnvironment
     
     var body: some View {
         HStack {
+            
             Spacer()
             
-            //TODO:: add reload button if no tasks loaded
-            
-            SideCalendarButtonView()
-            
-            Spacer().frame(width: 40)
-            
-            DayArrowButtonView(left: true)
-            TodayButtonView()
-            DayArrowButtonView(left: false)
-            
-            Spacer().frame(width: 40)
-            
-            SearchTextFieldView()
-            
-            Spacer().frame(width: 20)
+            Group{
+
+                RefreshTasksButtonView()
+                
+                Spacer().frame(width: 30)
+                
+                SideCalendarButtonView()
+                
+                Spacer().frame(width: 30)
+                
+                HStack(spacing: 0) {
+                    DayArrowButtonView(left: true)
+                    TodayButtonView()
+                    DayArrowButtonView(left: false)
+                }
+                
+                Spacer().frame(width: 30)
+                
+                SearchTextFieldView()
+                
+                Spacer().frame(width: 20)
+            }
         }
 
     }

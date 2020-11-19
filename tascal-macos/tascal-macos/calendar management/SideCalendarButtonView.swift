@@ -15,7 +15,7 @@ struct SideCalendarButtonView: View {
         Button(action: {
             toggleSidebar()
         }) {
-            Text("Y")
+            Image(systemName: "square.grid.2x2")
         }
         .frame(minWidth: 20)
         .buttonStyle(PlainButtonStyle())

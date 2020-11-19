@@ -20,7 +20,7 @@ struct SearchTextFieldView: View {
             Button(action: {
                 envi.is_searching.toggle()
             }, label: {
-                Image(systemName: "magnifyingglass.circle.fill")
+                Image(systemName: "magnifyingglass")
             })
             .buttonStyle(PlainButtonStyle())
             .onHover { (hov) in

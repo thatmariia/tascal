@@ -67,10 +67,6 @@ struct ContentView: View {
             
             TaskManagerView()
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                //.frame(idealHeight: geom_window.size.height * 0.15)
-            
-            
-            //Divider()
             
             CalView()
                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
