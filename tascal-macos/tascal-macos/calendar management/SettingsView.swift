@@ -10,10 +10,12 @@ import SwiftUI
 struct SettingsView: View {
     
     @EnvironmentObject var task_types: TaskTypesSettings
+    @EnvironmentObject var tasks: TasksEnvironment
     
     @State var showing = false
     @State var new_type = ""
     @State var hovering = false
+    @State var editing = false
     
     var body: some View {
         
@@ -27,11 +29,27 @@ struct SettingsView: View {
                 
                 Text("Task types:").font(.subheadline)
                 ForEach(task_types.types) { tt in
-                    HStack {
-                        Text(tt.txt)
-                        Spacer()
-                    }
-                    Divider()
+                        
+                        // TODO:: put this in a different file and make its own hovering case
+                        HStack {
+                            if hovering {
+                                TypeActionsMenu(editing: $editing, tt: tt)
+                            }
+                            if !editing {
+                                    Text(tt.txt)
+                                    Spacer()
+                            } else {
+                                Text("EDITING")
+                                Spacer()
+                                // TODO:: edit type
+                            }
+                        
+                        }
+                        .onHover { (hov) in
+                            hovering = hov
+                        }
+                        Divider()
+                    
                 }
                 
                 HStack {
@@ -50,6 +68,7 @@ struct SettingsView: View {
             }
             .padding()
             .buttonStyle(PlainButtonStyle())
+            
         })
         .frame(minWidth: 20)
         .buttonStyle(PlainButtonStyle())
@@ -60,6 +79,8 @@ struct SettingsView: View {
         }
         
     }
+    
+    
     
     fileprivate func add_task_type() {
         
