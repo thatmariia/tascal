@@ -36,7 +36,7 @@ struct TaskActionsMenuView: View {
                     dupl_task.level = -1
                     dupl_task.date_created = Date()
                     
-                    CloudKitHelper.save(task: dupl_task) { (result) in
+                    CloudKitHelper.save_tasks(task: dupl_task) { (result) in
                         switch result {
                         case .success(let dupl_task):
                             self.tasks.all_tasks.insert(dupl_task, at: 0)

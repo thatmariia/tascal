@@ -82,7 +82,7 @@ struct CalTaskView: View {
         var mod_task = task
         mod_task.is_completed = (task.is_completed == 0) ? 1 : 0
         
-        CloudKitHelper.modify(task: mod_task) { (result) in
+        CloudKitHelper.modify_tasks(task: mod_task) { (result) in
             switch result {
             case .success(let item):
                 for i in 0..<self.tasks.all_tasks.count {

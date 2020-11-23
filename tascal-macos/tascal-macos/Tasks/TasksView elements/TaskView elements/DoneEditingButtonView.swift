@@ -32,7 +32,7 @@ struct DoneEditingButtonView: View {
         mod_task.txt = txt
         mod_task.time = Double(time)!
         
-        CloudKitHelper.modify(task: mod_task) { (result) in
+        CloudKitHelper.modify_tasks(task: mod_task) { (result) in
             switch result {
             case .success(let item):
                 for i in 0..<self.tasks.all_tasks.count {

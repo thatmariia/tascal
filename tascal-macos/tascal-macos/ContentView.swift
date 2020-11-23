@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @EnvironmentObject var envi: AppEnvironment
     @EnvironmentObject var tasks: TasksEnvironment
+    @EnvironmentObject var task_types: TaskTypesSettings
     
     var body: some View {
         
@@ -39,6 +40,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .animation(.easeInOut)
             .onAppear(perform: {
+                fetch_tasktypes()
                 fetch_tasks()
             })
             
@@ -78,7 +80,7 @@ struct ContentView: View {
     }
     
     fileprivate func fetch_tasks() {
-        CloudKitHelper.fetch { (result) in
+        CloudKitHelper.fetch_tasks { (result) in
             switch result {
             case .success(let task):
                 self.tasks.all_tasks.append(task)
@@ -87,6 +89,19 @@ struct ContentView: View {
                 print(err.localizedDescription)
             }
         }
+    }
+    
+    fileprivate func fetch_tasktypes() {
+        CloudKitHelper.fetch_tasktypes { (result) in
+            switch result {
+            case .success(let task_type):
+                self.task_types.types.append(task_type)
+                print("Successfully fetched item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+        self.task_types.types = self.task_types.types.sorted(by: { $0.level < $1.level })
     }
 }
 

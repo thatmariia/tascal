@@ -37,7 +37,7 @@ struct AddTaskFieldView: View {
                             time: Double(new_time)!,
                             txt: new_task)
             
-            CloudKitHelper.save(task: task) { (result) in
+            CloudKitHelper.save_tasks(task: task) { (result) in
                 switch result {
                 case .success(let task):
                     self.tasks.all_tasks.insert(task, at: 0)

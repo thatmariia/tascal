@@ -24,7 +24,6 @@ struct TaskTextFieldView: View {
                 }
             }
             TextField("", text: $txt) { (changed) in
-
             } onCommit: {
             }
             .textFieldStyle(PlainTextFieldStyle())

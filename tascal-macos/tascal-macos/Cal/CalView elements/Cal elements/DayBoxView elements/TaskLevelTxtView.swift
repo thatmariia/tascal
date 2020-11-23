@@ -11,14 +11,14 @@ struct TaskLevelTxtView: View {
     
     @EnvironmentObject var task_types: TaskTypesSettings
 
-    var i: Int
+    var txt: String
     
     @State var hov = false
     
     var body: some View {
         HStack {
             
-            Text(task_types.types[i])
+            Text(txt)
                 .font(.system(size: 15)).fontWeight(.semibold)
                 .foregroundColor(Color.accentColor)
             

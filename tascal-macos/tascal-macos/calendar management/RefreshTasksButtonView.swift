@@ -30,7 +30,7 @@ struct RefreshTasksButtonView: View {
     
     fileprivate func refresh_tasks() {
         tasks.all_tasks = []
-        CloudKitHelper.fetch { (result) in
+        CloudKitHelper.fetch_tasks { (result) in
             switch result {
             case .success(let task):
                 self.tasks.all_tasks.append(task)

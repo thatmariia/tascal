@@ -18,7 +18,6 @@ struct TimeTextFieldView: View {
             // MARK: - text field
             //TODO:: figure out accent color and selection color
             TextField("", text: $time) { (changed) in
-                
             } onCommit: {
             }
             .textFieldStyle(PlainTextFieldStyle())

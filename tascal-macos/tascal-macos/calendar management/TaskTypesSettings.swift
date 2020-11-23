@@ -9,8 +9,7 @@ import Foundation
 
 class TaskTypesSettings: ObservableObject {
     
-    //TODO:: upload saved
-    @Published var types : [String] = ["Must", "Should", "Want"]
+    @Published var types : [TaskType] = []
     
     
 }

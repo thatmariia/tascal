@@ -36,6 +36,10 @@ struct CalManagerView: View {
                 
                 Spacer().frame(width: 30)
                 
+                SettingsView()
+                
+                Spacer().frame(width: 30)
+                
                 SearchTextFieldView()
                 
                 Spacer().frame(width: 20)

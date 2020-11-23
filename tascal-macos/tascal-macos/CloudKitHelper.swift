@@ -14,6 +14,7 @@ struct CloudKitHelper {
     // MARK: - record types
     struct RecordType {
         static let Tasks = "Tasks"
+        static let TaskTypes = "TaskTypes"
     }
     
     // MARK: - errors
@@ -25,7 +26,8 @@ struct CloudKitHelper {
     }
     
     // MARK: - saving to CloudKit
-    static func save(task: Task, completion: @escaping (Result<Task, Error>) -> ()) {
+    
+    static func save_tasks(task: Task, completion: @escaping (Result<Task, Error>) -> ()) {
         let itemRecord = CKRecord(recordType: RecordType.Tasks)
         
         itemRecord["task_id"]           = task.task_id          as CKRecordValue
@@ -98,8 +100,49 @@ struct CloudKitHelper {
         
     }
     
+    static func save_tasktypes(task_type: TaskType, completion: @escaping (Result<TaskType, Error>) -> ()) {
+        let itemRecord = CKRecord(recordType: RecordType.TaskTypes)
+        
+        itemRecord["level"] = task_type.level   as CKRecordValue
+        itemRecord["txt"]   = task_type.txt     as CKRecordValue
+        
+        CKContainer.default().privateCloudDatabase.save(itemRecord) { (record, err) in
+            DispatchQueue.main.async {
+                if let err = err {
+                    completion(.failure(err))
+                    return
+                }
+                guard let record = record else {
+                    completion(.failure(CloudKitHelperError.recordFailure))
+                    return
+                }
+                
+                let record_id = record.recordID
+                
+                guard let level = record["level"] as? Int else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
+                
+                guard let txt = record["txt"] as? String else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
+                
+                let task_type = TaskType(record_id: record_id,
+                                         level: level,
+                                         txt: txt)
+                
+                completion(.success(task_type))
+            }
+        }
+        
+        
+    }
+    
     // MARK: - fetching from CloudKit
-    static func fetch(completion: @escaping (Result<Task, Error>) -> ()) {
+    
+    static func fetch_tasks(completion: @escaping (Result<Task, Error>) -> ()) {
         let pred = NSPredicate(value: true)
         let sort = NSSortDescriptor(key: "creationDate", ascending: false)
         let query = CKQuery(recordType: RecordType.Tasks, predicate: pred)
@@ -115,7 +158,7 @@ struct CloudKitHelper {
                                  "time",
                                  "txt"]
         operation.resultsLimit = 1000
-         
+        
         
         operation.recordFetchedBlock = { record in
             DispatchQueue.main.async {
@@ -184,7 +227,61 @@ struct CloudKitHelper {
         CKContainer.default().privateCloudDatabase.add(operation)
     }
     
+    static func fetch_tasktypes(completion: @escaping (Result<TaskType, Error>) -> ()) {
+        let pred = NSPredicate(value: true)
+        // TODO:: check if that crashes
+        //let sort = NSSortDescriptor(key: "level", ascending: false)
+        let query = CKQuery(recordType: RecordType.TaskTypes, predicate: pred)
+        //query.sortDescriptors = [sort]
+        
+        let operation = CKQueryOperation(query: query)
+        operation.desiredKeys = ["level",
+                                 "txt"]
+        operation.resultsLimit = 1000
+        
+        
+        operation.recordFetchedBlock = { record in
+            DispatchQueue.main.async {
+                let record_id = record.recordID
+                
+                guard let level = record["level"] as? Int else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
+                
+                guard let txt = record["txt"] as? String else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
+                
+                let task_type = TaskType(record_id: record_id,
+                                         level: level,
+                                         txt: txt)
+                
+                completion(.success(task_type))
+            }
+        }
+        
+        operation.queryCompletionBlock = { (/*cursor*/ _, err) in
+            DispatchQueue.main.async {
+                if let err = err {
+                    completion(.failure(err))
+                    return
+                }
+                //                guard let cursor = cursor else {
+                //                    completion(.failure(CloudKitHelperError.cursorFailure))
+                //                    return
+                //                }
+                //                print("Cursor: \(String(describing: cursor))")
+            }
+            
+        }
+        
+        CKContainer.default().privateCloudDatabase.add(operation)
+    }
+    
     // MARK: - delete from CloudKit
+    
     static func delete(recordID: CKRecord.ID, completion: @escaping (Result<CKRecord.ID, Error>) -> ()) {
         CKContainer.default().privateCloudDatabase.delete(withRecordID: recordID) { (recordID, err) in
             DispatchQueue.main.async {
@@ -202,7 +299,8 @@ struct CloudKitHelper {
     }
     
     // MARK: - modify in CloudKit
-    static func modify(task: Task, completion: @escaping (Result<Task, Error>) -> ()) {
+    
+    static func modify_tasks(task: Task, completion: @escaping (Result<Task, Error>) -> ()) {
         guard let recordID = task.record_id else { return }
         CKContainer.default().privateCloudDatabase.fetch(withRecordID: recordID) { record, err in
             if let err = err {
@@ -235,7 +333,7 @@ struct CloudKitHelper {
                         completion(.failure(CloudKitHelperError.recordFailure))
                         return
                     }
-            
+                    
                     let record_id = record.recordID
                     
                     guard let task_id = record["task_id"] as? String else {
@@ -281,6 +379,57 @@ struct CloudKitHelper {
                                     txt: txt)
                     
                     completion(.success(task))
+                }
+            }
+        }
+    }
+    
+    static func modify_tasktypes(task_type: TaskType, completion: @escaping (Result<TaskType, Error>) -> ()) {
+        guard let recordID = task_type.record_id else { return }
+        CKContainer.default().privateCloudDatabase.fetch(withRecordID: recordID) { record, err in
+            if let err = err {
+                DispatchQueue.main.async {
+                    completion(.failure(err))
+                }
+                return
+            }
+            guard let record = record else {
+                DispatchQueue.main.async {
+                    completion(.failure(CloudKitHelperError.recordFailure))
+                }
+                return
+            }
+            record["level"]             = task_type.level            as CKRecordValue
+            record["txt"]               = task_type.txt              as CKRecordValue
+            
+            CKContainer.default().privateCloudDatabase.save(record) { (record, err) in
+                DispatchQueue.main.async {
+                    if let err = err {
+                        completion(.failure(err))
+                        return
+                    }
+                    guard let record = record else {
+                        completion(.failure(CloudKitHelperError.recordFailure))
+                        return
+                    }
+                    
+                    let record_id = record.recordID
+                    
+                    guard let level = record["level"] as? Int else {
+                        completion(.failure(CloudKitHelperError.castFailure))
+                        return
+                    }
+                    
+                    guard let txt = record["txt"] as? String else {
+                        completion(.failure(CloudKitHelperError.castFailure))
+                        return
+                    }
+                    
+                    let task_type = TaskType(record_id: record_id,
+                                             level: level,
+                                             txt: txt)
+                    
+                    completion(.success(task_type))
                 }
             }
         }

@@ -21,11 +21,11 @@ struct DayBoxView: View {
             DateButtonBoxView(date: date)
             
             List{
-                ForEach(0..<task_types.types.count) { i in
-                    Section(header: TaskLevelTxtView(i: i)) {
+                ForEach(task_types.types) { type in
+                    Section(header: TaskLevelTxtView(txt: type.txt)) {
                         TaskList(tasks: tasks.all_tasks
                                     .filter {
-                                        calendar.isDate($0.date_distributed, inSameDayAs: date.date) && ($0.level == i)
+                                        calendar.isDate($0.date_distributed, inSameDayAs: date.date) && ($0.level == type.level)
                                     }
                                     .sorted(by: {
                                         $0.is_completed < $1.is_completed
@@ -54,10 +54,10 @@ struct DayBoxView: View {
                                     }
                                 }
                                 if (task == nil) { return }
-                                task!.level = i
+                                task!.level = type.level
                                 task?.date_distributed = date.date
                                 
-                                CloudKitHelper.modify(task: task!) { (result) in
+                                CloudKitHelper.modify_tasks(task: task!) { (result) in
                                     switch result {
                                     case .success(let item):
                                         for i in 0..<tasks.all_tasks.count {

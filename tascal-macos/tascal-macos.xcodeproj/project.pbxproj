@@ -56,6 +56,8 @@
 		31E08AAE2566F69F006C0639 /* WeekDaysRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */; };
 		31E08ABB25671054006C0639 /* CalendarEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08ABA25671054006C0639 /* CalendarEnvironment.swift */; };
 		31E08AC025671413006C0639 /* RefreshTasksButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */; };
+		31E30ABC256B3D76005EE4DF /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30ABB256B3D76005EE4DF /* TaskType.swift */; };
+		31E30AC4256B437E005EE4DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AC3256B437E005EE4DF /* SettingsView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -142,6 +144,8 @@
 		31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaysRowView.swift; sourceTree = "<group>"; };
 		31E08ABA25671054006C0639 /* CalendarEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEnvironment.swift; sourceTree = "<group>"; };
 		31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTasksButtonView.swift; sourceTree = "<group>"; };
+		31E30ABB256B3D76005EE4DF /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
+		31E30AC3256B437E005EE4DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -286,7 +290,10 @@
 		3195BFBC255602DC00707ECB /* calendar management */ = {
 			isa = PBXGroup;
 			children = (
+				3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */,
+				31E30ABB256B3D76005EE4DF /* TaskType.swift */,
 				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
+				31E30AC3256B437E005EE4DF /* SettingsView.swift */,
 				31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */,
 				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
@@ -300,7 +307,6 @@
 				31EFA03025596566003DFADF /* SearchTextFieldView.swift */,
 				3199F43F25636C4F00279044 /* TextFieldClearButton.swift */,
 				3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */,
-				3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */,
 			);
 			path = "calendar management";
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				31E08AA92563932B006C0639 /* DayButtonView.swift in Sources */,
 				31EFA0192559488C003DFADF /* TaskActionsMenuView.swift in Sources */,
 				31898C38255F297C008FCB77 /* CloudKitHelper.swift in Sources */,
+				31E30AC4256B437E005EE4DF /* SettingsView.swift in Sources */,
 				31EF9FB22558ABA5003DFADF /* DoneEditingButtonView.swift in Sources */,
 				3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */,
 				3195BFD2255691D000707ECB /* DayBoxView.swift in Sources */,
@@ -562,6 +569,7 @@
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,
 				31E08AC025671413006C0639 /* RefreshTasksButtonView.swift in Sources */,
+				31E30ABC256B3D76005EE4DF /* TaskType.swift in Sources */,
 				31E08ABB25671054006C0639 /* CalendarEnvironment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -64,7 +64,7 @@ struct TasksView: View {
                         task!.level = -1
                         task!.is_completed = 0
                         
-                        CloudKitHelper.modify(task: task!) { (result) in
+                        CloudKitHelper.modify_tasks(task: task!) { (result) in
                             switch result {
                             case .success(let item):
                                 for i in 0..<tasks.all_tasks.count {
