@@ -59,6 +59,7 @@
 		31E30ABC256B3D76005EE4DF /* TaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30ABB256B3D76005EE4DF /* TaskType.swift */; };
 		31E30AC4256B437E005EE4DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AC3256B437E005EE4DF /* SettingsView.swift */; };
 		31E30AC9256B5404005EE4DF /* TypeActionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AC8256B5404005EE4DF /* TypeActionsMenu.swift */; };
+		31E30ACE256C7737005EE4DF /* TypeSettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30ACD256C7737005EE4DF /* TypeSettingsRowView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -148,6 +149,7 @@
 		31E30ABB256B3D76005EE4DF /* TaskType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskType.swift; sourceTree = "<group>"; };
 		31E30AC3256B437E005EE4DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		31E30AC8256B5404005EE4DF /* TypeActionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeActionsMenu.swift; sourceTree = "<group>"; };
+		31E30ACD256C7737005EE4DF /* TypeSettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSettingsRowView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				31E30ABB256B3D76005EE4DF /* TaskType.swift */,
 				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
 				31E30AC3256B437E005EE4DF /* SettingsView.swift */,
+				31E30ACD256C7737005EE4DF /* TypeSettingsRowView.swift */,
 				31E30AC8256B5404005EE4DF /* TypeActionsMenu.swift */,
 				31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */,
 				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
@@ -521,6 +524,7 @@
 			files = (
 				31750C7F2556F04F007ACF87 /* DateButtonBoxView.swift in Sources */,
 				3195BF542555F42A00707ECB /* tascal_macos.xcdatamodeld in Sources */,
+				31E30ACE256C7737005EE4DF /* TypeSettingsRowView.swift in Sources */,
 				31750CA925570DE3007ACF87 /* TaskLevelTxtView.swift in Sources */,
 				31EFA03125596566003DFADF /* SearchTextFieldView.swift in Sources */,
 				3195BF892555FA5200707ECB /* CalType.swift in Sources */,

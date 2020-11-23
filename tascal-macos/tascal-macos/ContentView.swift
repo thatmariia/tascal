@@ -101,7 +101,6 @@ struct ContentView: View {
                 print(err.localizedDescription)
             }
         }
-        self.task_types.types = self.task_types.types.sorted(by: { $0.level < $1.level })
     }
 }
 

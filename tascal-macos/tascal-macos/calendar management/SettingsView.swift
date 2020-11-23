@@ -15,7 +15,6 @@ struct SettingsView: View {
     @State var showing = false
     @State var new_type = ""
     @State var hovering = false
-    @State var editing = false
     
     var body: some View {
         
@@ -31,24 +30,7 @@ struct SettingsView: View {
                 ForEach(task_types.types) { tt in
                         
                         // TODO:: put this in a different file and make its own hovering case
-                        HStack {
-                            if hovering {
-                                TypeActionsMenu(editing: $editing, tt: tt)
-                            }
-                            if !editing {
-                                    Text(tt.txt)
-                                    Spacer()
-                            } else {
-                                Text("EDITING")
-                                Spacer()
-                                // TODO:: edit type
-                            }
-                        
-                        }
-                        .onHover { (hov) in
-                            hovering = hov
-                        }
-                        Divider()
+                    TypeSettingsRowView(tt: tt)
                     
                 }
                 
@@ -68,6 +50,8 @@ struct SettingsView: View {
             }
             .padding()
             .buttonStyle(PlainButtonStyle())
+            // TODO:: move hovering
+            
             
         })
         .frame(minWidth: 20)

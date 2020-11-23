@@ -87,7 +87,7 @@ struct TypeActionsMenu: View {
         CloudKitHelper.save_tasktypes(task_type: new_task_type) { (result) in
             switch result {
             case .success(let new_task_type):
-                self.task_types.types.append(new_task_type)
+                self.task_types.types.insert(new_task_type, at: new_task_type.level-1)//append(new_task_type)
                 print("Successfully added item")
             case .failure(let err):
                 print(err.localizedDescription)
@@ -95,7 +95,6 @@ struct TypeActionsMenu: View {
         }
     }
     
-    // TODO:: fix
     fileprivate func push_up_tasks() {
         let lvl = tt.level
         
@@ -123,7 +122,6 @@ struct TypeActionsMenu: View {
         }
     }
     
-    // TODO:: fix
     fileprivate func push_up_types() {
         let lvl = tt.level
         
@@ -166,7 +164,6 @@ struct TypeActionsMenu: View {
         }
     }
     
-    // TODO:: fix
     fileprivate func push_down_tasks(lvl: Int) {
         if lvl == 1 { return }
         
@@ -194,7 +191,6 @@ struct TypeActionsMenu: View {
         }
     }
     
-    // TODO:: fix
     fileprivate func push_down_types(lvl: Int) {
         if lvl == task_types.types.count { return }
         

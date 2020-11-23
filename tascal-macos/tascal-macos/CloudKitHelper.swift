@@ -229,10 +229,9 @@ struct CloudKitHelper {
     
     static func fetch_tasktypes(completion: @escaping (Result<TaskType, Error>) -> ()) {
         let pred = NSPredicate(value: true)
-        // TODO:: check if that crashes
-        //let sort = NSSortDescriptor(key: "level", ascending: false)
+        let sort = NSSortDescriptor(key: "level", ascending: true)
         let query = CKQuery(recordType: RecordType.TaskTypes, predicate: pred)
-        //query.sortDescriptors = [sort]
+        query.sortDescriptors = [sort]
         
         let operation = CKQueryOperation(query: query)
         operation.desiredKeys = ["level",
