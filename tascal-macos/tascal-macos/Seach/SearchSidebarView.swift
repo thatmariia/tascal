@@ -18,7 +18,7 @@ struct SearchSidebarView: View {
             
             List {
                 if grouped_dates().count == 0 {
-                    Text("No tasks found")
+                    Text("No tasks found").foregroundColor(Color.secondary)
                 }
                 
                 ForEach(grouped_dates(), id: \.self) { date in

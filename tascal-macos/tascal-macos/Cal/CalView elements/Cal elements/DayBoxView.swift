@@ -32,7 +32,8 @@ struct DayBoxView: View {
                                     }))
                         
                             
-                    }.animation(.easeInOut)
+                    }
+                    .animation(.easeInOut)
                     // MARK: - on drop
                     .onDrop(of: NSString.readableTypeIdentifiersForItemProvider, isTargeted: nil, perform: { (ips) -> Bool in
                         

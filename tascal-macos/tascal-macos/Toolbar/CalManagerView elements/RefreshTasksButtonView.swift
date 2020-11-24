@@ -9,12 +9,14 @@ import SwiftUI
 
 struct RefreshTasksButtonView: View {
     
+    @EnvironmentObject var task_types: TaskTypesSettings
     @EnvironmentObject var tasks: TasksEnvironment
     
     @State var hovering = false
     
     var body: some View {
         Button(action: {
+            refresh_types()
             refresh_tasks()
         }, label: {
             Image(systemName: "arrow.clockwise")
@@ -25,6 +27,19 @@ struct RefreshTasksButtonView: View {
         .modifier(ToolbarStyleModifier(hovering: hovering))
         .onHover { (hov) in
             hovering = hov
+        }
+    }
+    
+    fileprivate func refresh_types() {
+        task_types.types = []
+        CloudKitHelper.fetch_tasktypes { (result) in
+            switch result {
+            case .success(let task_type):
+                self.task_types.types.append(task_type)
+                print("Successfully fetched item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
     

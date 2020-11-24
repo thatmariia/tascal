@@ -62,6 +62,7 @@
 		31E30AD4256C80BF005EE4DF /* TaskTypeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AD3256C80BF005EE4DF /* TaskTypeTextFieldView.swift */; };
 		31E30AD9256C8828005EE4DF /* AddTaskTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AD8256C8828005EE4DF /* AddTaskTypeView.swift */; };
 		31E30ADE256C890D005EE4DF /* TaskTypesTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30ADD256C890D005EE4DF /* TaskTypesTitleView.swift */; };
+		31E30B09256CA579005EE4DF /* NSTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30B08256CA579005EE4DF /* NSTableView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -154,6 +155,7 @@
 		31E30AD3256C80BF005EE4DF /* TaskTypeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeTextFieldView.swift; sourceTree = "<group>"; };
 		31E30AD8256C8828005EE4DF /* AddTaskTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskTypeView.swift; sourceTree = "<group>"; };
 		31E30ADD256C890D005EE4DF /* TaskTypesTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypesTitleView.swift; sourceTree = "<group>"; };
+		31E30B08256CA579005EE4DF /* NSTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				3199F4102563092E00279044 /* View.swift */,
 				3188BD4D255A1CF80039CE56 /* DividerView.swift */,
 				31EFA02B25596250003DFADF /* NSViewAccessor.swift */,
+				31E30B08256CA579005EE4DF /* NSTableView.swift */,
 				3199F3FF2562025500279044 /* NSTextField.swift */,
 				31EF9FCD2558B2DB003DFADF /* IconButtonView.swift */,
 				31898C37255F297C008FCB77 /* CloudKitHelper.swift */,
@@ -608,6 +611,7 @@
 				31750CF325577285007ACF87 /* DayBoxViewModifier.swift in Sources */,
 				3199F41B2563341F00279044 /* SearchSidebarView.swift in Sources */,
 				31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */,
+				31E30B09256CA579005EE4DF /* NSTableView.swift in Sources */,
 				3188BD4E255A1CF80039CE56 /* DividerView.swift in Sources */,
 				3199F4112563092E00279044 /* View.swift in Sources */,
 				3195BF842555F99F00707ECB /* AppEnvironment.swift in Sources */,

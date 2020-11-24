@@ -22,11 +22,11 @@ struct CalManagerView: View {
 
                 RefreshTasksButtonView()
                 
-                Spacer().frame(width: 30)
+                Spacer().frame(width: 20)
                 
                 SideCalendarButtonView()
                 
-                Spacer().frame(width: 30)
+                Spacer().frame(width: 20)
                 
                 HStack(spacing: 0) {
                     DayArrowButtonView(left: true)
@@ -34,11 +34,11 @@ struct CalManagerView: View {
                     DayArrowButtonView(left: false)
                 }
                 
-                Spacer().frame(width: 30)
+                Spacer().frame(width: 20)
                 
                 SettingsView()
                 
-                Spacer().frame(width: 30)
+                Spacer().frame(width: 20)
                 
                 SearchTextFieldView()
                 
