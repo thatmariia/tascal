@@ -9,15 +9,12 @@ import SwiftUI
 
 struct TaskTypesTitleView: View {
     var body: some View {
-        HStack {
-            Text("Task types").font(.system(size: 20)).fontWeight(.bold)
-            Spacer()
+        VStack {
+            HStack {
+                Text("Task types").font(.system(size: 20)).fontWeight(.bold)
+                Spacer()
+            }
+            Divider()
         }
-    }
-}
-
-struct TaskTypesTitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskTypesTitleView()
     }
 }

@@ -14,21 +14,26 @@ struct AddTaskTypeView: View {
     @State var new_type = ""
     
     var body: some View {
-        HStack {
-            Button(action: {
-                add_task_type()
-                new_type = ""
-            }, label: {
-                Image(systemName: "plus.circle.fill")
-                    .foregroundColor(Color.accentColor)
-            })
-            .disabled(new_type.count == 0)
-            
-            TextField("Add type", text: $new_type)
-                .textFieldStyle(PlainTextFieldStyle())
-                .frame(width: 200)
+        VStack {
+            Spacer()
+            HStack {
+                Button(action: {
+                    add_task_type()
+                    new_type = ""
+                }, label: {
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundColor(Color.accentColor)
+                })
+                .disabled(new_type.count == 0)
+                
+                TextField("Add type", text: $new_type)
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .frame(width: 200)
+            }
+            .frame(height: 20)
+            Spacer()
+            Divider()
         }
-        .frame(height: 24)
     }
     
     fileprivate func add_task_type() {

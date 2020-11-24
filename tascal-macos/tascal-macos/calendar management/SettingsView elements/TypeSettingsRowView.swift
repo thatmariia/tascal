@@ -15,16 +15,21 @@ struct TypeSettingsRowView: View {
     var tt: TaskType
     
     var body: some View {
-        HStack {
-            if hovering && !editing {
-                TypeActionsMenu(editing: $editing, tt: tt)
+        VStack {
+            HStack {
+                if hovering && !editing {
+                    TypeActionsMenu(editing: $editing, tt: tt)
+                }
+                if !editing {
+                    Text(tt.txt)
+                    Spacer()
+                } else {
+                    TaskTypeTextFieldView(tt: tt, edit_type: tt.txt)
+                }
             }
-            if !editing {
-                Text(tt.txt)
-                Spacer()
-            } else {
-                TaskTypeTextFieldView(tt: tt, edit_type: tt.txt  )
-            }
+            // TODO:: why on earth doesnt it keep the height
+            .frame(height: 20)
+            Divider()
         }
         .onHover { (hov) in
             hovering = hov

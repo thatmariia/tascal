@@ -15,27 +15,11 @@ struct TaskTypeTextFieldView: View {
     @State var edit_type: String
     
     var body: some View {
-        
+        VStack {
+        Spacer()
         HStack {
             Button(action: {
-                var updated_tt = tt
-                updated_tt.txt = edit_type
-                
-                CloudKitHelper.modify_tasktypes(task_type: updated_tt) { (result) in
-                    switch result {
-                    case .success(let item):
-                        for i in 0..<task_types.types.count {
-                            let currentItem = task_types.types[i]
-                            if currentItem.record_id == item.record_id {
-                                task_types.types[i] = item
-                            }
-                        }
-                        print("Successfully modified item")
-                    case .failure(let err):
-                        print(err.localizedDescription)
-                    }
-                }
-
+                modify_type()
             }, label: {
                 Image(systemName: "pin.circle.fill")
                     .foregroundColor(Color.accentColor)
@@ -44,6 +28,28 @@ struct TaskTypeTextFieldView: View {
             
             TextField("", text: $edit_type)
                 .textFieldStyle(PlainTextFieldStyle())
+        }
+            Spacer()
+        }
+    }
+    
+    fileprivate func modify_type() {
+        var updated_tt = tt
+        updated_tt.txt = edit_type
+        
+        CloudKitHelper.modify_tasktypes(task_type: updated_tt) { (result) in
+            switch result {
+            case .success(let item):
+                for i in 0..<task_types.types.count {
+                    let currentItem = task_types.types[i]
+                    if currentItem.record_id == item.record_id {
+                        task_types.types[i] = item
+                    }
+                }
+                print("Successfully modified item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         }
     }
 }

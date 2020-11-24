@@ -26,15 +26,12 @@ struct SettingsView: View {
             VStack {
                 
                 TaskTypesTitleView()
-                Divider()
                 
                 ForEach(task_types.types) { tt in
                     TypeSettingsRowView(tt: tt)
-                    Divider()
                 }
 
                 AddTaskTypeView()
-                Divider()
                 
             }
             .padding()
