@@ -300,13 +300,13 @@
 		3195BFBC255602DC00707ECB /* calendar management */ = {
 			isa = PBXGroup;
 			children = (
+				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
 				3188BD3D255A18800039CE56 /* TaskTypesSettings.swift */,
 				31E30ABB256B3D76005EE4DF /* TaskType.swift */,
 				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
 				31E30AC3256B437E005EE4DF /* SettingsView.swift */,
 				31E30AD2256C808F005EE4DF /* SettingsView elements */,
 				31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */,
-				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
 				3195BFC925560D4A00707ECB /* DateInfo.swift */,
 				31750C832556F105007ACF87 /* CalDate.swift */,
@@ -335,11 +335,9 @@
 		3199F44725636E7E00279044 /* Sidebar Cal */ = {
 			isa = PBXGroup;
 			children = (
-				3199F415256318AF00279044 /* SidebarView.swift */,
 				31E08ABA25671054006C0639 /* CalendarEnvironment.swift */,
-				31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */,
-				31E08AA325638C8A006C0639 /* MonthSectionView.swift */,
-				31E08AA82563932B006C0639 /* DayButtonView.swift */,
+				3199F415256318AF00279044 /* SidebarView.swift */,
+				31E30AE8256C9A88005EE4DF /* SidebarView elements */,
 			);
 			path = "Sidebar Cal";
 			sourceTree = "<group>";
@@ -354,6 +352,16 @@
 				31E30ADD256C890D005EE4DF /* TaskTypesTitleView.swift */,
 			);
 			path = "SettingsView elements";
+			sourceTree = "<group>";
+		};
+		31E30AE8256C9A88005EE4DF /* SidebarView elements */ = {
+			isa = PBXGroup;
+			children = (
+				31E08AAD2566F69F006C0639 /* WeekDaysRowView.swift */,
+				31E08AA325638C8A006C0639 /* MonthSectionView.swift */,
+				31E08AA82563932B006C0639 /* DayButtonView.swift */,
+			);
+			path = "SidebarView elements";
 			sourceTree = "<group>";
 		};
 		31EF9FB62558AD20003DFADF /* TaskView elements */ = {

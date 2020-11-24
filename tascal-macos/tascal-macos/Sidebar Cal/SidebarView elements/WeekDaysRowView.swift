@@ -16,6 +16,8 @@ struct WeekDaysRowView: View {
             Spacer().frame(height: 8)
             Text(wd)
                 .font(.footnote)
+                .fontWeight(.bold)
+                .foregroundColor(Color.secondary)
             Spacer().frame(height: 8)
         }
     }

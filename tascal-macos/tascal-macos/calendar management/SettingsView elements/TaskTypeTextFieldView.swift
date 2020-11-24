@@ -16,19 +16,19 @@ struct TaskTypeTextFieldView: View {
     
     var body: some View {
         VStack {
-        Spacer()
-        HStack {
-            Button(action: {
-                modify_type()
-            }, label: {
-                Image(systemName: "pin.circle.fill")
-                    .foregroundColor(Color.accentColor)
-            })
-            .disabled(edit_type.count == 0)
-            
-            TextField("", text: $edit_type)
-                .textFieldStyle(PlainTextFieldStyle())
-        }
+            Spacer()
+            HStack {
+                Button(action: {
+                    modify_type()
+                }, label: {
+                    Image(systemName: "pin.circle.fill")
+                        .foregroundColor(Color.accentColor)
+                })
+                .disabled(edit_type.count == 0)
+                
+                TextField("", text: $edit_type)
+                    .textFieldStyle(PlainTextFieldStyle())
+            }
             Spacer()
         }
     }
