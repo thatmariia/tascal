@@ -13,7 +13,6 @@ struct SettingsView: View {
     @EnvironmentObject var tasks: TasksEnvironment
     
     @State var showing = false
-    @State var new_type = ""
     @State var hovering = false
     
     var body: some View {
@@ -26,31 +25,20 @@ struct SettingsView: View {
         .popover(isPresented: $showing, content: {
             VStack {
                 
-                Text("Task types:").font(.subheadline)
-                ForEach(task_types.types) { tt in
-                        
-                        // TODO:: put this in a different file and make its own hovering case
-                    TypeSettingsRowView(tt: tt)
-                    
-                }
+                TaskTypesTitleView()
+                Divider()
                 
-                HStack {
-                    Button(action: {
-                        add_task_type()
-                        new_type = ""
-                    }, label: {
-                        Image(systemName: "plus.circle.fill")
-                            .foregroundColor(Color.accentColor)
-                    })
-                    
-                    TextField("", text: $new_type)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .frame(width: 200)
+                ForEach(task_types.types) { tt in
+                    TypeSettingsRowView(tt: tt)
+                    Divider()
                 }
+
+                AddTaskTypeView()
+                Divider()
+                
             }
             .padding()
             .buttonStyle(PlainButtonStyle())
-            // TODO:: move hovering
             
             
         })
@@ -63,26 +51,7 @@ struct SettingsView: View {
         }
         
     }
-    
-    
-    
-    fileprivate func add_task_type() {
-        
-        let task_type = TaskType(id: UUID(),
-                                 level: task_types.types.count+1,
-                                 txt: new_type)
-        
-        CloudKitHelper.save_tasktypes(task_type: task_type) { (result) in
-            switch result {
-            case .success(let task_type):
-                self.task_types.types.append(task_type)
-                print("Successfully added item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-        
-    }
+
 }
 
 struct SettingsView_Previews: PreviewProvider {

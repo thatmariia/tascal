@@ -26,7 +26,6 @@ struct TypeActionsMenu: View {
         }, label: {
             Image(systemName: "ellipsis.circle.fill")
                 .foregroundColor(Color.accentColor)
-                .frame(width: 10)
         })
         .popover(isPresented: $showing, content: {
             

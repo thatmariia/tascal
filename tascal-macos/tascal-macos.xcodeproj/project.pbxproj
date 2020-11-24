@@ -60,6 +60,9 @@
 		31E30AC4256B437E005EE4DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AC3256B437E005EE4DF /* SettingsView.swift */; };
 		31E30AC9256B5404005EE4DF /* TypeActionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AC8256B5404005EE4DF /* TypeActionsMenu.swift */; };
 		31E30ACE256C7737005EE4DF /* TypeSettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30ACD256C7737005EE4DF /* TypeSettingsRowView.swift */; };
+		31E30AD4256C80BF005EE4DF /* TaskTypeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AD3256C80BF005EE4DF /* TaskTypeTextFieldView.swift */; };
+		31E30AD9256C8828005EE4DF /* AddTaskTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30AD8256C8828005EE4DF /* AddTaskTypeView.swift */; };
+		31E30ADE256C890D005EE4DF /* TaskTypesTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E30ADD256C890D005EE4DF /* TaskTypesTitleView.swift */; };
 		31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9F72255858D5003DFADF /* TasksEnvironment.swift */; };
 		31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */; };
 		31EF9FAA2558AB03003DFADF /* TaskTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */; };
@@ -150,6 +153,9 @@
 		31E30AC3256B437E005EE4DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		31E30AC8256B5404005EE4DF /* TypeActionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeActionsMenu.swift; sourceTree = "<group>"; };
 		31E30ACD256C7737005EE4DF /* TypeSettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSettingsRowView.swift; sourceTree = "<group>"; };
+		31E30AD3256C80BF005EE4DF /* TaskTypeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypeTextFieldView.swift; sourceTree = "<group>"; };
+		31E30AD8256C8828005EE4DF /* AddTaskTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskTypeView.swift; sourceTree = "<group>"; };
+		31E30ADD256C890D005EE4DF /* TaskTypesTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTypesTitleView.swift; sourceTree = "<group>"; };
 		31EF9F72255858D5003DFADF /* TasksEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksEnvironment.swift; sourceTree = "<group>"; };
 		31EF9FA12558A96F003DFADF /* TimeTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTextFieldView.swift; sourceTree = "<group>"; };
 		31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTextFieldView.swift; sourceTree = "<group>"; };
@@ -298,8 +304,7 @@
 				31E30ABB256B3D76005EE4DF /* TaskType.swift */,
 				3195BF982555FC6A00707ECB /* CalManagerView.swift */,
 				31E30AC3256B437E005EE4DF /* SettingsView.swift */,
-				31E30ACD256C7737005EE4DF /* TypeSettingsRowView.swift */,
-				31E30AC8256B5404005EE4DF /* TypeActionsMenu.swift */,
+				31E30AD2256C808F005EE4DF /* SettingsView elements */,
 				31E08ABF25671413006C0639 /* RefreshTasksButtonView.swift */,
 				31750C762556E4BB007ACF87 /* DatesSettings.swift */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
@@ -337,6 +342,18 @@
 				31E08AA82563932B006C0639 /* DayButtonView.swift */,
 			);
 			path = "Sidebar Cal";
+			sourceTree = "<group>";
+		};
+		31E30AD2256C808F005EE4DF /* SettingsView elements */ = {
+			isa = PBXGroup;
+			children = (
+				31E30ACD256C7737005EE4DF /* TypeSettingsRowView.swift */,
+				31E30AC8256B5404005EE4DF /* TypeActionsMenu.swift */,
+				31E30AD3256C80BF005EE4DF /* TaskTypeTextFieldView.swift */,
+				31E30AD8256C8828005EE4DF /* AddTaskTypeView.swift */,
+				31E30ADD256C890D005EE4DF /* TaskTypesTitleView.swift */,
+			);
+			path = "SettingsView elements";
 			sourceTree = "<group>";
 		};
 		31EF9FB62558AD20003DFADF /* TaskView elements */ = {
@@ -542,6 +559,7 @@
 				3188BD3E255A18800039CE56 /* TaskTypesSettings.swift in Sources */,
 				31750CBE25572F57007ACF87 /* AddTaskFieldView.swift in Sources */,
 				31750C772556E4BB007ACF87 /* DatesSettings.swift in Sources */,
+				31E30ADE256C890D005EE4DF /* TaskTypesTitleView.swift in Sources */,
 				31750CF325577285007ACF87 /* DayBoxViewModifier.swift in Sources */,
 				3199F41B2563341F00279044 /* SearchSidebarView.swift in Sources */,
 				31EF9FA22558A96F003DFADF /* TimeTextFieldView.swift in Sources */,
@@ -569,10 +587,12 @@
 				31EF9FF32558B969003DFADF /* DateFrameViewModifier.swift in Sources */,
 				31E08AAE2566F69F006C0639 /* WeekDaysRowView.swift in Sources */,
 				3199F42C256350A100279044 /* SideCalendarButtonView.swift in Sources */,
+				31E30AD4256C80BF005EE4DF /* TaskTypeTextFieldView.swift in Sources */,
 				3199F43B256365D300279044 /* FoundTaskView.swift in Sources */,
 				31750CEB25576E01007ACF87 /* MonthTitleView.swift in Sources */,
 				31750CB625572528007ACF87 /* TasksView.swift in Sources */,
 				31750CA425570D31007ACF87 /* CalTaskView.swift in Sources */,
+				31E30AD9256C8828005EE4DF /* AddTaskTypeView.swift in Sources */,
 				31898C33255F24F3008FCB77 /* Task.swift in Sources */,
 				3195BF4F2555F42A00707ECB /* AppDelegate.swift in Sources */,
 				31EF9F73255858D5003DFADF /* TasksEnvironment.swift in Sources */,
