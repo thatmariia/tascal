@@ -22,7 +22,7 @@ struct DayBoxView: View {
             
             List{
                 ForEach(task_types.types) { type in
-                    Section(header: TaskLevelTxtView(txt: type.txt)) {
+                    Section(header: TaskLevelTxtView(type: type)) {
                         TaskList(tasks: tasks.all_tasks
                                     .filter {
                                         calendar.isDate($0.date_distributed, inSameDayAs: date.date) && ($0.level == type.level)

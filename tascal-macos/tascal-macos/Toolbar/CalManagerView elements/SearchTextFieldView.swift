@@ -42,11 +42,9 @@ struct SearchTextFieldView: View {
                     TextField("", text: $search) { (changed) in
                     }
                     onCommit: {
-                        //is_searching = false
                     }
                     .onChange(of: search, perform: { (val) in
                         envi.search = val
-                        //TODO:: do the search
                     })
                     .textFieldStyle(PlainTextFieldStyle())
                     .modifier(TextFieldClearButton(text: $search))

@@ -11,6 +11,7 @@ import UniformTypeIdentifiers
 struct TasksView: View {
     
     @EnvironmentObject var tasks: TasksEnvironment
+    @EnvironmentObject var search: AppEnvironment
     
     @ObservedObject var delegate = TasksEnvironment()
     
@@ -25,13 +26,7 @@ struct TasksView: View {
                     LazyVGrid(columns: Array(repeating: .init(.flexible()), count: bins(width: geom.size.width))
                               , content: {
                                 AddTaskFieldView()
-                                ForEach(tasks.all_tasks
-                                            .filter {
-                                                $0.level == -1
-                                            }
-                                            .sorted(by: {
-                                                $0.date_created > $1.date_created
-                                            })) { task in
+                                ForEach(get_tasks()) { task in
                                     TaskView(task: task,
                                              txt: task.txt,
                                              time: String(task.time))
@@ -83,6 +78,29 @@ struct TasksView: View {
                 
                 return true
             })
+        }
+    }
+    
+    fileprivate func get_tasks() -> [Task]{
+        if search.search.isEmpty {
+            return tasks.all_tasks
+                .filter {
+                    $0.level == -1
+                }
+                .sorted(by: {
+                    $0.date_created > $1.date_created
+                })
+        } else {
+            return tasks.all_tasks
+                        .filter {
+                            $0.level == -1
+                        }
+                        .filter {
+                            $0.txt.contains(search.search)
+                        }
+                        .sorted(by: {
+                            $0.date_created > $1.date_created
+                        })
         }
     }
     

@@ -19,7 +19,6 @@ struct CalTypeView_Days: View {
                 MonthTitleView()
                 
                 HStack {
-                    // TODO:: maybe find a less ugly way to do this
                     
                     if geom.size.width < 600 {
                         ForEach(0..<1) { i in

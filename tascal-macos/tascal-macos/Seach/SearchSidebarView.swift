@@ -17,6 +17,10 @@ struct SearchSidebarView: View {
         VStack {
             
             List {
+                if grouped_dates().count == 0 {
+                    Text("No tasks found")
+                }
+                
                 ForEach(grouped_dates(), id: \.self) { date in
                     
                     Section(header: DateHeaderView(date: CalDate(date: date, date_info: DateInfo(date: date)))) {

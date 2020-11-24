@@ -36,7 +36,6 @@
 		3195BF842555F99F00707ECB /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF832555F99F00707ECB /* AppEnvironment.swift */; };
 		3195BF892555FA5200707ECB /* CalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF882555FA5200707ECB /* CalType.swift */; };
 		3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF982555FC6A00707ECB /* CalManagerView.swift */; };
-		3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */; };
 		3195BFAD2556010300707ECB /* CalTypeView_Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFAC2556010300707ECB /* CalTypeView_Days.swift */; };
 		3195BFB7255601FF00707ECB /* CalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFB6255601FF00707ECB /* CalView.swift */; };
 		3195BFCA25560D4A00707ECB /* DateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3195BFC925560D4A00707ECB /* DateInfo.swift */; };
@@ -129,7 +128,6 @@
 		3195BF832555F99F00707ECB /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		3195BF882555FA5200707ECB /* CalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalType.swift; sourceTree = "<group>"; };
 		3195BF982555FC6A00707ECB /* CalManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManagerView.swift; sourceTree = "<group>"; };
-		3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalManagerButtonView.swift; sourceTree = "<group>"; };
 		3195BFAC2556010300707ECB /* CalTypeView_Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTypeView_Days.swift; sourceTree = "<group>"; };
 		3195BFB6255601FF00707ECB /* CalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalView.swift; sourceTree = "<group>"; };
 		3195BFC925560D4A00707ECB /* DateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInfo.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 				31E30ABB256B3D76005EE4DF /* TaskType.swift */,
 				3195BFC925560D4A00707ECB /* DateInfo.swift */,
 				31750C832556F105007ACF87 /* CalDate.swift */,
-				3195BF9D2555FEA700707ECB /* CalManagerButtonView.swift */,
 				3195BF882555FA5200707ECB /* CalType.swift */,
 				31EF9FA92558AB03003DFADF /* TaskTextFieldView.swift */,
 			);
@@ -614,7 +611,6 @@
 				3188BD4E255A1CF80039CE56 /* DividerView.swift in Sources */,
 				3199F4112563092E00279044 /* View.swift in Sources */,
 				3195BF842555F99F00707ECB /* AppEnvironment.swift in Sources */,
-				3195BF9E2555FEA700707ECB /* CalManagerButtonView.swift in Sources */,
 				3195BF992555FC6A00707ECB /* CalManagerView.swift in Sources */,
 				3199F416256318AF00279044 /* SidebarView.swift in Sources */,
 				3195BFB7255601FF00707ECB /* CalView.swift in Sources */,
