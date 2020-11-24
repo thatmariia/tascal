@@ -13,10 +13,6 @@ struct ToolbarStyleModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            /*.overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(Color(.separatorColor).opacity(hovering ? 1.0 : 0.0))
-            )*/
             .frame(height: 24)
             .overlay(
                 RoundedRectangle(cornerRadius: 5)

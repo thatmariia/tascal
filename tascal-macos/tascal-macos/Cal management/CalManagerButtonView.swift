@@ -5,6 +5,7 @@
 //  Created by Mariia Turchina on 06/11/2020.
 //
 
+/*
 import SwiftUI
 
 struct CalManagerButtonView: View {
@@ -26,3 +27,4 @@ struct CalManagerButtonView: View {
         
     }
 }
+*/

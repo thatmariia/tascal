@@ -7,16 +7,8 @@
 
 import Foundation
 
+
 class CalendarEnvironment : ObservableObject {
-    
-    /*    var interval = DateInterval(start: Calendar.current.date(from:
-     DateComponents(year: 2020,
-     month: 1,
-     day: 1))!,
-     end: Calendar.current.date(from:
-     DateComponents(year: DateInfo(date: Date()).year+2,
-     month: DateInfo(date: Date()).month_int,
-     day: 1))!)*/
     
     @Published var day: Date = Calendar.current.date(from:
                                                         DateComponents(year: DateInfo(date: Date()).year,
