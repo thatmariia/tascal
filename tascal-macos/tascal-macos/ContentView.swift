@@ -17,34 +17,34 @@ struct ContentView: View {
         
         HStack{
             
-        NavigationView {
-            
-            SidebarView()
-                .frame(width: 175)
-            
-            GeometryReader { geom_window in
+            NavigationView {
                 
-                HSplitView {
+                SidebarView()
+                    .frame(width: 175)
+                
+                GeometryReader { geom_window in
                     
-                    MainView(geom_window: geom_window).layoutPriority(1)
-                        .frame(minWidth: 0.5*geom_window.size.width)
-                    
-                    if envi.is_searching {
-                        SearchView()
-                            .frame(minWidth: 150, idealWidth: 200)
+                    HSplitView {
+                        
+                        MainView(geom_window: geom_window).layoutPriority(1)
+                            .frame(minWidth: 0.5*geom_window.size.width)
+                        
+                        if envi.is_searching {
+                            SearchView()
+                                .frame(minWidth: 150, idealWidth: 200)
+                        }
+                        
                     }
                     
                 }
-
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .animation(.easeInOut)
+                .onAppear(perform: {
+                    fetch_tasktypes()
+                    fetch_tasks()
+                })
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .animation(.easeInOut)
-            .onAppear(perform: {
-                fetch_tasktypes()
-                fetch_tasks()
-            })
-            
-        }
         }
         
         

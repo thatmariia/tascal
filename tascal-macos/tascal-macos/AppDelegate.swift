@@ -24,11 +24,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         
         let contentView = ContentView()
-            // TODO: figure out min window size without errors
-            /*.frame(minWidth: 400,
+            .frame(minWidth: 450,
                    maxWidth: .infinity,
                    minHeight: 350,
-                   maxHeight: .infinity)*/
+                   maxHeight: .infinity)
             .environment(\.managedObjectContext, persistentContainer.viewContext)
             .environmentObject(app_environement)
             .environmentObject(dates_settings)
@@ -64,6 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let titlebarAccessory = NSTitlebarAccessoryViewController()
         titlebarAccessory.view = toolbarButtons
         titlebarAccessory.layoutAttribute = .trailing
+        titlebarAccessory.automaticallyAdjustsSize = false
         
         window.toolbar = NSToolbar()
         window.addTitlebarAccessoryViewController(titlebarAccessory)

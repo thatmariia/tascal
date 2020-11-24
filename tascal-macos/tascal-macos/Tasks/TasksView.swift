@@ -18,7 +18,7 @@ struct TasksView: View {
     var body: some View {
         
         GeometryReader { geom in
-            ScrollView(.vertical, showsIndicators: true){
+            ScrollView(.vertical, showsIndicators: false){
                 Spacer().frame(height: 2)
                 
                 VStack{
