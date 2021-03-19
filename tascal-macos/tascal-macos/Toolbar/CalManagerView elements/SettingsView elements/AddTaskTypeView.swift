@@ -23,7 +23,7 @@ struct AddTaskTypeView: View {
                     Image(systemName: "plus.circle.fill")
                         .foregroundColor(Color.accentColor)
                 })
-                .disabled(new_type.count == 0)
+                .disabled(new_type.count == 0 || is_existing_type(type_name: new_type))
                 
                 TextField("Add type", text: $new_type)
                     .textFieldStyle(PlainTextFieldStyle())
@@ -32,6 +32,16 @@ struct AddTaskTypeView: View {
             .frame(height: 20)
             Divider()
         }
+    }
+    
+    fileprivate func is_existing_type(type_name: String) -> Bool {
+        for tt in task_types.types {
+            if tt.txt == type_name {
+                return true
+            }
+        }
+        return false
+
     }
     
     fileprivate func add_task_type() {
