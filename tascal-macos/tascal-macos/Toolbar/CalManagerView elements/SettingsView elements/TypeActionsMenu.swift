@@ -31,17 +31,6 @@ struct TypeActionsMenu: View {
             
             HStack {
                 
-                // MARK: - duplicate task type
-                Button(action: {
-                    duplicate_task_type()
-                    push_up_tasks()
-                    push_up_types()
-                    showing = false
-                }, label: {
-                    Image(systemName: "plus.square.on.square")
-                })
-                
-                Divider()
                 
                 // MARK: - edit task type
                 Button(action: {
