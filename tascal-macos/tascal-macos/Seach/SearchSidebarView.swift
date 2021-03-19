@@ -38,7 +38,7 @@ struct SearchSidebarView: View {
     
     fileprivate func tasks_on_date(date: Date) -> [Task] {
         let t = tasks.all_tasks.filter {
-            ($0.level != -1) && ($0.txt.contains(search.search)) && calendar.isDate($0.date_distributed, equalTo: date, toGranularity: .day)
+            ($0.level != -1) && ($0.txt.lowercased().contains(search.search.lowercased())) && calendar.isDate($0.date_distributed, equalTo: date, toGranularity: .day)
         }
         return t
         
@@ -49,7 +49,7 @@ struct SearchSidebarView: View {
         
         let grouped_dict = Dictionary(grouping:
                                     tasks.all_tasks.filter {
-                                        ($0.level != -1) && ($0.txt.contains(search.search))
+                                        ($0.level != -1) && ($0.txt.lowercased().contains(search.search.lowercased()))
                                     }) { (dc) -> DateComponents in
             let date = Calendar.current.dateComponents([.day, .year, .month], from: (dc.date_distributed))
             return date
