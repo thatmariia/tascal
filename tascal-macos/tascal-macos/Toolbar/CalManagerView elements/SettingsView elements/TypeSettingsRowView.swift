@@ -17,7 +17,7 @@ struct TypeSettingsRowView: View {
     var body: some View {
         VStack {
             HStack {
-                if hovering && !editing {
+                if hovering && !editing && !(tt.txt == "Others") {
                     TypeActionsMenu(editing: $editing, tt: tt)
                 }
                 if !editing {
