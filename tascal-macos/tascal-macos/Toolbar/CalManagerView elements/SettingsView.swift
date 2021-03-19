@@ -18,11 +18,21 @@ struct SettingsView: View {
     var body: some View {
         
         Button(action: {
-            showing = true
+            //showing = true
+            let settingView = TypeSettingsView()
+            .environmentObject(task_types)
+            .environmentObject(tasks)
+            .padding()
+            .buttonStyle(PlainButtonStyle())
+            
+            let controller = DetailWindowController(rootView: settingView)
+            controller.window?.title = "Settings"
+            controller.showWindow(nil)
+            
         }, label: {
             Image(systemName: "gear")
         })
-        .popover(isPresented: $showing, content: {
+        /*.popover(isPresented: $showing, content: {
             VStack {
                 
                 TaskTypesTitleView()
@@ -38,7 +48,7 @@ struct SettingsView: View {
             .buttonStyle(PlainButtonStyle())
             
             
-        })
+        })*/
         .frame(minWidth: 20)
         .buttonStyle(PlainButtonStyle())
         .padding(EdgeInsets(top: 3, leading: 10, bottom: 3, trailing: 10))
