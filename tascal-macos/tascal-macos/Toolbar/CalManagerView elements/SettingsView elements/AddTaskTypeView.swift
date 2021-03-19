@@ -46,58 +46,11 @@ struct AddTaskTypeView: View {
     
     fileprivate func add_task_type() {
         
-        let task_type = TaskType(id: UUID(),
-                                 level: task_types.types.count+1,
-                                 txt: new_type)
+        let added_tt = TaskType(id: UUID(),
+                                level: task_types.types.count+1,
+                                txt: new_type)
         
-        CloudKitHelper.save_tasktypes(task_type: task_type) { (result) in
-            switch result {
-            case .success(let task_type):
-                self.task_types.types.append(task_type)
-                _reorder_task_types()
-                print("Successfully added item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-        
-    }
-    
-    fileprivate func _reorder_task_types() {
-        for tt in task_types.types {
-            if (tt.txt == "Others") && (tt.level != task_types.types.count) {
-                
-                let switch_lvl = tt.level
-                let last_lvl = task_types.types.count
-                    
-                modify_type(tt: task_types.types[task_types.types.count-1], to: tt.level)
-                modify_type(tt: tt, to: last_lvl)
-                
-                task_types.types.swapAt(switch_lvl-1, last_lvl-1)
-                
-                break
-            }
-        }
-    }
-    
-    fileprivate func modify_type(tt: TaskType, to lvl: Int) {
-        var updated_tt = tt
-        updated_tt.level = lvl
-        
-        CloudKitHelper.modify_tasktypes(task_type: updated_tt) { (result) in
-            switch result {
-            case .success(let item):
-                for i in 0..<task_types.types.count {
-                    let currentItem = task_types.types[i]
-                    if currentItem.record_id == item.record_id {
-                        task_types.types[i] = item
-                    }
-                }
-                print("Successfully modified item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
+        task_types.add_reorder_task_type(added_tt: added_tt)
     }
 }
 

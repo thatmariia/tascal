@@ -36,4 +36,22 @@ class TasksEnvironment : ObservableObject {
         }
         return true
     }
+    
+    func update_task(updated_task: Task) {
+        
+        CloudKitHelper.modify_tasks(task: updated_task) { (result) in
+            switch result {
+            case .success(let item):
+                for i in 0..<self.all_tasks.count {
+                    let currentItem = self.all_tasks[i]
+                    if currentItem.record_id == item.record_id {
+                        self.all_tasks[i] = item
+                    }
+                }
+                print("Successfully modified item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }

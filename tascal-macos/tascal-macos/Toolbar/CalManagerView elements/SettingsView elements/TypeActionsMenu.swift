@@ -48,7 +48,8 @@ struct TypeActionsMenu: View {
                     let lvl = tt.level
                     
                     handle_type_deletion(at: lvl)
-                    delete_type(tt: tt)
+                    task_types.delete_type(deleted_tt: tt)
+                    //delete_type(tt: tt)
                     
                     showing = false
                     
@@ -63,8 +64,6 @@ struct TypeActionsMenu: View {
         })
         .buttonStyle(PlainButtonStyle())
         
-        
-        
     }
     
     
@@ -73,7 +72,7 @@ struct TypeActionsMenu: View {
         
         for tt in task_types.types {
             if tt.level > lvl {
-                _modify_type(tt: tt, to: tt.level-1)
+                modify_type(tt: tt, to: tt.level-1)
             }
         }
 
@@ -87,31 +86,20 @@ struct TypeActionsMenu: View {
         
     }
     
-    fileprivate func _modify_type(tt: TaskType, to lvl: Int) {
+    fileprivate func modify_type(tt: TaskType, to lvl: Int) {
         var updated_tt = tt
         updated_tt.level = lvl
         
-        CloudKitHelper.modify_tasktypes(task_type: updated_tt) { (result) in
-            switch result {
-            case .success(let item):
-                for i in 0..<task_types.types.count {
-                    let currentItem = task_types.types[i]
-                    if currentItem.record_id == item.record_id {
-                        task_types.types[i] = item
-                    }
-                }
-                print("Successfully modified item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
+        task_types.modify_type(updated_tt: updated_tt)
     }
     
     fileprivate func _update_task(task: Task, to lvl: Int) {
         var updated_task = task
         updated_task.level = lvl
         
-        CloudKitHelper.modify_tasks(task: updated_task) { (result) in
+        tasks.update_task(updated_task: updated_task)
+        
+        /*CloudKitHelper.modify_tasks(task: updated_task) { (result) in
             switch result {
             case .success(let item):
                 for i in 0..<tasks.all_tasks.count {
@@ -124,23 +112,7 @@ struct TypeActionsMenu: View {
             case .failure(let err):
                 print(err.localizedDescription)
             }
-        }
-    }
-    
-    fileprivate func delete_type(tt: TaskType) {
-        guard let recordID = tt.record_id else { return }
-        
-        CloudKitHelper.delete(recordID: recordID) { (result) in
-            switch result {
-            case .success(let recordID):
-                self.task_types.types.removeAll { (t) -> Bool in
-                    return t.record_id == recordID
-                }
-                print("Successfully deleted item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
+        }*/
     }
 
 }
