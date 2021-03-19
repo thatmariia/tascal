@@ -67,20 +67,6 @@ struct TypeActionsMenu: View {
         
     }
     
-    fileprivate func duplicate_task_type() {
-        var new_task_type = tt
-        new_task_type.level = tt.level + 1
-        
-        CloudKitHelper.save_tasktypes(task_type: new_task_type) { (result) in
-            switch result {
-            case .success(let new_task_type):
-                self.task_types.types.insert(new_task_type, at: new_task_type.level-1)//append(new_task_type)
-                print("Successfully added item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-    }
     
     fileprivate func handle_type_deletion(at lvl: Int) {
         let last_type_lvl = task_types.types.count
@@ -137,59 +123,6 @@ struct TypeActionsMenu: View {
                 print("Successfully modified item")
             case .failure(let err):
                 print(err.localizedDescription)
-            }
-        }
-    }
-    
-    fileprivate func push_up_tasks() {
-        let lvl = tt.level
-        
-        for task in tasks.all_tasks {
-            if task.level > lvl {
-                var updated_task = task
-                updated_task.level = task.level + 1
-                
-                CloudKitHelper.modify_tasks(task: updated_task) { (result) in
-                    switch result {
-                    case .success(let item):
-                        for i in 0..<tasks.all_tasks.count {
-                            let currentItem = tasks.all_tasks[i]
-                            if currentItem.record_id == item.record_id {
-                                tasks.all_tasks[i] = item
-                            }
-                        }
-                        print("Successfully modified item")
-                    case .failure(let err):
-                        print(err.localizedDescription)
-                    }
-                }
-                
-            }
-        }
-    }
-    
-    fileprivate func push_up_types() {
-        let lvl = tt.level
-        
-        for task_type in task_types.types {
-            if task_type.level > lvl {
-                var updated_type = task_type
-                updated_type.level = task_type.level + 1
-                
-                CloudKitHelper.modify_tasktypes(task_type: updated_type) { (result) in
-                    switch result {
-                    case .success(let item):
-                        for i in 0..<task_types.types.count {
-                            let currentItem = task_types.types[i]
-                            if currentItem.record_id == item.record_id {
-                                task_types.types[i] = item
-                            }
-                        }
-                        print("Successfully modified item")
-                    case .failure(let err):
-                        print(err.localizedDescription)
-                    }
-                }
             }
         }
     }
