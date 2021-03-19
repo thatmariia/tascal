@@ -15,7 +15,6 @@ struct AddTaskTypeView: View {
     
     var body: some View {
         VStack {
-            Spacer()
             HStack {
                 Button(action: {
                     add_task_type()
@@ -28,10 +27,9 @@ struct AddTaskTypeView: View {
                 
                 TextField("Add type", text: $new_type)
                     .textFieldStyle(PlainTextFieldStyle())
-                    .frame(width: 200)
+                    .frame(maxWidth: .infinity)
             }
             .frame(height: 20)
-            Spacer()
             Divider()
         }
     }

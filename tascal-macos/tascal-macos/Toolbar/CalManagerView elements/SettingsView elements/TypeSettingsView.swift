@@ -13,16 +13,18 @@ struct TypeSettingsView: View {
     
     
     var body: some View {
-        VStack {
-            
-            TaskTypesTitleView()
-            
-            ForEach(task_types.types) { tt in
-                TypeSettingsRowView(tt: tt)
-            }
+        ScrollView(.vertical, showsIndicators: true) {
+            VStack {
+                
+                TaskTypesTitleView()
+                
+                ForEach(task_types.types) { tt in
+                    TypeSettingsRowView(tt: tt)
+                }
 
-            AddTaskTypeView()
-            
+                AddTaskTypeView()
+                
+            }
         }
     }
 }
