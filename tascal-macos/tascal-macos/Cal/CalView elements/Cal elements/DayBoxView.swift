@@ -62,7 +62,15 @@ struct DayBoxView: View {
                                 }
                                 if (task == nil) { return }
                                 task!.level = type.level
-                                task?.date_distributed = Date()
+                                
+                                var date_distributed = date.date
+                                date_distributed = Calendar.current.date(
+                                    bySettingHour: Calendar.current.component(.hour, from: Date()),
+                                    minute: Calendar.current.component(.minute, from: Date()),
+                                    second: Calendar.current.component(.second, from: Date()),
+                                    of: date_distributed)!
+                                
+                                task?.date_distributed = date_distributed//date.date //Date()
                                 
                                 tasks.update_task(updated_task: task!)
                             }

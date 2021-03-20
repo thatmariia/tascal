@@ -46,5 +46,6 @@ struct AddTaskFieldView: View {
         })
         .buttonStyle(PlainButtonStyle())
         .disabled(!tasks.is_valid_task(with: new_task) || !tasks.is_valid_time(with: new_time))
+        
     }
 }

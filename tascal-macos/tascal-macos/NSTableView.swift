@@ -19,3 +19,4 @@ extension NSTableView {
 }
 
 // TODO:: figure out how to remove background from focused section header
+// TODO:: throws an error when looking at window in main toolbar lol
