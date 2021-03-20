@@ -10,6 +10,7 @@ import SwiftUI
 struct AddTaskTypeView: View {
     
     @EnvironmentObject var task_types: TaskTypesSettings
+    @EnvironmentObject var tasks: TasksEnvironment
     
     @State var new_type = ""
     
@@ -45,12 +46,24 @@ struct AddTaskTypeView: View {
     }
     
     fileprivate func add_task_type() {
+        let nrtts = task_types.types.count
+        
+        let last_lvl = (nrtts == 0) ? 1 : nrtts
+        let new_last_lvl = nrtts + 1
+        
+        if nrtts != 0 {
+            var updated_tt = task_types.types[task_types.types.count-1]
+            updated_tt.level = new_last_lvl
+            task_types.modify_type(updated_tt: updated_tt)
+        }
         
         let added_tt = TaskType(id: UUID(),
-                                level: task_types.types.count+1,
+                                level: last_lvl,
                                 txt: new_type)
-        
         task_types.add_reorder_task_type(added_tt: added_tt)
+        
+        tasks.swap_tasks_levels(between: last_lvl, and: new_last_lvl)
+
     }
 }
 

@@ -54,4 +54,31 @@ class TasksEnvironment : ObservableObject {
             }
         }
     }
+    
+    func swap_tasks_levels(between lvl1: Int, and lvl2: Int) {
+        print("******* SWAPPING start - \(lvl1) and \(lvl2)")
+        for task in self.all_tasks {
+            
+            if task.level == lvl1 {
+                
+                var updated_task = task
+                updated_task.level = lvl2
+                self.update_task(updated_task: updated_task)
+                
+                print("******* SWAPPING from \(lvl1) to \(lvl2)")
+                
+            } else if task.level == lvl2 {
+                
+                var updated_task = task
+                updated_task.level = lvl1
+                self.update_task(updated_task: updated_task)
+                
+                print("******* SWAPPING from \(lvl2) to \(lvl1)")
+                
+            }
+        }
+        
+
+        
+    }
 }
