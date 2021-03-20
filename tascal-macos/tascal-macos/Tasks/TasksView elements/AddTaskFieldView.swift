@@ -31,21 +31,14 @@ struct AddTaskFieldView: View {
                             task_id: UUID().uuidString,
                             date_created: Date(),
                             date_distributed: Date(),
+                            date_completed: Date(),
                             is_completed: 0,
                             is_repeating: 0,
                             level: -1,
                             time: Double(new_time)!,
                             txt: new_task)
             
-            CloudKitHelper.save_tasks(task: task) { (result) in
-                switch result {
-                case .success(let task):
-                    self.tasks.all_tasks.insert(task, at: 0)
-                    print("Successfully added item")
-                case .failure(let err):
-                    print(err.localizedDescription)
-                }
-            }
+            tasks.add_task(added_task: task)
             
             new_task  = ""
         }, label: {

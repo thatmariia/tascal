@@ -37,6 +37,19 @@ class TasksEnvironment : ObservableObject {
         return true
     }
     
+    func add_task(added_task: Task) {
+        
+        CloudKitHelper.save_tasks(task: added_task) { (result) in
+            switch result {
+            case .success(let task):
+                self.self.all_tasks.insert(task, at: 0)
+                print("Successfully added item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     func update_task(updated_task: Task) {
         
         CloudKitHelper.modify_tasks(task: updated_task) { (result) in

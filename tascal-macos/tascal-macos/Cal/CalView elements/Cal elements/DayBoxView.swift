@@ -32,7 +32,7 @@ struct DayBoxView: View {
                                             if $0.is_completed == 0 {
                                                 return $0.date_distributed > $1.date_distributed
                                             }
-                                            //return $0.date_completed > $0.date_completed
+                                            return $0.date_completed > $0.date_completed
                                         }
                                         return $0.is_completed < $1.is_completed
                                     }))

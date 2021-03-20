@@ -33,6 +33,7 @@ struct CloudKitHelper {
         itemRecord["task_id"]           = task.task_id          as CKRecordValue
         itemRecord["date_created"]      = task.date_created     as CKRecordValue
         itemRecord["date_distributed"]  = task.date_distributed as CKRecordValue
+        itemRecord["date_completed"]    = task.date_completed   as CKRecordValue
         itemRecord["is_completed"]      = task.is_completed     as CKRecordValue
         itemRecord["is_repeating"]      = task.is_repeating     as CKRecordValue
         itemRecord["level"]             = task.level            as CKRecordValue
@@ -64,6 +65,10 @@ struct CloudKitHelper {
                     completion(.failure(CloudKitHelperError.castFailure))
                     return
                 }
+                guard let date_completed = record["date_completed"] as? Date else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
                 guard let is_completed = record["is_completed"] as? Int else {
                     completion(.failure(CloudKitHelperError.castFailure))
                     return
@@ -88,6 +93,7 @@ struct CloudKitHelper {
                                 record_id: record_id,
                                 date_created: date_created,
                                 date_distributed: date_distributed,
+                                date_completed: date_completed,
                                 is_completed: is_completed,
                                 is_repeating: is_repeating,
                                 level: level,
@@ -152,6 +158,7 @@ struct CloudKitHelper {
         operation.desiredKeys = ["task_id",
                                  "date_created",
                                  "date_distributed",
+                                 "date_completed",
                                  "is_completed",
                                  "is_repeating",
                                  "level",
@@ -172,6 +179,10 @@ struct CloudKitHelper {
                     return
                 }
                 guard let date_distributed = record["date_distributed"] as? Date else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
+                guard let date_completed = record["date_completed"] as? Date else {
                     completion(.failure(CloudKitHelperError.castFailure))
                     return
                 }
@@ -199,6 +210,7 @@ struct CloudKitHelper {
                                 record_id: record_id,
                                 date_created: date_created,
                                 date_distributed: date_distributed,
+                                date_completed: date_completed,
                                 is_completed: is_completed,
                                 is_repeating: is_repeating,
                                 level: level,
@@ -316,6 +328,7 @@ struct CloudKitHelper {
             }
             // task id and creation date can't change
             record["date_distributed"]  = task.date_distributed as CKRecordValue
+            record["date_completed"]    = task.date_completed   as CKRecordValue
             record["is_completed"]      = task.is_completed     as CKRecordValue
             record["is_repeating"]      = task.is_repeating     as CKRecordValue
             record["level"]             = task.level            as CKRecordValue
@@ -347,6 +360,10 @@ struct CloudKitHelper {
                         completion(.failure(CloudKitHelperError.castFailure))
                         return
                     }
+                    guard let date_completed = record["date_completed"] as? Date else {
+                        completion(.failure(CloudKitHelperError.castFailure))
+                        return
+                    }
                     guard let is_completed = record["is_completed"] as? Int else {
                         completion(.failure(CloudKitHelperError.castFailure))
                         return
@@ -371,6 +388,7 @@ struct CloudKitHelper {
                                     record_id: record_id,
                                     date_created: date_created,
                                     date_distributed: date_distributed,
+                                    date_completed: date_completed,
                                     is_completed: is_completed,
                                     is_repeating: is_repeating,
                                     level: level,
