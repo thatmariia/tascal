@@ -28,7 +28,13 @@ struct DayBoxView: View {
                                         calendar.isDate($0.date_distributed, inSameDayAs: date.date) && ($0.level == type.level)
                                     }
                                     .sorted(by: {
-                                        $0.is_completed < $1.is_completed
+                                        if $0.is_completed == $1.is_completed {
+                                            if $0.is_completed == 0 {
+                                                return $0.date_distributed > $1.date_distributed
+                                            }
+                                            //return $0.date_completed > $0.date_completed
+                                        }
+                                        return $0.is_completed < $1.is_completed
                                     }))
                         
                             
@@ -56,7 +62,7 @@ struct DayBoxView: View {
                                 }
                                 if (task == nil) { return }
                                 task!.level = type.level
-                                task?.date_distributed = date.date
+                                task?.date_distributed = Date()
                                 
                                 tasks.update_task(updated_task: task!)
                             }
