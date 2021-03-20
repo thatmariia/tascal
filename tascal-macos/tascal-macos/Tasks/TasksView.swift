@@ -59,20 +59,7 @@ struct TasksView: View {
                         task!.level = -1
                         task!.is_completed = 0
                         
-                        CloudKitHelper.modify_tasks(task: task!) { (result) in
-                            switch result {
-                            case .success(let item):
-                                for i in 0..<tasks.all_tasks.count {
-                                    let currentItem = tasks.all_tasks[i]
-                                    if currentItem.record_id == item.record_id {
-                                        tasks.all_tasks[i] = item
-                                    }
-                                }
-                                print("Successfully modified item")
-                            case .failure(let err):
-                                print(err.localizedDescription)
-                            }
-                        }
+                        tasks.update_task(updated_task: task!)
                     }
                 }
                 
