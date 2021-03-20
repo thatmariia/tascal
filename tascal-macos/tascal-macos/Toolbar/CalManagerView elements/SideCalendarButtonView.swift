@@ -26,9 +26,3 @@ struct SideCalendarButtonView: View {
         }
     }
 }
-
-struct SideCalendarButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        SideCalendarButtonView()
-    }
-}

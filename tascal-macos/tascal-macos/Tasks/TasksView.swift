@@ -97,9 +97,3 @@ struct TasksView: View {
         return 3
     }
 }
-
-struct TasksView_Previews: PreviewProvider {
-    static var previews: some View {
-        TasksView()
-    }
-}

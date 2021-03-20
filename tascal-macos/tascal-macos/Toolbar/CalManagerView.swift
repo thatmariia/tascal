@@ -48,9 +48,3 @@ struct CalManagerView: View {
 
     }
 }
-
-struct CalManagerView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalManagerView()
-    }
-}

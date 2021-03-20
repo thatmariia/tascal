@@ -90,7 +90,7 @@ struct TypeActionsMenu: View {
         var updated_tt = tt
         updated_tt.level = lvl
         
-        task_types.modify_type(updated_tt: updated_tt)
+        task_types.update_type(updated_tt: updated_tt)
     }
     
     fileprivate func _update_task(task: Task, to lvl: Int) {
@@ -98,21 +98,6 @@ struct TypeActionsMenu: View {
         updated_task.level = lvl
         
         tasks.update_task(updated_task: updated_task)
-        
-        /*CloudKitHelper.modify_tasks(task: updated_task) { (result) in
-            switch result {
-            case .success(let item):
-                for i in 0..<tasks.all_tasks.count {
-                    let currentItem = tasks.all_tasks[i]
-                    if currentItem.record_id == item.record_id {
-                        tasks.all_tasks[i] = item
-                    }
-                }
-                print("Successfully modified item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }*/
     }
 
 }

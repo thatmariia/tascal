@@ -16,8 +16,8 @@ struct RefreshTasksButtonView: View {
     
     var body: some View {
         Button(action: {
-            refresh_types()
-            refresh_tasks()
+            task_types.refresh_types()
+            tasks.refresh_tasks()
         }, label: {
             Image(systemName: "arrow.clockwise")
         })
@@ -30,35 +30,4 @@ struct RefreshTasksButtonView: View {
         }
     }
     
-    fileprivate func refresh_types() {
-        task_types.types = []
-        CloudKitHelper.fetch_tasktypes { (result) in
-            switch result {
-            case .success(let task_type):
-                self.task_types.types.append(task_type)
-                print("Successfully fetched item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-    }
-    
-    fileprivate func refresh_tasks() {
-        tasks.all_tasks = []
-        CloudKitHelper.fetch_tasks { (result) in
-            switch result {
-            case .success(let task):
-                self.tasks.all_tasks.append(task)
-                print("Successfully fetched item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
-    }
-}
-
-struct RefreshTasksButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        RefreshTasksButtonView()
-    }
 }

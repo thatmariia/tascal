@@ -42,8 +42,3 @@ struct CalTypeView_Days: View {
     }
 }
 
-struct CalTypeView_Days_Previews: PreviewProvider {
-    static var previews: some View {
-        CalTypeView_Days()
-    }
-}

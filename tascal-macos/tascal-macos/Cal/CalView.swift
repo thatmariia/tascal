@@ -16,9 +16,3 @@ struct CalView: View {
         
     }
 }
-
-struct CalView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalView()
-    }
-}

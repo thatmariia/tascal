@@ -37,6 +37,19 @@ class TasksEnvironment : ObservableObject {
         return true
     }
     
+    func refresh_tasks() {
+        self.all_tasks = []
+        CloudKitHelper.fetch_tasks { (result) in
+            switch result {
+            case .success(let task):
+                self.self.all_tasks.append(task)
+                print("Successfully fetched item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     func add_task(added_task: Task) {
         
         CloudKitHelper.save_tasks(task: added_task) { (result) in
@@ -62,6 +75,22 @@ class TasksEnvironment : ObservableObject {
                     }
                 }
                 print("Successfully modified item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func delete_task(deleted_task: Task) {
+        guard let recordID = deleted_task.record_id else { return }
+        
+        CloudKitHelper.delete(recordID: recordID) { (result) in
+            switch result {
+            case .success(let recordID):
+                self.self.all_tasks.removeAll { (t) -> Bool in
+                    return t.record_id == recordID
+                }
+                print("Successfully deleted item")
             case .failure(let err):
                 print(err.localizedDescription)
             }

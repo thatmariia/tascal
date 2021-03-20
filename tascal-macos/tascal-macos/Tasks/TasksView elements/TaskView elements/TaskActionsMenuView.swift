@@ -36,15 +36,7 @@ struct TaskActionsMenuView: View {
                     dupl_task.level = -1
                     dupl_task.date_created = Date()
                     
-                    CloudKitHelper.save_tasks(task: dupl_task) { (result) in
-                        switch result {
-                        case .success(let dupl_task):
-                            self.tasks.all_tasks.insert(dupl_task, at: 0)
-                            print("Successfully duplicated item")
-                        case .failure(let err):
-                            print(err.localizedDescription)
-                        }
-                    }
+                    tasks.add_task(added_task: dupl_task)
                     
                     showing = false
                     
@@ -66,19 +58,7 @@ struct TaskActionsMenuView: View {
                 
                 // MARK: - delete task
                 Button(action: {
-                    guard let recordID = task.record_id else { return }
-                    
-                    CloudKitHelper.delete(recordID: recordID) { (result) in
-                        switch result {
-                        case .success(let recordID):
-                            self.tasks.all_tasks.removeAll { (t) -> Bool in
-                                return t.record_id == recordID
-                            }
-                            print("Successfully deleted item")
-                        case .failure(let err):
-                            print(err.localizedDescription)
-                        }
-                    }
+                    tasks.delete_task(deleted_task: task)
                     
                     showing = false
                 }, label: {

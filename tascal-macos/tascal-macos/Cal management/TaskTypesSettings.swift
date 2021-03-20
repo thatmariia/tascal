@@ -11,7 +11,20 @@ class TaskTypesSettings: ObservableObject {
     
     @Published var types : [TaskType] = []
     
-    func add_reorder_task_type(added_tt: TaskType, new_last_lvl: Int){
+    func refresh_types() {
+        self.types = []
+        CloudKitHelper.fetch_tasktypes { (result) in
+            switch result {
+            case .success(let task_type):
+                self.self.types.append(task_type)
+                print("Successfully fetched item")
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func add_reorder_task_type(added_tt: TaskType, new_last_lvl: Int) {
         
         CloudKitHelper.save_tasktypes(task_type: added_tt) { (result) in
             switch result {
@@ -24,38 +37,8 @@ class TaskTypesSettings: ObservableObject {
             }
         }
     }
-
     
-    /*func _reorder_task_types() -> (Int, Int) {
-        var swap_lvls = (0, 0)
-        
-        for tt in self.types {
-            if (tt.txt == "Others") && (tt.level != self.types.count) {
-                
-                let switch_lvl = tt.level
-                let last_lvl = self.types.count
-                
-                var updated_tt1 = self.types[self.types.count-1]
-                updated_tt1.level = tt.level
-                self.modify_type(updated_tt: updated_tt1)
-                
-                var updated_tt2 = tt
-                updated_tt2.level = last_lvl
-                self.modify_type(updated_tt: updated_tt2)
-                
-                self.types.swapAt(switch_lvl-1, last_lvl-1)
-                
-                swap_lvls = (switch_lvl-1, last_lvl-1)
-                print("****** NOW the SWAPPING assigned =\(swap_lvls)")
-                
-                return swap_lvls
-            }
-        }
-        
-        return swap_lvls
-    }*/
-    
-    func modify_type(updated_tt: TaskType) {
+    func update_type(updated_tt: TaskType) {
         CloudKitHelper.modify_tasktypes(task_type: updated_tt) { (result) in
             switch result {
             case .success(let item):

@@ -37,6 +37,6 @@ struct TaskTypeTextFieldView: View {
         var updated_tt = tt
         updated_tt.txt = edit_type
         
-        task_types.modify_type(updated_tt: updated_tt)
+        task_types.update_type(updated_tt: updated_tt)
     }
 }

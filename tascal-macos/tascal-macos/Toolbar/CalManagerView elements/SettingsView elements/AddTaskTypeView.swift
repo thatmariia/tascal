@@ -54,7 +54,7 @@ struct AddTaskTypeView: View {
         if nrtts != 0 {
             var updated_tt = task_types.types[task_types.types.count-1]
             updated_tt.level = new_last_lvl
-            task_types.modify_type(updated_tt: updated_tt)
+            task_types.update_type(updated_tt: updated_tt)
         }
         
         let added_tt = TaskType(id: UUID(),
@@ -64,11 +64,5 @@ struct AddTaskTypeView: View {
         
         tasks.swap_tasks_levels(between: last_lvl, and: new_last_lvl)
 
-    }
-}
-
-struct AddTaskTypeView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddTaskTypeView()
     }
 }

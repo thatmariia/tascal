@@ -28,24 +28,11 @@ struct DoneEditingButtonView: View {
     }
     
     fileprivate func modify_task() {
-        var mod_task = task
-        mod_task.txt = txt
-        mod_task.time = Double(time)!
+        var updated_task = task
+        updated_task.txt = txt
+        updated_task.time = Double(time)!
         
-        CloudKitHelper.modify_tasks(task: mod_task) { (result) in
-            switch result {
-            case .success(let item):
-                for i in 0..<self.tasks.all_tasks.count {
-                    let currentItem = self.tasks.all_tasks[i]
-                    if currentItem.record_id == item.record_id {
-                        self.tasks.all_tasks[i] = item
-                    }
-                }
-                print("Successfully modified item")
-            case .failure(let err):
-                print(err.localizedDescription)
-            }
-        }
+        tasks.update_task(updated_task: updated_task)
         
         editing = false
     }

@@ -20,8 +20,3 @@ struct MonthTitleView: View {
     }
 }
 
-struct MonthTitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        MonthTitleView()
-    }
-}

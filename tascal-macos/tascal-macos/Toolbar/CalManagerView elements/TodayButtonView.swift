@@ -28,8 +28,3 @@ struct TodayButtonView: View {
     }
 }
 
-struct TodayButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodayButtonView()
-    }
-}
