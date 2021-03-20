@@ -11,17 +11,13 @@ class TaskTypesSettings: ObservableObject {
     
     @Published var types : [TaskType] = []
     
-    func add_reorder_task_type(added_tt: TaskType){
-        let nrtts = self.types.count
-        
-        let last_lvl = (nrtts == 0) ? 1 : nrtts
-        let new_last_lvl = nrtts + 1
+    func add_reorder_task_type(added_tt: TaskType, new_last_lvl: Int){
         
         CloudKitHelper.save_tasktypes(task_type: added_tt) { (result) in
             switch result {
             case .success(let task_type):
                 self.self.types.append(task_type)
-                self.types.swapAt(last_lvl-1, new_last_lvl-1)
+                self.types.swapAt(added_tt.level-1, new_last_lvl-1)
                 print("Successfully added item")
             case .failure(let err):
                 print(err.localizedDescription)

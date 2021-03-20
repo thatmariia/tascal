@@ -60,7 +60,7 @@ struct AddTaskTypeView: View {
         let added_tt = TaskType(id: UUID(),
                                 level: last_lvl,
                                 txt: new_type)
-        task_types.add_reorder_task_type(added_tt: added_tt)
+        task_types.add_reorder_task_type(added_tt: added_tt, new_last_lvl: new_last_lvl)
         
         tasks.swap_tasks_levels(between: last_lvl, and: new_last_lvl)
 
